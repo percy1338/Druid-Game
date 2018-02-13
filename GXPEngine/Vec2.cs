@@ -33,8 +33,8 @@ namespace GXPEngine
 		}
 		public Vec2 Multiply(float other)
 		{
-			x = x * other;
-			y = y * other;
+			x *= other;
+			y *= other;
 			return this;
 		}
 		public float Lenght()
