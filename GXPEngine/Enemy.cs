@@ -5,7 +5,11 @@ using System.Text;
 
 namespace GXPEngine
 {
-    class Enemy
+    public class Enemy
     {
+		public Enemy()
+		{
+
+		}
     }
 }
