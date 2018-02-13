@@ -4,10 +4,11 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\MyGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\GXPEngine\Core\GLContext.cs">
     <Files>
       <File FileName="GXPEngine\MyGame.cs" Line="8" Column="29" />
-      <File FileName="GXPEngine\GXPEngine\Core\GLContext.cs" Line="84" Column="34" />
+      <File FileName="GXPEngine\GXPEngine\Core\GLContext.cs" Line="65" Column="1" />
+      <File FileName="GXPEngine\Vec2.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

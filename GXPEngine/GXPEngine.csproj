@@ -68,6 +68,7 @@
     <Compile Include="Objects.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="TmxParser.cs" />
+    <Compile Include="Vec2.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
