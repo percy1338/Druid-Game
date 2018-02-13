@@ -5,7 +5,11 @@ using System.Text;
 
 namespace GXPEngine
 {
-    class Hitbox
+    public class Hitbox
     {
+		public Hitbox()
+		{
+
+		}
     }
 }
