@@ -5,7 +5,8 @@ public class MyGame : Game
 {
 	public MyGame() : base(800, 600, false, true)		// Create a window that's 800x600 and NOT fullscreen
 	{
-	//reeee	
+        //reeee	
+        Player dissit = new Player();
 	}
 
 	void Update()
