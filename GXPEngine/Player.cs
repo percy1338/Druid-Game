@@ -5,7 +5,11 @@ using System.Text;
 
 namespace GXPEngine
 {
-    class Player
+    public class Player : Sprite
     {
+		public Player() : base("Sprites/p1_front.png")
+		{
+
+		}
     }
 }
