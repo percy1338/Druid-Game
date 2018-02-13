@@ -9,7 +9,8 @@ namespace GXPEngine
 {
     public class TmxParser
     {
-        TMXMap map = new TMXMap();
+        public Map map = new Map();
+        private string _level = "test.tmx";
 
         public TmxParser()
         {
@@ -18,10 +19,10 @@ namespace GXPEngine
 
         public void ReadMap()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(TMXMap));
+            XmlSerializer serializer = new XmlSerializer(typeof(Map));
 
-            TextReader reader = new StreamReader("level name");
-            map = serializer.Deserialize(reader) as TMXMap;
+            TextReader reader = new StreamReader(_level);
+            map = serializer.Deserialize(reader) as Map;
             reader.Close();
 
             Console.WriteLine(map);

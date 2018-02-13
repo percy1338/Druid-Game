@@ -7,14 +7,13 @@ using System.Xml.Serialization;
 namespace GXPEngine
 {
     [XmlRoot("image")]
-    class Image
+    public class Image
     {
         [XmlAttribute("source")]
         public string source = "";
 
         public Image()
         {
-
         }
 
         public override string ToString()

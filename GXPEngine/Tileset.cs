@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace GXPEngine
 {
     [XmlRoot("tileset")]
-    class Tileset
+    public class TileSet
     {
         [XmlAttribute("firstgid")]
         public int firstGid = 0;
@@ -30,7 +30,8 @@ namespace GXPEngine
         [XmlElement("image")]
         public Image image;
 
-        public Tileset()
+
+        public TileSet()
         {
         }
 
@@ -41,6 +42,5 @@ namespace GXPEngine
 
             return output;
         }
-
     }
 }

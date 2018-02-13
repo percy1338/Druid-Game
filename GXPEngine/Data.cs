@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace GXPEngine
 {
     [XmlRoot("data")]
-    class Data
+    public class Data
     {
         [XmlAttribute("encoding")]
         public string encoding;
