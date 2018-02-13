@@ -33,10 +33,15 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Hitbox.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="Layer.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />
@@ -67,6 +72,8 @@
     <Compile Include="GXPEngine\Utils\Utils.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Tileset.cs" />
+    <Compile Include="TMXMap.cs" />
     <Compile Include="TmxParser.cs" />
     <Compile Include="Vec2.cs" />
   </ItemGroup>

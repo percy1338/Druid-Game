@@ -5,7 +5,12 @@ using System.Text;
 
 namespace GXPEngine
 {
-    class Objects
+    public class Objects
     {
+        public Objects()
+        {
+
+        }
+
     }
 }
