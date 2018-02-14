@@ -72,6 +72,7 @@
     <Compile Include="GXPEngine\Utils\Utils.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Properties.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileSet.cs" />
     <Compile Include="Map.cs" />

@@ -30,6 +30,8 @@ namespace GXPEngine
         [XmlElement("image")]
         public Image image;
 
+        [XmlElement("tile")]
+        public Tile tile;
 
         public TileSet()
         {

@@ -14,7 +14,7 @@ namespace GXPEngine
 
         }
 
-        public void DrawLevel(Map map, int[,] TileGids)//, int tileHeight, int tileWidth)
+        public void DrawLevel(Map map, int[,] TileGids)
         {
             if (HasChild(this))
             {
@@ -27,10 +27,10 @@ namespace GXPEngine
                 {
                     if (TileGids[y, x] != 0)
                     {
-                        Tile tile = new Tile(TileGids[y, x], map);
-                        tile.x = x * map.tileWidth;
-                        tile.y = y * map.tileHeight;
-                        this.AddChild(tile);
+                        Objects obj = new Objects(TileGids[y, x], map, map.tileSet.tilecount / map.tileSet.columns);
+                        obj.x = x * map.tileWidth;
+                        obj.y = y * map.tileHeight;
+                        this.AddChild(obj);
                     }
                 }
             }
