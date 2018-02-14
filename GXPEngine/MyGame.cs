@@ -10,11 +10,16 @@ public class MyGame : Game
     int[,] gIDArray;
 
 
-    private string _level = "test.tmx";
+    private string _level = "Level/test.tmx";
 
     public MyGame() : base(800, 600, false, false)
     {
-        generateLevel();
+        //background
+        generateLevel();//tiles
+        Player _player = new Player();//player
+        AddChild(_player);
+        //forground
+        //hud
     }
 
     static void Main()
