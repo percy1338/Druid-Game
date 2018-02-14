@@ -20,7 +20,7 @@ namespace GXPEngine
 		private bool _landed;
 
 		public delegate void OnShapeEvent(Shape shape);
-		public event OnShapeEvent onEvent;
+		public event OnShapeEvent onShapeEvent;
 
 		Shape currentShape;
 
@@ -37,6 +37,8 @@ namespace GXPEngine
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
 			SetFrame(0);
+			this.SetOrigin(width / 2, height);
+
 
 			Game = game;
 
@@ -66,33 +68,41 @@ namespace GXPEngine
 			if (Input.GetKey(Key.LEFT_SHIFT))
 			{
 
-				if (Input.GetKeyDown(Key.W))
+				if ((Input.GetKeyDown(Key.W)) && currentShape != Shape.Bird)
 				{
 					//Shapeshift into bird.
+					onShapeEvent(Shape.Bird);
 					currentShape = Shape.Bird;
 					shapeEvent(Shape.Bird);
+					this.SetScaleXY(0.75f, 0.75f);
 				}
 
-				if (Input.GetKeyDown(Key.S))
+				if ((Input.GetKeyDown(Key.S)) && currentShape != Shape.Human)
 				{
 					//Shapeshift human
+                    onShapeEvent(Shape.Human);
 					currentShape = Shape.Human;
 					shapeEvent(Shape.Human);
+                    this.SetScaleXY(1, 1);
 
 				}
 
-				if (Input.GetKeyDown(Key.A))
+				if ((Input.GetKeyDown(Key.A)) && currentShape != Shape.Snake)
 				{
 					//Shapeshift into snake
+                    onShapeEvent(Shape.Snake);
 					currentShape = Shape.Snake;
 					shapeEvent(Shape.Snake);
+                    this.SetScaleXY(0.5f, 0.5f);
 				}
 
-				if (Input.GetKeyDown(Key.D))
+				if ((Input.GetKeyDown(Key.D)) && currentShape != Shape.Bear)
 				{
 					//shapeshift into bear
+                    onShapeEvent(Shape.Bear);
 					currentShape = Shape.Bear;
 					shapeEvent(Shape.Bear);
+                    this.SetScaleXY(2, 2);
 				}
 			}
 		}
@@ -101,28 +111,28 @@ namespace GXPEngine
 		{
 			if (shape == Shape.Human)
 			{
-				Console.WriteLine("Human!");
+				Console.WriteLine("human");
 				_weight = 1;
 				SetFrame(0);
 			}
 
 			if (shape == Shape.Bird)
 			{
-				Console.WriteLine("Bird!");
+				Console.WriteLine("bird");
 				_weight = 0.5f;
 				SetFrame(1);
 			}
 
 			if (shape == Shape.Snake)
 			{
-				Console.WriteLine("Snake!");
+				Console.WriteLine("snake");
 				_weight = 0.25f;
 				SetFrame(2);
 			}
 
 			if (shape == Shape.Bear)
 			{
-				Console.WriteLine("Bear!");
+				Console.WriteLine("bear");
 				_weight = 2f;
 				SetFrame(3);
 			}

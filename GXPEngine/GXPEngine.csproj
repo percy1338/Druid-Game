@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -38,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Hitbox.cs" />
     <Compile Include="Image.cs" />
@@ -71,7 +71,6 @@
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
     <Compile Include="Objects.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileSet.cs" />

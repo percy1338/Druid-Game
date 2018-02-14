@@ -5,14 +5,15 @@ using System.Text;
 
 namespace GXPEngine
 {
-    public class Hitbox : Sprite
-    {
+	public class Hitbox : Sprite
+	{
 		Player _player;
 
 		public Hitbox(Player player) : base("Sprites/colors.png")
 		{
 			_player = player;
-			player.onEvent += playerOnShapeEvent;
+			player.onShapeEvent += playerOnShapeEvent;
+			this.SetOrigin(width / 2, height);
 		}
 
 		public void Update()
@@ -21,35 +22,32 @@ namespace GXPEngine
 		}
 		private void adjustPosition()
 		{
-            this.x = _player._position.x;
+			this.x = _player._position.x;
 			this.y = _player._position.y;
 		}
 
 		private void playerOnShapeEvent(Player.Shape shape)
 		{
-			
+
 			if (shape == Player.Shape.Human)
-			{
+			{           
 				this.SetScaleXY(1, 1);
 			}
 
 			if (shape == Player.Shape.Bird)
 			{
-                this.SetScaleXY(0.5f, 0.5f);
+               this.SetScaleXY(0.75f, 0.75f);
 			}
 
 			if (shape == Player.Shape.Snake)
 			{
-                this.SetScaleXY(0.25f, 0.25f);
+                this.SetScaleXY(0.5f, 0.5f);
 			}
 
 			if (shape == Player.Shape.Bear)
 			{
-             this.SetScaleXY(2, 2);
+               this.SetScaleXY(2, 2); 
 			}
-
 		}
-
-
-    }
+	}
 }
