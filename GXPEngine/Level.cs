@@ -27,11 +27,22 @@ namespace GXPEngine
                 {
                     if (TileGids[y, x] != 0)
                     {
-                        Objects obj = new Objects(TileGids[y, x], map);
-                        obj.x = x * map.tileWidth;
-                        obj.y = y * map.tileHeight;
-                        this.AddChild(obj);
+                        Tiles tile = new Tiles(TileGids[y, x], map);
+                        tile.x = x * map.tileWidth;
+                        tile.y = y * map.tileHeight;
+                        this.AddChild(tile);
                     }
+                }
+            }
+
+            if(map.objGroup.TiledObject != null)
+            {
+                for(int i = 0; i< map.objGroup.TiledObject.Count(); i++)
+                {
+                    Objects obj = new Objects(map.objGroup.TiledObject[i].gid,map);
+                    obj.x = map.objGroup.TiledObject[i].x;
+                    obj.y = map.objGroup.TiledObject[i].y;
+                    AddChild(obj);
                 }
             }
         }

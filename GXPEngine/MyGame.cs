@@ -41,8 +41,7 @@ public class MyGame : Game
 
     public void ReadMap()
     {
-        try
-        {
+
             XmlSerializer serializer = new XmlSerializer(typeof(Map));
 
             TextReader reader = new StreamReader(_level);
@@ -50,11 +49,6 @@ public class MyGame : Game
             reader.Close();
 
             Console.WriteLine(map);
-        }
-        catch(Exception ex)
-        {
-            Console.WriteLine(ex);
-        }
     }
 
     private void ParseInnerDate()

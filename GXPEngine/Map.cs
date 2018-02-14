@@ -36,6 +36,10 @@ namespace GXPEngine
         [XmlElement("layer")]
         public Layer[] layers;
 
+        [XmlElement("objectgroup")]
+        public Objectgroup objGroup;
+
+
         public Map()
         {
         }
