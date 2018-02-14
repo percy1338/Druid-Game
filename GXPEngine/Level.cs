@@ -11,7 +11,8 @@ namespace GXPEngine
 
         public Level() : base()
         {
-
+            this.x = 0;
+            this.y = 0;
         }
 
         public void DrawLevel(Map map, int[,] TileGids)
@@ -39,7 +40,7 @@ namespace GXPEngine
             {
                 for(int i = 0; i< map.objGroup.TiledObject.Count(); i++)
                 {
-                    Objects obj = new Objects(map.objGroup.TiledObject[i].gid,map);
+                    Objects obj = new Objects(map.objGroup.TiledObject[i].gid,map,i);
                     obj.x = map.objGroup.TiledObject[i].x;
                     obj.y = map.objGroup.TiledObject[i].y;
                     AddChild(obj);
