@@ -9,8 +9,8 @@ namespace GXPEngine
 		private Player _player;
 
 		//values
-		private float _speed = 5;
-		private float _weight = 0.01f;
+		private float _speed = 10;
+		private float _weight = 0.05f;
 
 		public Projectile(Player player) : base("Sprites/checkers.png")
 		{
@@ -24,13 +24,14 @@ namespace GXPEngine
 			this.y = _player.position.y;
 			_position.x += _player.position.x;
 			_position.y += _player.position.y;
-
 		}
 		public void Update()
 		{
 			float gravityForce = _weight * 0.981f;
 
-			_speed *= 0.98f;
+			_gravity.y += gravityForce;
+
+			_speed *= 0.99f;
 			_velocity.x = _speed;
 			_velocity.y = 0;
 
