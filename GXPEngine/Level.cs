@@ -27,7 +27,7 @@ namespace GXPEngine
                 {
                     if (TileGids[y, x] != 0)
                     {
-                        Objects obj = new Objects(TileGids[y, x], map, map.tileSet.tilecount / map.tileSet.columns);
+                        Objects obj = new Objects(TileGids[y, x], map);
                         obj.x = x * map.tileWidth;
                         obj.y = y * map.tileHeight;
                         this.AddChild(obj);
