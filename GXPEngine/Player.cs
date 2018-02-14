@@ -11,6 +11,8 @@ namespace GXPEngine
 		public Vec2 _velocity;
 		public Vec2 _gravity;
 
+		MyGame Game;
+
 		private float _weight = 1;
 		private float _speed = 0.5f;
 		private float _gravityForce;
@@ -18,7 +20,7 @@ namespace GXPEngine
 		private bool _landed;
 
 		public delegate void OnShapeEvent(Shape shape);
-		//public event OnShapeEvent onShapeEvent;
+		public event OnShapeEvent onEvent;
 
 		Shape currentShape;
 
@@ -30,11 +32,17 @@ namespace GXPEngine
 			Snake
 		}
 
-		public Player() : base("Sprites/testSheet.png", 4,1,-1)
+		public Player(MyGame game) : base("Sprites/testSheet.png", 4,1,-1)
 		{
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
 			SetFrame(0);
+
+			Game = game;
+
+			Hitbox _hitbox = new Hitbox(this);
+			Game.AddChild(_hitbox);
+
 
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
@@ -43,12 +51,13 @@ namespace GXPEngine
 
 		public void Update()
 		{
+            handleShapeShift();
+
 			if (currentShape == Shape.Human) handleMovementHuman();
 			if (currentShape == Shape.Bird) handleMovementBird();
 			if (currentShape == Shape.Snake) handleMovementSnake();
 			if (currentShape == Shape.Bear) handleMovementBear();
 
-			handleShapeShift();
 			handlePhysics();
 		}
 
@@ -124,11 +133,11 @@ namespace GXPEngine
 		private void handlePhysics()
 		{
 
-
+			// SHOULD HAPPEN BEFORE IT DETECTS IF IT IS ON THE GROUND, ELSE YOU CAN DOUBLE JUMP.
 			_gravityForce = _weight * 0.981f;
 
 
-			if (this.y >= 450)
+			if (this.y > 450)
 			{
 				_gravityForce = 0;
 				_gravity.y = 0;
@@ -138,7 +147,6 @@ namespace GXPEngine
 			{
 				_gravity.y += _gravityForce;
 			}
-
 
 			_velocity.Multiply(0.95f);
 
@@ -216,9 +224,10 @@ namespace GXPEngine
 		{
 			if (!Input.GetKey(Key.LEFT_SHIFT))
 			{
-				if (Input.GetKeyDown(Key.W))
+				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= 10;
+					_landed = false;
 				}
 
 				if (Input.GetKey(Key.A))

@@ -7,8 +7,8 @@ public class MyGame : Game
 {
     Map map;
     Level level = new Level();
+	Hitbox _hitbox;
     int[,] gIDArray;
-
 
     private string _level = "Level/test.tmx";
 
@@ -16,7 +16,7 @@ public class MyGame : Game
     {
         //background
         generateLevel();//tiles
-        Player _player = new Player();//player
+		Player _player = new Player(this); // player.
         AddChild(_player);
         //forground
         //hud

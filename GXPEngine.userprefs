@@ -4,16 +4,20 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\MyGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\GXPEngine\Core\Texture2D.cs">
     <Files>
-      <File FileName="GXPEngine\MyGame.cs" Line="12" Column="15" />
-      <File FileName="GXPEngine\Player.cs" Line="1" Column="1" />
+      <File FileName="GXPEngine\MyGame.cs" Line="18" Column="32" />
+      <File FileName="GXPEngine\Player.cs" Line="23" Column="29" />
+      <File FileName="GXPEngine\Hitbox.cs" Line="28" Column="35" />
       <File FileName="GXPEngine\Vec2.cs" Line="53" Column="16" />
       <File FileName="GXPEngine\Level.cs" Line="13" Column="4" />
-      <File FileName="GXPEngine\Hitbox.cs" Line="13" Column="4" />
       <File FileName="GXPEngine\Enemy.cs" Line="12" Column="4" />
       <File FileName="GXPEngine\TmxParser.cs" Line="1" Column="1" />
       <File FileName="GXPEngine\GXPEngine\Core\GLContext.cs" Line="65" Column="1" />
+      <File FileName="GXPEngine\Objects.cs" Line="1" Column="1" />
+      <File FileName="GXPEngine\Tile.cs" Line="12" Column="52" />
+      <File FileName="GXPEngine\GXPEngine\Core\Texture2D.cs" Line="123" Column="1" />
+      <File FileName="GXPEngine\GXPEngine\GameObject.cs" Line="188" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
