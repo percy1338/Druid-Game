@@ -7,7 +7,6 @@ public class MyGame : Game
 {
     Map map;
     Level level = new Level();
-	Hitbox _hitbox;
     int[,] gIDArray;
 
     private string _level = "Level/test.tmx";
