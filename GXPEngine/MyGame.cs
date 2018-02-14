@@ -5,7 +5,6 @@ using System.IO;
 
 public class MyGame : Game
 {
-<<<<<<< HEAD
     Map map;
     Level level = new Level();
     int[,] gIDArray;
@@ -13,7 +12,7 @@ public class MyGame : Game
 
     private string _level = "test.tmx";
 
-    public MyGame() : base(800, 600, false)
+    public MyGame() : base(800, 600, false, false)
     {
         generateLevel();
     }
@@ -60,21 +59,4 @@ public class MyGame : Game
         Layer layer = map.layers[0];
         gIDArray = layer.parseTile();
     }
-=======
-	public MyGame() : base(800, 600, false, false)		// Create a window that's 800x600 and NOT fullscreen
-	{
-		Player player = new Player();
-		AddChild(player);
-	}
-
-	void Update()
-	{
-		// Empty
-	}
-
-	static void Main()							// Main() is the first method that's called when the program is run
-	{
-		new MyGame().Start();					// Create a "MyGame" and start it
-	}
->>>>>>> 74acca0c7c94970cd508bc836f32301a456299f3
 }
