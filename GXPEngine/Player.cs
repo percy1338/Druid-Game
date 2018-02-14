@@ -26,7 +26,8 @@ namespace GXPEngine
 
 
 		private bool _landed;
-
+		public bool left;
+		public bool right;
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -220,15 +221,8 @@ namespace GXPEngine
 				if (Input.GetKeyDown(Key.SPACE))
 				{
 					//Shoot
-
 					Projectile fireball = new Projectile(this);
 					Game.AddChild(fireball);
-
-
-
-
-
-
 
 				}
 
