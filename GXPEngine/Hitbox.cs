@@ -14,6 +14,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
+			this.alpha = 0;
 		}
 
 		public void Update()
