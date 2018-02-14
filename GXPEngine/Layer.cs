@@ -35,7 +35,6 @@ namespace GXPEngine
 
         public int[,] parseTile()
         {
-            //int x = 0;
             int x = 0;
             int[,] dataArray = new int[width, height];
             string layerData = data.ToString();
