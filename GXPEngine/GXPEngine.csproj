@@ -79,6 +79,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="TmxParser.cs" />
     <Compile Include="Vec2.cs" />
+    <Compile Include="Projectile.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
