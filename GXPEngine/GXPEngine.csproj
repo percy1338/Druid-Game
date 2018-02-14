@@ -71,11 +71,8 @@
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
     <Compile Include="Objects.cs" />
-<<<<<<< HEAD
     <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
-=======
->>>>>>> eba8d0a6e42f35d698f54b3a370d424fc24d6183
     <Compile Include="Properties.cs" />
     <Compile Include="SolidObjects.cs" />
     <Compile Include="Tile.cs" />
