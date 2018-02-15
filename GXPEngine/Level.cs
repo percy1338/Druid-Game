@@ -40,10 +40,20 @@ namespace GXPEngine
             {
                 for (int i = 0; i < map.objGroup.TiledObject.Count(); i++)
                 {
-                    Objects obj = new Objects(map.objGroup.TiledObject[i].gid,map,i);
-                    obj.x = map.objGroup.TiledObject[i].x;
-                    obj.y = map.objGroup.TiledObject[i].y - map.objGroup.TiledObject[i].height;
-                    AddChild(obj);
+                    if(map.objGroup.TiledObject[i].properties.property[0].name == "Type" && map.objGroup.TiledObject[i].properties.property[0].value == "PICKUP")
+                    {
+                        Pickup pickup = new Pickup(map.objGroup.TiledObject[i].gid, map, i);
+                        pickup.x = map.objGroup.TiledObject[i].x;
+                        pickup.y = map.objGroup.TiledObject[i].y - map.objGroup.TiledObject[i].height;
+                        AddChild(pickup);
+                    }
+                    else
+                    {
+                        Objects obj = new Objects(map.objGroup.TiledObject[i].gid, map, i);
+                        obj.x = map.objGroup.TiledObject[i].x;
+                        obj.y = map.objGroup.TiledObject[i].y - map.objGroup.TiledObject[i].height;
+                        AddChild(obj);
+                    }
                 }
             }
         }

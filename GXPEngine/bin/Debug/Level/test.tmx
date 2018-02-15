@@ -3,7 +3,7 @@
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="98" columns="14">
   <image source="sheet.png" width="980" height="490"/>
  </tileset>
- <layer name="Tilelaag 1" width="10" height="10">
+ <layer name="Tilelaag 1" width="10" height="10" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,
@@ -18,57 +18,9 @@
 </data>
  </layer>
  <objectgroup name="Objectlaag 1">
-  <object id="38" gid="71" x="350" y="280" width="70" height="70">
-   <properties>
-    <property name="doorId" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="39" gid="44" x="490" y="281" width="70" height="70">
-   <properties>
-    <property name="doorid" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="40" gid="44" x="490" y="208" width="70" height="70">
-   <properties>
-    <property name="doorid" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="41" gid="44" x="491" y="139" width="70" height="70">
-   <properties>
-    <property name="doorid" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="42" gid="44" x="489" y="71" width="70" height="70">
-   <properties>
-    <property name="doorid" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="43" gid="58" x="490" y="420" width="70" height="70">
-   <properties>
-    <property name="breakable" type="bool" value="true"/>
-    <property name="hp" type="int" value="3"/>
-   </properties>
-  </object>
-  <object id="44" gid="58" x="490" y="490" width="70" height="70">
-   <properties>
-    <property name="breakable" type="bool" value="true"/>
-    <property name="hp" type="int" value="3"/>
-   </properties>
-  </object>
-  <object id="45" gid="58" x="489" y="559" width="70" height="70">
-   <properties>
-    <property name="breakable" type="bool" value="true"/>
-    <property name="hp" type="int" value="3"/>
-   </properties>
-  </object>
-  <object id="46" gid="58" x="490" y="631" width="70" height="70">
-   <properties>
-    <property name="breakable" type="bool" value="true"/>
-    <property name="hp" type="int" value="3"/>
-   </properties>
-  </object>
   <object id="47" gid="97" x="208" y="632" width="70" height="70">
    <properties>
+    <property name="Type" value="PICKUP"/>
     <property name="points" type="int" value="5"/>
    </properties>
   </object>
