@@ -1,24 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="2" height="2" tilewidth="70" tileheight="70" nextobjectid="28">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="70" tileheight="70" nextobjectid="82">
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="98" columns="14">
   <image source="sheet.png" width="980" height="490"/>
  </tileset>
- <layer name="Tilelaag 1" width="2" height="2">
+ <imagelayer name="backgroundlayer" offsetx="61.3333" offsety="16.6667">
+  <image source="Shining_Tomb.png" width="1280" height="678"/>
+ </imagelayer>
+ <layer name="Tilelaag 1" width="20" height="20">
   <data encoding="csv">
-17,0,
-0,0
+17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
+17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,
+17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,
+17,0,0,16,0,0,0,0,0,0,17,17,0,0,0,0,0,0,0,17,
+17,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,0,0,17,17,
+17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
+17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
+17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
+17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,
+17,0,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup name="Objectlaag 1">
-  <object id="19" gid="97" x="70" y="140" width="70" height="70">
+  <object id="47" gid="97" x="208" y="632" width="70" height="70">
    <properties>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="26" gid="84" x="70" y="70" width="70" height="70">
-   <properties>
+    <property name="Type" value="PICKUP"/>
     <property name="points" type="int" value="5"/>
    </properties>
   </object>
+  <object id="52" x="306" y="543" width="68" height="86" visible="0">
+   <properties>
+    <property name="spawn" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="54" gid="58" x="491" y="632" width="70" height="70">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+    <property name="hp" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="55" gid="58" x="490" y="560" width="70" height="70">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+    <property name="hp" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="56" gid="58" x="491" y="489" width="70" height="70">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+    <property name="hp" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="57" gid="58" x="490" y="417" width="70" height="70">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+    <property name="hp" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="58" gid="71" x="350" y="280" width="70" height="70">
+   <properties>
+    <property name="Type" value="BUTTON"/>
+    <property name="doorID" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="60" gid="98" x="351" y="631" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="62" gid="97" x="1050" y="562" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="63" gid="97" x="1118" y="563" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="64" gid="98" x="1189" y="558" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="65" gid="98" x="841" y="213" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="66" gid="98" x="912" y="210" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="67" gid="98" x="837" y="142" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="68" gid="98" x="838" y="280" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="69" gid="98" x="905" y="140" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="70" gid="98" x="913" y="279" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="74" gid="44" x="491" y="280" width="70" height="70">
+   <properties>
+    <property name="Type" value="DOOR"/>
+    <property name="doorID" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="75" gid="44" x="491" y="211" width="70" height="70">
+   <properties>
+    <property name="Type" value="DOOR"/>
+    <property name="doorID" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="76" gid="44" x="491" y="142" width="70" height="70">
+   <properties>
+    <property name="Type" value="DOOR"/>
+    <property name="doorID" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="81" gid="55" x="283" y="631" width="70" height="70">
+   <properties>
+    <property name="Type" value="DAMAGE"/>
+    <property name="damage" type="int" value="5"/>
+   </properties>
+  </object>
  </objectgroup>
+ <imagelayer name="foreground layer" visible="0" offsetx="-216" offsety="-136">
+  <image source="Forth_Ground.png" width="1920" height="1080"/>
+ </imagelayer>
 </map>

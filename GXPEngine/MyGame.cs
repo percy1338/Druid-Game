@@ -3,21 +3,28 @@ using GXPEngine;
 using System.Xml.Serialization;
 using System.IO;
 
+ 
+
 public class MyGame : Game
 {
     Map map;
+
     Level level = new Level();
     int[,] gIDArray;
 
     private string _level = "Level/test.tmx";
 
-    public MyGame() : base(800, 600, false, false)
+    public MyGame() : base(1600, 900, false, false)
     {
         //background
-        generateLevel();//tiles
-		Player _player = new Player(this); // player.
+
+        //tiles
+        generateLevel();
+        // player.
+        Player _player = new Player(this, map);
         AddChild(_player);
         //forground
+
         //hud
     }
 

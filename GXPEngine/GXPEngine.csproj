@@ -36,11 +36,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data.cs" />
+    <Compile Include="Background.cs" />
+    <Compile Include="Button.cs" />
+    <Compile Include="Destructable.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="ForeGround.cs" />
     <Compile Include="Hitbox.cs" />
-    <Compile Include="Image.cs" />
-    <Compile Include="Layer.cs" />
+    <Compile Include="IActivatable.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />
@@ -69,16 +71,11 @@
     <Compile Include="GXPEngine\Utils\MouseHandler.cs" />
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
-    <Compile Include="Objectgroup.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Properties.cs" />
-    <Compile Include="SolidObjects.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="TiledObject.cs" />
+    <Compile Include="Thornes.cs" />
     <Compile Include="Tiles.cs" />
-    <Compile Include="TileSet.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="TmxParser.cs" />
     <Compile Include="Vec2.cs" />
