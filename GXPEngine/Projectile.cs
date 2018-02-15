@@ -34,14 +34,6 @@ namespace GXPEngine
 		{
 			float gravityForce = _weight * 0.981f;
 
-			float ree = 0;
-			ree++;
-
-			Mathf.Sin(ree);
-			Console.WriteLine("reee " + ree);
-
-
-
 			_gravity.y += gravityForce;
 
 			_speed *= 0.99f;

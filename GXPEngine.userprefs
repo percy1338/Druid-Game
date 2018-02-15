@@ -4,12 +4,12 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Objects.cs">
     <Files>
-      <File FileName="GXPEngine\Player.cs" Line="188" Column="1" />
-      <File FileName="GXPEngine\Projectile.cs" Line="38" Column="4" />
-      <File FileName="GXPEngine\Hitbox.cs" Line="17" Column="18" />
+      <File FileName="GXPEngine\Player.cs" Line="2" Column="16" />
+      <File FileName="GXPEngine\Hitbox.cs" Line="58" Column="12" />
       <File FileName="GXPEngine\Vec2.cs" Line="67" Column="4" />
+      <File FileName="GXPEngine\Objects.cs" Line="29" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

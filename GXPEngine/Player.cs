@@ -15,6 +15,8 @@ namespace GXPEngine
 
 		MyGame Game;
 
+
+
 		//values from all the animals.
 		private float _weight;
 		private float _speed;
@@ -22,10 +24,9 @@ namespace GXPEngine
 		private float _jump;
 
 		//calculated floats.
-		private float _gravityForce;
+		public float _gravityForce;
 
-
-		private bool _landed;
+		public bool _landed;
 
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
@@ -41,15 +42,15 @@ namespace GXPEngine
 			Snake
 		}
 
-        private Map _map;
+		private Map _map;
 
 		public Player(MyGame game, Map map) : base("Sprites/testSheet.png", 4, 1, -1)
 		{
-            _position = Vec2.zero;
-            _velocity = Vec2.zero;
-            _gravity = Vec2.zero;
+			_position = Vec2.zero;
+			_velocity = Vec2.zero;
+			_gravity = Vec2.zero;
 
-            this.SetOrigin(width / 2, height);
+			this.SetOrigin(width / 2, height);
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
 
@@ -57,22 +58,22 @@ namespace GXPEngine
 			Hitbox _hitbox = new Hitbox(this);
 			Game.AddChild(_hitbox);
 
-            // find player spawn
-            _map = map;
-            for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
-            {
-                if (map.objGroup.TiledObject[i].properties != null)
-                {
-                    for(int p = 0; p < map.objGroup.TiledObject[i].properties.property.Length; p++)
-                    {
-                        if(map.objGroup.TiledObject[i].properties.property[p].name == "spawn" || map.objGroup.TiledObject[i].properties.property[p].value == "true")
-                        {
-                            _position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
-                        }
-                    }
-                }
-            }
-        }
+			// find player spawn
+			_map = map;
+			for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
+			{
+				if (map.objGroup.TiledObject[i].properties != null)
+				{
+					for (int p = 0; p < map.objGroup.TiledObject[i].properties.property.Length; p++)
+					{
+						if (map.objGroup.TiledObject[i].properties.property[p].name == "spawn" || map.objGroup.TiledObject[i].properties.property[p].value == "true")
+						{
+							_position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
+						}
+					}
+				}
+			}
+		}
 
 		public void Update()
 		{
@@ -189,27 +190,43 @@ namespace GXPEngine
 
 		private void handlePhysics()
 		{
-			// SHOULD HAPPEN BEFORE IT DETECTS IF IT IS ON THE GROUND, ELSE YOU CAN DOUBLE JUMP.
-			_gravityForce = _weight * 0.981f; // creates gravityforce, depending on the weight.
-
-			if (this.y > 450) // (NEEDS TO BE REMOVED, invisible border for testing purposes)
+			if (_landed == true)
 			{
-				_gravityForce = 0;
-				_gravity.y = 0;
-				_landed = true;
+				
 			}
 			else
 			{
+				_gravityForce = _weight * 0.981f;
 				_gravity.y += _gravityForce;
 			}
-
-			_velocity.Multiply(0.95f);
 
 			_position.Add(_velocity);
 			_position.Add(_gravity);
 
 			this.x = _position.x;
 			this.y = _position.y;
+
+			//_gravityForce = _weight * 0.981f; // creates gravityforce, depending on the weight.
+
+
+			//if (_landed == true)
+			//{
+			//	_gravityForce = 0;
+			//	_gravity.y = 0;
+			//}
+			//else
+			//{
+			//	_gravity.y += _gravityForce;
+			//}
+
+
+			//_velocity.Multiply(0.95f);
+
+			//_position.Add(_velocity);
+			//_position.Add(_gravity);
+
+			//this.x = _position.x;
+			//this.y = _position.y;
 		}
 
 		private void handleInputHuman()
@@ -238,7 +255,7 @@ namespace GXPEngine
 
 					Projectile fireball = new Projectile(this);
 					Game.AddChild(fireball);
-				}     
+				}
 			}
 		}
 
@@ -249,6 +266,7 @@ namespace GXPEngine
 				if (Input.GetKeyDown(Key.W))
 				{
 					_velocity.y -= _jump;
+					_landed = false;
 					_gravityForce = 0;
 					_gravity.y = 0;
 				}

@@ -50,5 +50,13 @@ namespace GXPEngine
                this.SetScaleXY(2, 2); 
 			}
 		}
+
+		public void OnCollision(GameObject other)
+		{
+			if (other is Tiles)
+			{
+				_player._landed = true;
+			}
+		}
 	}
 }
