@@ -20,14 +20,27 @@ namespace GXPEngine
 
 			_player = player;
 
-			this.x = _player.position.x;
-			this.y = _player.position.y;
-			_position.x += _player.position.x;
-			_position.y += _player.position.y;
+			this.SetOrigin(width / 2, height / 2);
+			this.SetScaleXY(0.5f, 0.5f);
+
+			this.x = _player.position.x + 48;
+			this.y = _player.position.y - 32;
+			_position.x += _player.position.x + 48;
+			_position.y += _player.position.y - 32;
+
+
 		}
 		public void Update()
 		{
 			float gravityForce = _weight * 0.981f;
+
+			float ree = 0;
+			ree++;
+
+			Mathf.Sin(ree);
+			Console.WriteLine("reee " + ree);
+
+
 
 			_gravity.y += gravityForce;
 
