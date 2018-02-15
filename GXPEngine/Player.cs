@@ -12,7 +12,7 @@ namespace GXPEngine
 		public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
-
+		Hitbox _hitbox;
 		MyGame Game;
 
 
@@ -27,7 +27,7 @@ namespace GXPEngine
 		public float _gravityForce;
 
 		public bool _landed;
-
+		public bool _hitTop;
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -54,8 +54,10 @@ namespace GXPEngine
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
 
+			_velocity.y = -1;
+
 			Game = game;
-			Hitbox _hitbox = new Hitbox(this);
+			_hitbox = new Hitbox(this);
 			Game.AddChild(_hitbox);
 
 			// find player spawn
@@ -190,40 +192,58 @@ namespace GXPEngine
 
 		private void handlePhysics()
 		{
+			_gravity.y = _weight * 0.981f;
+
+
+
 			if (_landed == true)
 			{
-				
-			}
-			else
-			{
-				_gravityForce = _weight * 0.981f;
-				_gravity.y += _gravityForce;
+				_velocity.Set(0, 0);
+				position.Add(velocity);
 			}
 
-			_position.Add(_velocity);
-			_position.Add(_gravity);
+			if (_landed == false)
+			{
+				_velocity.Multiply(0.95f);
+				_velocity.Add(_gravity);
+				position.Add(velocity);
+			}
+
+
+
+			if (_hitTop == true)
+			{
+				_hitTop = false;
+			}
 
 			this.x = _position.x;
 			this.y = _position.y;
 
-			//_gravityForce = _weight * 0.981f; // creates gravityforce, depending on the weight.
+
+			Console.WriteLine(_landed);
+			Console.WriteLine(_velocity);
+
+
+
+			//_gravity.y = _weight * 0.981f;
 
 
 			//if (_landed == true)
 			//{
-			//	_gravityForce = 0;
 			//	_gravity.y = 0;
 			//}
-			//else
+
+			//if (_landed == false)
 			//{
-			//	_gravity.y += _gravityForce;
+			//	_velocity.Add(_gravity);
 			//}
 
 
 			//_velocity.Multiply(0.95f);
+			//_position.Add(velocity);
 
-			//_position.Add(_velocity);
-			//_position.Add(_gravity);
+			//Console.WriteLine(_landed);
+			//Console.WriteLine(_velocity);
 
 			//this.x = _position.x;
 			//this.y = _position.y;
@@ -236,7 +256,6 @@ namespace GXPEngine
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
-					_landed = false;
 				}
 
 				if (Input.GetKey(Key.A))
@@ -266,7 +285,6 @@ namespace GXPEngine
 				if (Input.GetKeyDown(Key.W))
 				{
 					_velocity.y -= _jump;
-					_landed = false;
 					_gravityForce = 0;
 					_gravity.y = 0;
 				}
@@ -311,7 +329,6 @@ namespace GXPEngine
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
-					_landed = false;
 				}
 
 				if (Input.GetKey(Key.A))
