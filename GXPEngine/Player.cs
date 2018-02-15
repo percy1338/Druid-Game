@@ -61,9 +61,15 @@ namespace GXPEngine
             _map = map;
             for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
             {
-                if (map.objGroup.TiledObject[i].gid == 79)
+                if (map.objGroup.TiledObject[i].properties != null)
                 {
-                    _position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
+                    for(int p = 0; p < map.objGroup.TiledObject[i].properties.property.Length; p++)
+                    {
+                        if(map.objGroup.TiledObject[i].properties.property[p].name == "spawn" || map.objGroup.TiledObject[i].properties.property[p].value == "true")
+                        {
+                            _position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
+                        }
+                    }
                 }
             }
         }
