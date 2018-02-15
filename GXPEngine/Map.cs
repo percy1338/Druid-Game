@@ -39,6 +39,9 @@ namespace GXPEngine
         [XmlElement("objectgroup")]
         public Objectgroup objGroup;
 
+        [XmlElement("imagelayer")]
+        public Imagelayer[] background;
+
 
         public Map()
         {
@@ -101,6 +104,7 @@ namespace GXPEngine
                     for (int y = 0; y < width; y++)
                     {
                         dataArray[x, y] = int.Parse(row[y]);
+
                     }
                     x++;
                 }
@@ -108,6 +112,7 @@ namespace GXPEngine
             return dataArray;
         }
     }
+
     [XmlRoot("tileset")]
     public class TileSet
     {
@@ -202,6 +207,8 @@ namespace GXPEngine
         [XmlAttribute("source")]
         public string source = "";
 
+
+
         public Image()
         {
         }
@@ -246,5 +253,19 @@ namespace GXPEngine
         {
             return innnerXML + "\n";
         }
+    }
+
+    [XmlRoot("<imagelayer ")]
+    public class Imagelayer
+    {
+        [XmlAttribute("offsetx")]
+        public float offsetx = 0.0f;
+
+        [XmlAttribute("offsety")]
+        public float offsety = 0.0f;
+
+        [XmlElement("image")]
+        public Image background;
+
     }
 }

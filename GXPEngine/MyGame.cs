@@ -8,6 +8,7 @@ using System.IO;
 public class MyGame : Game
 {
     Map map;
+
     Level level = new Level();
     int[,] gIDArray;
 

@@ -36,8 +36,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background.cs" />
+    <Compile Include="Button.cs" />
+    <Compile Include="Destructable.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="ForeGround.cs" />
     <Compile Include="Hitbox.cs" />
+    <Compile Include="IActivatable.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />
