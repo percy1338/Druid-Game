@@ -8,7 +8,6 @@ namespace GXPEngine
 	public class Hitbox : Sprite
 	{
 		Player _player;
-		public List<GameObject> _collisionSprites = new List<GameObject>();
 
 		public float LastX;
 		public float LastY;
@@ -64,32 +63,13 @@ namespace GXPEngine
 		public void step()
 		{
 			GameObject tiledObject;
-			tiledObject = CheckCollision(this);
+			//tiledObject = Level.Return().CheckCollision();
 
-			if (tiledObject != null)
-			{
-				
-			}
+			//if (tiledObject != null)
+			//{
+			//	this.Destroy();
+			//}
 
-
-			tiledObject = CheckCollision(this);
 		}
-
-
-		public GameObject CheckCollision(GameObject other)
-		{
-			GameObject tiledObject;
-			for (int i = 0; i < _collisionSprites.Count; i++)
-			{
-				tiledObject = _collisionSprites[i];
-				if (other.HitTest(tiledObject))
-					return tiledObject;
-			}
-			return null;
-		}
-
-
-
-
 	}
 }
