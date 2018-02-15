@@ -23,6 +23,7 @@ namespace GXPEngine
                 }
             }
         }
+
         public void Update()
         {
             Console.WriteLine(this.x);
