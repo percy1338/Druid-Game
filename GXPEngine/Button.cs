@@ -22,7 +22,7 @@ namespace GXPEngine
 
         public void Activateble(Player player)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

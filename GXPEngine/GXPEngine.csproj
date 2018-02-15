@@ -74,6 +74,7 @@
     <Compile Include="Objects.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Thornes.cs" />
     <Compile Include="Tiles.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="TmxParser.cs" />
