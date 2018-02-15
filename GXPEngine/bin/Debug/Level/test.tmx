@@ -1,23 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="2" height="2" tilewidth="70" tileheight="70" nextobjectid="28">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="70" tileheight="70" nextobjectid="50">
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="98" columns="14">
   <image source="sheet.png" width="980" height="490"/>
  </tileset>
- <layer name="Tilelaag 1" width="2" height="2">
+ <layer name="Tilelaag 1" width="10" height="10">
   <data encoding="csv">
-17,0,
-0,0
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,17,17,17,17,17,17,17,17,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+17,17,17,17,17,17,17,17,17,17
 </data>
  </layer>
  <objectgroup name="Objectlaag 1">
-  <object id="19" gid="97" x="70" y="140" width="70" height="70">
+  <object id="38" gid="71" x="350" y="280" width="70" height="70">
    <properties>
-    <property name="points" type="int" value="10"/>
+    <property name="doorId" type="int" value="99"/>
    </properties>
   </object>
-  <object id="26" gid="84" x="70" y="70" width="70" height="70">
+  <object id="39" gid="44" x="490" y="281" width="70" height="70">
+   <properties>
+    <property name="doorid" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="40" gid="44" x="490" y="208" width="70" height="70">
+   <properties>
+    <property name="doorid" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="41" gid="44" x="491" y="139" width="70" height="70">
+   <properties>
+    <property name="doorid" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="42" gid="44" x="489" y="71" width="70" height="70">
+   <properties>
+    <property name="doorid" type="int" value="99"/>
+   </properties>
+  </object>
+  <object id="43" gid="58" x="490" y="420" width="70" height="70">
+   <properties>
+    <property name="breakable" type="bool" value="true"/>
+    <property name="hp" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="44" gid="58" x="490" y="490" width="70" height="70">
+   <properties>
+    <property name="breakable" type="bool" value="true"/>
+    <property name="hp" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="45" gid="58" x="489" y="559" width="70" height="70">
+   <properties>
+    <property name="breakable" type="bool" value="true"/>
+    <property name="hp" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="46" gid="58" x="490" y="631" width="70" height="70">
+   <properties>
+    <property name="breakable" type="bool" value="true"/>
+    <property name="hp" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="47" gid="97" x="208" y="632" width="70" height="70">
    <properties>
     <property name="points" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="48" gid="79" x="208" y="279" width="70" height="70">
+   <properties>
+    <property name="spawn" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>

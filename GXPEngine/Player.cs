@@ -41,9 +41,15 @@ namespace GXPEngine
 			Snake
 		}
 
-		public Player(MyGame game) : base("Sprites/testSheet.png", 4, 1, -1)
+        private Map _map;
+
+		public Player(MyGame game, Map map) : base("Sprites/testSheet.png", 4, 1, -1)
 		{
-			this.SetOrigin(width / 2, height);
+            _position = Vec2.zero;
+            _velocity = Vec2.zero;
+            _gravity = Vec2.zero;
+
+            this.SetOrigin(width / 2, height);
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
 
@@ -51,10 +57,16 @@ namespace GXPEngine
 			Hitbox _hitbox = new Hitbox(this);
 			Game.AddChild(_hitbox);
 
-			_position = Vec2.zero;
-			_velocity = Vec2.zero;
-			_gravity = Vec2.zero;
-		}
+            // find player spawn
+            _map = map;
+            for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
+            {
+                if (map.objGroup.TiledObject[i].gid == 79)
+                {
+                    _position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
+                }
+            }
+        }
 
 		public void Update()
 		{
@@ -171,10 +183,8 @@ namespace GXPEngine
 
 		private void handlePhysics()
 		{
-
 			// SHOULD HAPPEN BEFORE IT DETECTS IF IT IS ON THE GROUND, ELSE YOU CAN DOUBLE JUMP.
 			_gravityForce = _weight * 0.981f; // creates gravityforce, depending on the weight.
-
 
 			if (this.y > 450) // (NEEDS TO BE REMOVED, invisible border for testing purposes)
 			{
@@ -195,7 +205,6 @@ namespace GXPEngine
 			this.x = _position.x;
 			this.y = _position.y;
 		}
-
 
 		private void handleInputHuman()
 		{
@@ -223,15 +232,7 @@ namespace GXPEngine
 
 					Projectile fireball = new Projectile(this);
 					Game.AddChild(fireball);
-
-
-
-
-
-
-
-				}
-
+				}     
 			}
 		}
 
