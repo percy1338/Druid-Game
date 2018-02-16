@@ -77,13 +77,6 @@ namespace GXPEngine
 						btn.y = map.objGroup.TiledObject[i].y - map.objGroup.TiledObject[i].height;
 						AddChild(btn);
 					}
-					else
-					{
-						Objects obj = new Objects(map.objGroup.TiledObject[i].gid, map, i);
-						obj.x = map.objGroup.TiledObject[i].x;
-						obj.y = map.objGroup.TiledObject[i].y - map.objGroup.TiledObject[i].height;
-						AddChild(obj);
-					}
 				}
 			}
             //////////////////////player

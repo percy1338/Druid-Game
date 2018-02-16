@@ -377,6 +377,19 @@ namespace GXPEngine
 			}
 			y = position.y - velocity.y;
 		}
-	}
+
+        public void OnCollision(GameObject other)
+        {
+            if (other is IActivatable)
+            {
+                (other as IActivatable).Activateble(this);
+            }
+        }
+
+        public Shape GetShape()
+        {
+            return currentShape;
+        }
+    }
 }
 

@@ -11,6 +11,7 @@ namespace GXPEngine
 
         public Destructable(int frame, Map map, int index) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
         {
+
             SetFrame(frame - map.tileSet.firstGid);
             for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
             {
@@ -23,11 +24,14 @@ namespace GXPEngine
 
         public void Activateble(Player player)
         {
-            _health--;
-            if(_health <= 0)
+            if(player.GetShape() == Player.Shape.Bear)
             {
-                //play animation
-                this.Destroy();
+                _health--;
+                if (_health <= 0)
+                {
+                    //play animation
+                     this.Destroy();
+                }
             }
         }
     }

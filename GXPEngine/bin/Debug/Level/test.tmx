@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="70" tileheight="70" nextobjectid="82">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="70" tileheight="70" nextobjectid="92">
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="98" columns="14">
   <image source="sheet.png" width="980" height="490"/>
  </tileset>
- <imagelayer name="backgroundlayer" offsetx="61.3333" offsety="16.6667">
+ <imagelayer name="backgroundlayer" visible="0" offsetx="61.3333" offsety="16.6667">
   <image source="Shining_Tomb.png" width="1280" height="678"/>
  </imagelayer>
  <layer name="Tilelaag 1" width="20" height="20">
@@ -11,8 +11,8 @@
 17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,
 17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,
 17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,
-17,0,0,16,0,0,0,0,0,0,17,17,0,0,0,0,0,0,0,17,
-17,0,0,17,17,17,17,17,17,17,17,17,17,17,17,17,0,0,17,17,
+17,17,17,16,17,0,0,0,0,0,17,17,0,0,0,0,0,0,0,17,
+17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,0,0,17,17,
 17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
 17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
 17,0,0,0,0,0,0,0,0,0,17,17,17,17,0,0,0,0,0,17,
@@ -31,7 +31,7 @@
 </data>
  </layer>
  <objectgroup name="Objectlaag 1">
-  <object id="47" gid="97" x="208" y="632" width="70" height="70">
+  <object id="47" gid="97" x="124" y="628" width="70" height="70">
    <properties>
     <property name="Type" value="PICKUP"/>
     <property name="points" type="int" value="5"/>
@@ -66,13 +66,13 @@
     <property name="hp" type="int" value="2"/>
    </properties>
   </object>
-  <object id="58" gid="71" x="350" y="280" width="70" height="70">
+  <object id="58" gid="71" x="420.667" y="2.66667" width="70" height="70">
    <properties>
     <property name="Type" value="BUTTON"/>
     <property name="doorID" type="int" value="99"/>
    </properties>
   </object>
-  <object id="60" gid="98" x="351" y="631" width="70" height="70">
+  <object id="60" gid="98" x="424.333" y="629.667" width="70" height="70">
    <properties>
     <property name="Type" value="PICKUP"/>
     <property name="points" value="10"/>
@@ -132,19 +132,13 @@
     <property name="points" value="10"/>
    </properties>
   </object>
-  <object id="74" gid="44" x="491" y="280" width="70" height="70">
+  <object id="74" gid="44" x="209.667" y="208" width="70" height="70">
    <properties>
     <property name="Type" value="DOOR"/>
     <property name="doorID" type="int" value="99"/>
    </properties>
   </object>
-  <object id="75" gid="44" x="491" y="211" width="70" height="70">
-   <properties>
-    <property name="Type" value="DOOR"/>
-    <property name="doorID" type="int" value="99"/>
-   </properties>
-  </object>
-  <object id="76" gid="44" x="491" y="142" width="70" height="70">
+  <object id="75" gid="44" x="208.333" y="140.333" width="70" height="70">
    <properties>
     <property name="Type" value="DOOR"/>
     <property name="doorID" type="int" value="99"/>
@@ -156,20 +150,49 @@
     <property name="damage" type="int" value="5"/>
    </properties>
   </object>
+  <object id="82" name="NoTransformZone" x="700" y="546.667" width="278.667" height="97.3333">
+   <properties>
+    <property name="CanTransform" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="88" gid="98" x="71.6667" y="211.667" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="89" gid="98" x="139.667" y="211.667" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="90" gid="98" x="142.333" y="139.667" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
+  <object id="91" gid="98" x="69" y="142.333" width="70" height="70">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" value="10"/>
+   </properties>
+  </object>
  </objectgroup>
- <imagelayer name="foreground layer" offsetx="-98.6667" offsety="273.333">
+ <imagelayer name="foreground layer" visible="0" offsetx="-98.6667" offsety="273.333">
   <image source="foregroundtree.png" width="368" height="466"/>
  </imagelayer>
- <imagelayer name="foreground layer" offsetx="1153.33" offsety="-148">
+ <imagelayer name="foreground layer" visible="0" offsetx="1153.33" offsety="-148">
   <image source="foregroundBush3.png" width="571" height="320"/>
  </imagelayer>
- <imagelayer name="foreground layer" offsetx="1185.33" offsety="525.333">
+ <imagelayer name="foreground layer" visible="0" offsetx="1185.33" offsety="525.333">
   <image source="foregroundBush1.png" width="290" height="203"/>
  </imagelayer>
- <imagelayer name="foreground layer" offsetx="692" offsety="542.667">
+ <imagelayer name="foreground layer" visible="0" offsetx="692" offsety="542.667">
   <image source="foregroundBush1.png" width="290" height="203"/>
  </imagelayer>
- <imagelayer name="foreground layer" offsetx="-80" offsety="-146.667">
+ <imagelayer name="foreground layer" visible="0" offsetx="-80" offsety="-146.667">
   <image source="foregroundBush2.png" width="774" height="381"/>
  </imagelayer>
 </map>

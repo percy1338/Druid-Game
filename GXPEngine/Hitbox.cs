@@ -15,7 +15,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 0.5F;
+			this.alpha = 0.0F;
 			playerOnShapeEvent(Player.Shape.Human);
 
 		}
