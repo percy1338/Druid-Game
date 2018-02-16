@@ -52,7 +52,7 @@ namespace GXPEngine
 		}
 		public void Update()
 		{
-			Console.WriteLine(_player._velocity.x);
+			//Console.WriteLine(_player._velocity.x);
 
 			float gravityForce = _weight * 0.981f;
 

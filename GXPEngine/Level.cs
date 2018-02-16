@@ -16,6 +16,8 @@ namespace GXPEngine
 		{
 			this.x = 0;
 			this.y = 0;
+
+			_lvl = this;
 		}
 
 		public void DrawLevel(Map map, int[,] TileGids)
@@ -91,11 +93,6 @@ namespace GXPEngine
 		}
 
 
-		public static Level Return()
-		{
-			return _lvl;
-		}
-
 		public GameObject CheckCollision(GameObject other)
 		{
 			GameObject tiledObject;
@@ -108,7 +105,10 @@ namespace GXPEngine
 			return null;
 		}
 
-
+		public static Level Return()
+		{
+			return _lvl;
+		}
 
 	}
 }

@@ -9,31 +9,21 @@ namespace GXPEngine
 	{
 		Player _player;
 
-		public float LastX;
-		public float LastY;
 
 		public Hitbox(Player player) : base("Sprites/colors.png")
 		{
+
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
 			this.alpha = 0.5f;
+
 		}
 
 		public void Update()
 		{
-			adjustPosition();
-
-			LastX = _player.position.x;
-			LastY = _player.position.y;
-
-			step();
-
-		}
-		private void adjustPosition()
-		{
-			this.x = _player._position.x;
-			this.y = _player._position.y;
+			this.x = _player._position.x - _player._velocity.x;
+			this.y = _player._position.y - _player._velocity.y;
 		}
 
 		private void playerOnShapeEvent(Player.Shape shape)
@@ -58,18 +48,6 @@ namespace GXPEngine
 			{
 				this.SetScaleXY(2, 2);
 			}
-		}
-
-		public void step()
-		{
-			GameObject tiledObject;
-			//tiledObject = Level.Return().CheckCollision();
-
-			//if (tiledObject != null)
-			//{
-			//	this.Destroy();
-			//}
-
 		}
 	}
 }

@@ -6,8 +6,10 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Player.cs">
     <Files>
-      <File FileName="GXPEngine\Projectile.cs" Line="51" Column="4" />
-      <File FileName="GXPEngine\Player.cs" Line="37" Column="23" />
+      <File FileName="GXPEngine\Projectile.cs" Line="55" Column="6" />
+      <File FileName="GXPEngine\Player.cs" Line="347" Column="17" />
+      <File FileName="GXPEngine\Hitbox.cs" Line="51" Column="4" />
+      <File FileName="GXPEngine\Level.cs" Line="44" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

@@ -25,10 +25,10 @@ namespace GXPEngine
 
 		//calculated floats.
 
-		private bool _landed;
+		public bool _landed;
 		public bool left;
 		public bool right;
-		public bool _hitTop;
+
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -54,8 +54,6 @@ namespace GXPEngine
 			this.SetOrigin(width / 2, height);
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
-
-			_velocity.y = -1;
 
 			Game = game;
 			_hitbox = new Hitbox(this);
@@ -87,6 +85,7 @@ namespace GXPEngine
 			if (currentShape == Shape.Snake) handleInputSnake(); // better solution out there probaly.
 			if (currentShape == Shape.Bear) handleInputBear(); // better solution out there probaly.
 
+			Step();
 			handlePhysics(); // handles all the physics and mechanics.
 		}
 
@@ -193,69 +192,24 @@ namespace GXPEngine
 
 		private void handlePhysics()
 		{
-			_gravity.y = _weight * 0.981f;
+			
+				_gravity.y = _weight * 0.981f;
+			
 
 
-			if (_landed == true)
-			{
-				_velocity.Set(0, 0);
-				position.Add(velocity);
-			}
+			_velocity.Multiply(0.95f);
 
-			if (_landed == false)
-			{
-				_velocity.Multiply(0.95f);
-				_velocity.Add(_gravity);
-				position.Add(velocity);
-			}
-
-
-
-			if (_hitTop == true)
-			{
-				_hitTop = false;
-			}
-
-			this.x = _position.x;
-			this.y = _position.y;
-
-
-			Console.WriteLine(_landed);
-			Console.WriteLine(_velocity);
-
-
-
-			//_gravity.y = _weight * 0.981f;
-
-
-			//if (_landed == true)
-			//{
-			//	_gravity.y = 0;
-			//}
-
-			//if (_landed == false)
-			//{
-			//	_velocity.Add(_gravity);
-			//}
-
-
-			//_velocity.Multiply(0.95f);
-			//_position.Add(velocity);
-
-			//Console.WriteLine(_landed);
-			//Console.WriteLine(_velocity);
-
-			//this.x = _position.x;
-			//this.y = _position.y;
 		}
 
 		private void handleInputHuman()
 		{
 			if (!Input.GetKey(Key.LEFT_SHIFT))
 			{
+				Console.WriteLine(_landed);
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
+					_landed = false;
 				}
 
 				if (Input.GetKey(Key.A))
@@ -360,6 +314,68 @@ namespace GXPEngine
 			get { return _velocity; }
 		}
 
+		public void Step()
+		{
+			int direction;
+			GameObject TiledObject;
 
+			//X-COLLISION
+			position.x += _velocity.x;
+			this.x = position.x;
+
+			TiledObject = Level.Return().CheckCollision(this);
+
+			if (TiledObject != null)
+			{
+				direction = _velocity.x > 0 ? -1 : 1;
+
+				if (direction == -1)
+				{
+					_position.x = TiledObject.x - 32f;
+					_velocity.x = 0;
+				}
+
+				if (direction == 1)
+				{
+					_position.x = TiledObject.x + 102f;
+					_velocity.x = 0;
+				}
+			}
+			this.x = _position.x - velocity.x;
+
+
+			//Y-COLLISION
+			_velocity.Add(_gravity);
+			position.y += _velocity.y;
+			this.y = position.y;
+
+			TiledObject = Level.Return().CheckCollision(this);
+
+			if (TiledObject != null)
+			{
+				direction = _velocity.y < 0 ? -1 : 1;
+
+				if (direction == 1)
+				{
+					position.y = TiledObject.y;
+					_landed = true;
+				}
+
+				if (direction == -1)
+				{
+					position.y = TiledObject.y + height + 70;
+					Console.WriteLine(TiledObject.y);
+					Console.WriteLine(position.y);
+					_velocity.y = 0;
+				}
+
+				_velocity.y = 0;
+				_gravity.y = 0;
+
+			}
+			y = position.y - velocity.y;
+
+		}
 	}
 }
+
