@@ -12,11 +12,11 @@ namespace GXPEngine
 
 		public Hitbox(Player player) : base("Sprites/colors.png")
 		{
-
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 0.5f;
+			this.alpha = 0.5F;
+			playerOnShapeEvent(Player.Shape.Human);
 
 		}
 
@@ -31,17 +31,17 @@ namespace GXPEngine
 
 			if (shape == Player.Shape.Human)
 			{
-				this.SetScaleXY(1, 1);
+				this.SetScaleXY(1, 1.5f);
 			}
 
 			if (shape == Player.Shape.Bird)
 			{
-				this.SetScaleXY(0.75f, 0.75f);
+				this.SetScaleXY(1, 1.25f);
 			}
 
 			if (shape == Player.Shape.Snake)
 			{
-				this.SetScaleXY(0.5f, 0.5f);
+				this.SetScaleXY(1f, 1f);
 			}
 
 			if (shape == Player.Shape.Bear)

@@ -26,28 +26,24 @@ namespace GXPEngine
 			if (player._velocity.x < 0)
 			{
 				this.x = _player.position.x - 48;
-				this.y = _player.position.y - 32;
+				this.y = _player.position.y - 64;
 				_position.x += _player.position.x - 48;
-				_position.y += _player.position.y - 32;
+				_position.y += _player.position.y - 64;
 				_speed = -10;
 			}
 
 			if (player._velocity.x > 0)
 			{
 				this.x = _player.position.x + 48;
-				this.y = _player.position.y - 32;
+				this.y = _player.position.y - 64;
 				_position.x += _player.position.x + 48;
-				_position.y += _player.position.y - 32;
+				_position.y += _player.position.y - 64;
 				_speed = 10;
 			}
 
 			this.SetOrigin(width / 2, height / 2);
 			this.SetScaleXY(0.5f, 0.5f);
 
-			this.x = _player.position.x + 48;
-			this.y = _player.position.y - 32;
-			_position.x += _player.position.x + 48;
-			_position.y += _player.position.y - 32;
 
 		}
 		public void Update()

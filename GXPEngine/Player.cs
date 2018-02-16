@@ -131,7 +131,7 @@ namespace GXPEngine
 				currentShape = Shape.Human;
 
 				//sizes:
-				this.SetScaleXY(1, 1);
+				this.SetScaleXY(1f, 1.5f);
 				SetFrame(0);
 
 				//values:
@@ -147,7 +147,7 @@ namespace GXPEngine
 				currentShape = Shape.Bird;
 
 				//sizes:
-				this.SetScaleXY(0.75f, 0.75f);
+				this.SetScaleXY(1f, 1.25f);
 				SetFrame(1);
 
 				//values:
@@ -163,7 +163,7 @@ namespace GXPEngine
 				currentShape = Shape.Snake;
 
 				//sizes:
-				this.SetScaleXY(0.5f, 0.5f);
+				this.SetScaleXY(1f, 1f);
 				SetFrame(2);
 
 				//values:
@@ -186,7 +186,7 @@ namespace GXPEngine
 				_weight = 1.5f;
 				_speed = 0.5f;
 				_topSpeed = -2f;
-				_jump = 25;
+				_jump = 20;
 			}
 		}
 
@@ -281,6 +281,7 @@ namespace GXPEngine
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
+					_landed = false;
 				}
 
 				if (Input.GetKey(Key.A))
@@ -314,6 +315,7 @@ namespace GXPEngine
 			get { return _velocity; }
 		}
 
+
 		public void Step()
 		{
 			int direction;
@@ -331,17 +333,17 @@ namespace GXPEngine
 
 				if (direction == -1)
 				{
-					_position.x = TiledObject.x - 32f;
+					_position.x = TiledObject.x - width / 2f;
 					_velocity.x = 0;
 				}
 
 				if (direction == 1)
 				{
-					_position.x = TiledObject.x + 102f;
+					_position.x = TiledObject.x + 70 + width/2f;
 					_velocity.x = 0;
 				}
 			}
-			this.x = _position.x - velocity.x;
+			x = _position.x - velocity.x;
 
 
 			//Y-COLLISION
@@ -374,7 +376,6 @@ namespace GXPEngine
 
 			}
 			y = position.y - velocity.y;
-
 		}
 	}
 }
