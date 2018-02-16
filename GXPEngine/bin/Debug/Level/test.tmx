@@ -157,7 +157,19 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer name="foreground layer" visible="0" offsetx="-216" offsety="-136">
-  <image source="Forth_Ground.png" width="1920" height="1080"/>
+ <imagelayer name="foreground layer" offsetx="-98.6667" offsety="273.333">
+  <image source="foregroundtree.png" width="368" height="466"/>
+ </imagelayer>
+ <imagelayer name="foreground layer" offsetx="1153.33" offsety="-148">
+  <image source="foregroundBush3.png" width="571" height="320"/>
+ </imagelayer>
+ <imagelayer name="foreground layer" offsetx="1185.33" offsety="525.333">
+  <image source="foregroundBush1.png" width="290" height="203"/>
+ </imagelayer>
+ <imagelayer name="foreground layer" offsetx="692" offsety="542.667">
+  <image source="foregroundBush1.png" width="290" height="203"/>
+ </imagelayer>
+ <imagelayer name="foreground layer" offsetx="-80" offsety="-146.667">
+  <image source="foregroundBush2.png" width="774" height="381"/>
  </imagelayer>
 </map>

@@ -7,10 +7,12 @@ namespace GXPEngine
 {
     public class ForeGround : Sprite
     {
-        public ForeGround(Map map) : base("Level/" + map.background[1].background.source)
+        private int _index = 0;
+        public ForeGround(Map map, int i) : base("Level/" + map.background[i].background.source)
         {
-             this.x += map.background[1].offsetx;
-             this.y += map.background[1].offsety;
+            _index = i;
+             this.x += map.background[_index].offsetx;
+             this.y += map.background[_index].offsety;
         }
     }
 }

@@ -258,6 +258,9 @@ namespace GXPEngine
     [XmlRoot("<imagelayer ")]
     public class Imagelayer
     {
+        [XmlAttribute("name")]
+        public string name;
+
         [XmlAttribute("offsetx")]
         public float offsetx = 0.0f;
 

@@ -11,9 +11,11 @@ namespace GXPEngine
 		public List<GameObject> _collisionSprites = new List<GameObject>();
 
 		private static Level _lvl;
+        private MyGame _mygame;
 
-		public Level() : base()
+		public Level(MyGame mygame) : base()
 		{
+            _mygame = mygame;
 			this.x = 0;
 			this.y = 0;
 
@@ -84,11 +86,23 @@ namespace GXPEngine
 					}
 				}
 			}
-			///////// foreground
-			if (map.background != null)
+            //////////////////////player
+            Player _player = new Player(_mygame, map);
+            AddChild(_player);
+
+            ///////// foreground
+            if (map.background != null)
 			{
-				ForeGround foreground = new ForeGround(map);
-				AddChild(foreground);
+                for(int i = 0; i < map.background.Length; i++)
+                {
+                    if(map.background[i].name == "foreground layer")
+                    {
+                        ForeGround foreground = new ForeGround(map,i);
+                        AddChild(foreground);
+                    }
+                }
+				//ForeGround foreground = new ForeGround(map);
+				//AddChild(foreground);
 			}
 		}
 

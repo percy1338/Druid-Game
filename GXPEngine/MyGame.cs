@@ -9,7 +9,7 @@ public class MyGame : Game
 {
     Map map;
 
-    Level level = new Level();
+    Level level;
     int[,] gIDArray;
 
     private string _level = "Level/test.tmx";
@@ -19,10 +19,10 @@ public class MyGame : Game
         //background
 
         //tiles
+        level = new Level(this);
         generateLevel();
         // player.
-        Player _player = new Player(this, map);
-        AddChild(_player);
+
         //forground
 
         //hud
