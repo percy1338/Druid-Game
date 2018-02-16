@@ -18,14 +18,14 @@ namespace GXPEngine
                 {
                     _points = int.Parse(map.objGroup.TiledObject[index].properties.property[i].value);
                 }
-            }
-            
+            } 
         }
 
         public void Activateble(Player player)
-        {            
+        {
             // increse player score;
             //player.score += _points;
+            this.alpha = 0;
             this.Destroy();
         }
     }
