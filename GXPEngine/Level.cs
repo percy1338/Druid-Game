@@ -70,40 +70,50 @@ namespace GXPEngine
 			{
 				for (int i = 0; i < map.objGroup.TiledObject.Count(); i++)
 				{
-					if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "PICKUP")
-					{
-						Pickup pickup = new Pickup(map.objGroup.TiledObject[i].gid, _map, i);
-						pickup.x = _map.objGroup.TiledObject[i].x;
-						pickup.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-						AddChild(pickup);
-					}
-					if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "DESTRUCTABLE")
-					{
-						Destructable destructable = new Destructable(_map.objGroup.TiledObject[i].gid, map, i);
-						destructable.x = map.objGroup.TiledObject[i].x;
-						destructable.y = map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-						AddChild(destructable);
-					}
-					if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "BUTTON")
-					{
-						Button btn = new Button(_map.objGroup.TiledObject[i].gid, _map, i);
-						btn.x = _map.objGroup.TiledObject[i].x;
-						btn.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-						AddChild(btn);
-					}
-                    if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && map.objGroup.TiledObject[i].properties.property[0].value == "NOTRANSZONE")
+                    if (_map.objGroup.TiledObject[i].properties != null)
                     {
-                        NoZone zone = new NoZone(map.objGroup.TiledObject[i].gid, _map, i);
-                        zone.x = _map.objGroup.TiledObject[i].x;
-                        zone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-                        AddChild(zone);
-                    }
-                    if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "TRANSZONE")
-                    {
-                        YesZone yZone = new YesZone(map.objGroup.TiledObject[i].gid, map, i);
-                        yZone.x = _map.objGroup.TiledObject[i].x;
-                        yZone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-                        AddChild(yZone);
+                        if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "PICKUP")
+                        {
+                            Pickup pickup = new Pickup(map.objGroup.TiledObject[i].gid, _map, i);
+                            pickup.x = _map.objGroup.TiledObject[i].x;
+                            pickup.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(pickup);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "DESTRUCTABLE")
+                        {
+                            Destructable destructable = new Destructable(_map.objGroup.TiledObject[i].gid, map, i);
+                            destructable.x = map.objGroup.TiledObject[i].x;
+                            destructable.y = map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(destructable);
+                        }
+                        if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "BUTTON")
+                        {
+                            Button btn = new Button(_map.objGroup.TiledObject[i].gid, _map, i);
+                            btn.x = _map.objGroup.TiledObject[i].x;
+                            btn.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(btn);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && map.objGroup.TiledObject[i].properties.property[0].value == "NOTRANSZONE")
+                        {
+                            NoZone zone = new NoZone(map.objGroup.TiledObject[i].gid, _map, i);
+                            zone.x = _map.objGroup.TiledObject[i].x;
+                            zone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(zone);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "TRANSZONE")
+                        {
+                            YesZone yZone = new YesZone(map.objGroup.TiledObject[i].gid, map, i);
+                            yZone.x = _map.objGroup.TiledObject[i].x;
+                            yZone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(yZone);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ENEMY")
+                        {
+                            YesZone yZone = new YesZone(map.objGroup.TiledObject[i].gid, map, i);
+                            yZone.x = _map.objGroup.TiledObject[i].x;
+                            yZone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(yZone);
+                        }
                     }
                 }
 			}
@@ -145,7 +155,7 @@ namespace GXPEngine
             {
                 this.x = -_player.x + this._screenWidth * 0.5f;
             }
-            if (_player.y >= this._screenHeight * 0.5f && _player.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5)
+            if (_player.y >= this._screenHeight * 0.5f && _player.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5f)
             {
                 this.y = -_player.y + this._screenHeight * 0.5f;
             }

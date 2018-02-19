@@ -11,8 +11,9 @@ namespace GXPEngine
         public ForeGround(Map map, int i) : base("Level/" + map.background[i].background.source)
         {
             _index = i;
-             this.x += map.background[_index].offsetx;
-             this.y += map.background[_index].offsety;
+
+            this.x = map.background[_index].offsetx;
+            this.y = map.background[_index].offsety;
         }
     }
 }

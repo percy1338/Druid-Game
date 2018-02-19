@@ -9,7 +9,7 @@ namespace GXPEngine
     {
         private int _points = 0;
 
-        public Pickup(int frame ,Map map, int index) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount/map.tileSet.columns, -1)
+        public Pickup(int frame ,Map map, int index) : base("Level/Collectible1.png",1,1,-1)//("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount/map.tileSet.columns, -1)
         {
             SetFrame(frame - map.tileSet.firstGid);
             for(int i =0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)

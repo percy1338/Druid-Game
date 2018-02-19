@@ -46,7 +46,7 @@ namespace GXPEngine
 
 		private Map _map;
 
-		public Player(MyGame game, Map map) : base("Sprites/testSheet.png", 4, 1, -1)
+		public Player(MyGame game, Map map) : base("Sprites/Testsheet.png", 4, 1, -1)
 		{
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
