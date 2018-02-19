@@ -29,7 +29,7 @@ namespace GXPEngine
 		public bool Changeable;
 		public bool left;
 		public bool right;
-
+        public bool CanTransform = true;
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -94,28 +94,28 @@ namespace GXPEngine
 		{
 			if (Input.GetKey(Key.LEFT_SHIFT))
 			{
-				if ((Input.GetKeyDown(Key.W)) && currentShape != Shape.Bird)
+				if ((Input.GetKeyDown(Key.W)) && currentShape != Shape.Bird && CanTransform)
 				{
 					//Shapeshift into bird.
 					onShapeEvent(Shape.Bird); // does the event.
 					shapeEvent(Shape.Bird); // Does the private void shapeEvent.
 				}
 
-				if ((Input.GetKeyDown(Key.S)) && currentShape != Shape.Human)
+				if ((Input.GetKeyDown(Key.S)) && currentShape != Shape.Human && CanTransform)
 				{
 					//Shapeshift human
 					onShapeEvent(Shape.Human); // does the event.
 					shapeEvent(Shape.Human); // Does the private void shapeEvent.
 				}
 
-				if ((Input.GetKeyDown(Key.A)) && currentShape != Shape.Snake)
+				if ((Input.GetKeyDown(Key.A)) && currentShape != Shape.Snake && CanTransform)
 				{
 					//Shapeshift into snake
 					onShapeEvent(Shape.Snake); // does the event.
 					shapeEvent(Shape.Snake); // Does the private void shapeEvent.
 				}
 
-				if ((Input.GetKeyDown(Key.D)) && currentShape != Shape.Bear)
+				if ((Input.GetKeyDown(Key.D)) && currentShape != Shape.Bear && CanTransform)
 				{
 					//shapeshift into bear
 					onShapeEvent(Shape.Bear); // does the event.
@@ -381,7 +381,8 @@ namespace GXPEngine
 		{
 			if (other is IActivatable)
 			{
-				(other as IActivatable).Activateble(this);
+			    (other as IActivatable).Activateble(this);
+                Console.WriteLine(other);
 			}
 		}
 

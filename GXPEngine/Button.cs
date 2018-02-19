@@ -18,6 +18,7 @@ namespace GXPEngine
                     _doorId = int.Parse(map.objGroup.TiledObject[index].properties.property[i].value);
                 }
             }
+            
         }
 
         public void Activateble(Player player)

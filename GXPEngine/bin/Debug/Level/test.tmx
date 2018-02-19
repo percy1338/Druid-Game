@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="70" tileheight="70" nextobjectid="92">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="70" tileheight="70" nextobjectid="98">
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="98" columns="14">
   <image source="sheet.png" width="980" height="490"/>
  </tileset>
@@ -50,7 +50,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="Objectlaag 1">
+ <objectgroup name="Objectlaag 1" offsetx="-1.33333" offsety="0">
   <object id="47" gid="97" x="124" y="628" width="70" height="70">
    <properties>
     <property name="Type" value="PICKUP"/>
@@ -170,11 +170,6 @@
     <property name="damage" type="int" value="5"/>
    </properties>
   </object>
-  <object id="82" name="NoTransformZone" x="700" y="546.667" width="278.667" height="97.3333">
-   <properties>
-    <property name="CanTransform" type="bool" value="false"/>
-   </properties>
-  </object>
   <object id="88" gid="98" x="71.6667" y="211.667" width="70" height="70">
    <properties>
     <property name="Type" value="PICKUP"/>
@@ -199,6 +194,28 @@
     <property name="points" value="10"/>
    </properties>
   </object>
+  <object id="92" gid="79" x="702.333" y="632.333" width="68.6667" height="70">
+   <properties>
+    <property name="Type" value="NOTRANSZONE"/>
+    <property name="canTransform" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="95" gid="81" x="601" y="628.333" width="100.667" height="102">
+   <properties>
+    <property name="Type" value="TRANSZONE"/>
+   </properties>
+  </object>
+  <object id="96" gid="81" x="983" y="630.333" width="100.667" height="102">
+   <properties>
+    <property name="Type" value="TRANSZONE"/>
+   </properties>
+  </object>
+  <object id="97" gid="79" x="912.333" y="630.333" width="68.6667" height="70">
+   <properties>
+    <property name="Type" value="NOTRANSZONE"/>
+    <property name="canTransform" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer name="foreground layer" offsetx="-98.6667" offsety="273.333">
   <image source="foregroundtree.png" width="368" height="466"/>
@@ -209,7 +226,7 @@
  <imagelayer name="foreground layer" offsetx="1185.33" offsety="525.333">
   <image source="foregroundBush1.png" width="290" height="203"/>
  </imagelayer>
- <imagelayer name="foreground layer" offsetx="692" offsety="542.667">
+ <imagelayer name="foreground layer" offsetx="682.667" offsety="696">
   <image source="foregroundBush1.png" width="290" height="203"/>
  </imagelayer>
  <imagelayer name="foreground layer" offsetx="-66.6667" offsety="-101.334">

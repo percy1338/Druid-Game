@@ -71,6 +71,7 @@
     <Compile Include="GXPEngine\Utils\MouseHandler.cs" />
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
+    <Compile Include="NoZone.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Thornes.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="TmxParser.cs" />
     <Compile Include="Vec2.cs" />
     <Compile Include="Projectile.cs" />
+    <Compile Include="YesZone.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>

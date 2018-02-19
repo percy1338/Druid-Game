@@ -7,6 +7,9 @@ using System.IO;
 
 public class MyGame : Game
 {
+    private int _width = 1600;
+    private int _height = 900;
+
     Map map;
 
     Level level;
@@ -19,7 +22,7 @@ public class MyGame : Game
         //background
 
         //tiles
-        level = new Level(this);
+        level = new Level(this, _width, _height);
         generateLevel();
         // player.
 
