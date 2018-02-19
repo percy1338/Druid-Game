@@ -11,6 +11,7 @@ namespace GXPEngine
 		//values
 		private float _speed;
 		private float _weight = 0.05f;
+		private bool _lastLeft;
 
 		public Projectile(Player player) : base("Sprites/checkers.png")
 		{
@@ -23,30 +24,25 @@ namespace GXPEngine
 
 			_player = player;
 
-			if (player._velocity.x < 0)
+			if (player._velocity.x < 0 || _lastLeft == true)
 			{
 				this.x = _player.position.x - 48;
 				this.y = _player.position.y - 64;
 				_position.x += _player.position.x - 48;
 				_position.y += _player.position.y - 64;
 				_speed = -10;
+				_lastLeft = true;
+
 			}
 
-			if (player._velocity.x > 0)
+			if (player._velocity.x > 0 || _lastLeft == false)
 			{
 				this.x = _player.position.x + 48;
 				this.y = _player.position.y - 64;
 				_position.x += _player.position.x + 48;
 				_position.y += _player.position.y - 64;
 				_speed = 10;
-			}
-
-			if (player._velocity.x == 0)
-			{
-                this.x = _player.position.x + 48;
-				this.y = _player.position.y - 64;
-				_position.x += _player.position.x + 48;
-				_position.y += _player.position.y - 64;
+				_lastLeft = false;
 			}
 
 			this.SetOrigin(width / 2, height / 2);

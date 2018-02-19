@@ -26,6 +26,7 @@ namespace GXPEngine
 		//calculated floats.
 
 		public bool _landed;
+		public bool Changeable;
 		public bool left;
 		public bool right;
 
@@ -192,11 +193,7 @@ namespace GXPEngine
 
 		private void handlePhysics()
 		{
-			
-				_gravity.y = _weight * 0.981f;
-			
-
-
+			_gravity.y = _weight * 0.981f;
 			_velocity.Multiply(0.95f);
 
 		}
@@ -205,7 +202,7 @@ namespace GXPEngine
 		{
 			if (!Input.GetKey(Key.LEFT_SHIFT))
 			{
-				Console.WriteLine(_landed);
+				//Console.WriteLine(_landed);
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
@@ -335,13 +332,15 @@ namespace GXPEngine
 				{
 					_position.x = TiledObject.x - width / 2f;
 					_velocity.x = 0;
+
 				}
 
 				if (direction == 1)
 				{
-					_position.x = TiledObject.x + 70 + width/2f;
+					_position.x = TiledObject.x + 70 + width / 2f;
 					_velocity.x = 0;
 				}
+
 			}
 			x = _position.x - velocity.x;
 
@@ -366,8 +365,8 @@ namespace GXPEngine
 				if (direction == -1)
 				{
 					position.y = TiledObject.y + height + 70;
-					Console.WriteLine(TiledObject.y);
-					Console.WriteLine(position.y);
+					//Console.WriteLine(TiledObject.y);
+					//Console.WriteLine(position.y);
 					_velocity.y = 0;
 				}
 
@@ -378,18 +377,18 @@ namespace GXPEngine
 			y = position.y - velocity.y;
 		}
 
-        public void OnCollision(GameObject other)
-        {
-            if (other is IActivatable)
-            {
-                (other as IActivatable).Activateble(this);
-            }
-        }
+		public void OnCollision(GameObject other)
+		{
+			if (other is IActivatable)
+			{
+				(other as IActivatable).Activateble(this);
+			}
+		}
 
-        public Shape GetShape()
-        {
-            return currentShape;
-        }
-    }
+		public Shape GetShape()
+		{
+			return currentShape;
+		}
+	}
 }
 
