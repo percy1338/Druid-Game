@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
-	class Level : GameObject
+	public class Level : GameObject
 	{
 		List<GameObject> children = new List<GameObject>();
 		public List<GameObject> _collisionSprites = new List<GameObject>();
@@ -20,7 +20,7 @@ namespace GXPEngine
 
 		public Level(MyGame mygame, int width, int height) : base()
 		{
-            _player = new Player(_mygame, _map);
+            _player = new Player( _map, this);
             _mygame = mygame;
 			this.x = 0;
 			this.y = 0;
@@ -166,13 +166,13 @@ namespace GXPEngine
 
         void MoveCamera()
         {
-            if (_player.x >= this._screenWidth * 0.5f && _player.x <= _map.width * _map.tileWidth - this._screenWidth*0.5)
+            if (_player._hitbox.x >= this._screenWidth * 0.5f && _player._hitbox.x <= _map.width * _map.tileWidth - this._screenWidth*0.5)
             {
-                this.x = -_player.x + this._screenWidth * 0.5f;
+                this.x = -_player._hitbox.x + this._screenWidth * 0.5f;
             }
-            if (_player.y >= this._screenHeight * 0.5f && _player.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5f)
+            if (_player._hitbox.y >= this._screenHeight * 0.5f && _player._hitbox.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5f)
             {
-                this.y = -_player.y + this._screenHeight * 0.5f;
+                this.y = -_player._hitbox.y + this._screenHeight * 0.5f;
             }
         }
 
