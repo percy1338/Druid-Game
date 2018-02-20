@@ -17,7 +17,7 @@ public class MyGame : Game
 
     private string _level = "Level/test.tmx";
 
-    public MyGame() : base(1600, 900, false, false)
+    public MyGame() : base(1600, 900, false)
     {
         //background
 

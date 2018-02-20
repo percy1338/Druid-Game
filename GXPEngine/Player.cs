@@ -12,10 +12,8 @@ namespace GXPEngine
 		public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
-		Hitbox _hitbox;
-		MyGame Game;
-
-
+		public Hitbox _hitbox;
+		Level _level;
 
 		//values from all the animals.
 		private float _weight;
@@ -26,10 +24,11 @@ namespace GXPEngine
 		//calculated floats.
 
 		public bool _landed;
+		public bool _landedBird;
 		public bool Changeable;
 		public bool left;
 		public bool right;
-        public bool CanTransform = true;
+		public bool CanTransform = true;
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -46,7 +45,7 @@ namespace GXPEngine
 
 		private Map _map;
 
-		public Player(MyGame game, Map map) : base("Sprites/Testsheet.png", 4, 1, -1)
+		public Player(Map map, Level level) : base("Sprites/Testsheet.png", 4, 1, -1)
 		{
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
@@ -55,13 +54,14 @@ namespace GXPEngine
 			this.SetOrigin(width / 2, height);
 			currentShape = Shape.Human;
 			shapeEvent(Shape.Human);
+			_level = level;
 
-			Game = game;
 			_hitbox = new Hitbox(this);
-			Game.AddChild(_hitbox);
+			_level.AddChild(_hitbox);
 
 			// find player spawn
 			_map = map;
+
 			for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
 			{
 				if (map.objGroup.TiledObject[i].properties != null)
@@ -86,7 +86,11 @@ namespace GXPEngine
 			if (currentShape == Shape.Snake) handleInputSnake(); // better solution out there probaly.
 			if (currentShape == Shape.Bear) handleInputBear(); // better solution out there probaly.
 
-			Step();
+			_hitbox.Step();
+
+			this.x = _hitbox.x;
+			this.y = _hitbox.y;
+
 			handlePhysics(); // handles all the physics and mechanics.
 		}
 
@@ -108,7 +112,7 @@ namespace GXPEngine
 					shapeEvent(Shape.Human); // Does the private void shapeEvent.
 				}
 
-				if ((Input.GetKeyDown(Key.A)) && currentShape != Shape.Snake && CanTransform)
+				if ((Input.GetKeyDown(Key.A)) && currentShape != Shape.Snake)
 				{
 					//Shapeshift into snake
 					onShapeEvent(Shape.Snake); // does the event.
@@ -148,7 +152,7 @@ namespace GXPEngine
 				currentShape = Shape.Bird;
 
 				//sizes:
-				this.SetScaleXY(1f, 1.25f);
+				this.SetScaleXY(2f, 2);
 				SetFrame(1);
 
 				//values:
@@ -202,7 +206,6 @@ namespace GXPEngine
 		{
 			if (!Input.GetKey(Key.LEFT_SHIFT))
 			{
-				//Console.WriteLine(_landed);
 				if ((Input.GetKeyDown(Key.W)) && _landed == true)
 				{
 					_velocity.y -= _jump;
@@ -223,7 +226,7 @@ namespace GXPEngine
 				{
 					//Shoot
 					Projectile fireball = new Projectile(this);
-					Game.AddChild(fireball);
+					_level.AddChild(fireball);
 				}
 			}
 		}
@@ -238,12 +241,12 @@ namespace GXPEngine
 					_gravity.y = 0;
 				}
 
-				if (Input.GetKey(Key.A))
+				if ((Input.GetKey(Key.A)) && _landedBird == false)
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 				}
 
-				if (Input.GetKey(Key.D))
+				if ((Input.GetKey(Key.D)) && _landedBird == false)
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 				}
@@ -299,7 +302,6 @@ namespace GXPEngine
 			}
 		}
 
-
 		public Vec2 position
 		{
 			set { _position = value ?? Vec2.zero; }
@@ -310,80 +312,6 @@ namespace GXPEngine
 		{
 			set { _velocity = value ?? Vec2.zero; }
 			get { return _velocity; }
-		}
-
-
-		public void Step()
-		{
-			int direction;
-			GameObject TiledObject;
-
-			//X-COLLISION
-			position.x += _velocity.x;
-			this.x = position.x;
-
-			TiledObject = Level.Return().CheckCollision(this);
-
-			if (TiledObject != null)
-			{
-				direction = _velocity.x > 0 ? -1 : 1;
-
-				if (direction == -1)
-				{
-					_position.x = TiledObject.x - width / 2f;
-					_velocity.x = 0;
-
-				}
-
-				if (direction == 1)
-				{
-					_position.x = TiledObject.x + 70 + width / 2f;
-					_velocity.x = 0;
-				}
-
-			}
-			x = _position.x - velocity.x;
-
-
-			//Y-COLLISION
-			_velocity.Add(_gravity);
-			position.y += _velocity.y;
-			this.y = position.y;
-
-			TiledObject = Level.Return().CheckCollision(this);
-
-			if (TiledObject != null)
-			{
-				direction = _velocity.y < 0 ? -1 : 1;
-
-				if (direction == 1)
-				{
-					position.y = TiledObject.y;
-					_landed = true;
-				}
-
-				if (direction == -1)
-				{
-					position.y = TiledObject.y + height + 70;
-					//Console.WriteLine(TiledObject.y);
-					//Console.WriteLine(position.y);
-					_velocity.y = 0;
-				}
-
-				_velocity.y = 0;
-				_gravity.y = 0;
-
-			}
-			y = position.y - velocity.y;
-		}
-
-		public void OnCollision(GameObject other)
-		{
-			if (other is IActivatable)
-			{
-			    (other as IActivatable).Activateble(this);
-                Console.WriteLine(other);
-			}
 		}
 
 		public Shape GetShape()

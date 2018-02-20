@@ -12,6 +12,7 @@ namespace GXPEngine
 		private float _speed;
 		private float _weight = 0.05f;
 		private bool _lastLeft;
+		private int _timer;
 
 		public Projectile(Player player) : base("Sprites/checkers.png")
 		{
@@ -52,8 +53,30 @@ namespace GXPEngine
 		}
 		public void Update()
 		{
-			//Console.WriteLine(_player._velocity.x);
+			
+			TimerProjectile();
+			ProjectileCollision();
+			ProjectilePhysics();
+		}
 
+		private void ProjectileCollision()
+		{
+			GameObject TiledObject;
+			TiledObject = Level.Return().CheckCollision(this);
+
+			//X-collision
+            this.x += _velocity.x;
+
+			if (TiledObject != null)
+			{
+				
+
+			}
+
+		}
+
+		private void ProjectilePhysics()
+		{
 			float gravityForce = _weight * 0.981f;
 
 			_gravity.y += gravityForce;
@@ -68,6 +91,15 @@ namespace GXPEngine
 
 			this.x = _position.x;
 			this.y = _position.y;
+		}
+
+		private void TimerProjectile()
+		{
+			_timer++;
+			if (_timer > 120)
+			{
+				this.Destroy();
+			}
 		}
 	}
 }
