@@ -10,7 +10,7 @@ namespace GXPEngine
 
 		//values
 		private float _speed;
-		private float _weight = 0.05f;
+		private float _weight = 0.25f;
 		private bool _lastLeft;
 		private int _timer;
 
@@ -19,9 +19,6 @@ namespace GXPEngine
 			_velocity = Vec2.zero;
 			_position = Vec2.zero;
 			_gravity = Vec2.zero;
-
-			this.SetOrigin(width / 2, height / 2);
-			this.SetScaleXY(0.5f, 0.5f);
 
 			_player = player;
 
@@ -44,56 +41,52 @@ namespace GXPEngine
 				_speed = 10;
 				_lastLeft = false;
 			}
+
 			this.SetOrigin(width / 2, height / 2);
-			this.SetScaleXY(0.5f, 0.5f);
 
 			_velocity.x = _speed;
 
 		}
 		public void Update()
 		{
+			//Y-stuff;
+			_gravity.y = _weight * 0.981f;
+			_velocity.y += _gravity.y;
+
+			//X-stuff;
+
 			TimerProjectile();
 			ProjectileCollision();
 
 			//ProjectilePhysics();
-
-
-			_velocity.Multiply(0.98f);
-			_position.Add(_velocity);
 		}
 
 		private void ProjectileCollision()
 		{
+			_gravity.y = _weight * 0.981f;
+			_velocity.y += _gravity.y;
+
+			_velocity.x *= 0.98f;
+
+			//int direction;
 			GameObject TiledObject;
+
+			//X - collision;
+
+			_position.x += _velocity.x;
+			this.x = _position.x;
+
 			TiledObject = Level.Return().CheckCollision(this);
 
-			//X-collision
-            this.x += _velocity.x;
-
-			if (TiledObject != null)
-			{
-				_velocity.Multiply(-1);
-
-			}
-			x = _position.x + _velocity.x;
-		}
-
-		private void ProjectilePhysics()
-		{
-			//float gravityForce = _weight * 0.981f;
-
-			//_gravity.y += gravityForce;
-
-			//_speed *= 0.99f;
-			//_velocity.x = _speed;
-			//_velocity.y = 0;
 
 
-			//_position.Add(_velocity);
-			//_position.Add(_gravity);
 
-			//this.x = _position.x;
-			//this.y = _position.y;
+
+
+			// y - collision;
+
+
+
 		}
 
 		private void TimerProjectile()

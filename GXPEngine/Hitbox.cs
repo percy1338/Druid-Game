@@ -75,6 +75,7 @@ namespace GXPEngine
 				{
 					_player._position.x = TiledObject.x - width / 2f;
 					_player._velocity.x = 0;
+					//Console.WriteLine("hitright");
 
 				}
 
@@ -82,6 +83,7 @@ namespace GXPEngine
 				{
 					_player._position.x = TiledObject.x + 64 + width / 2f;
 					_player._velocity.x = 0;
+					//Console.WriteLine("hitleft");
 				}
 
 			}
@@ -104,12 +106,14 @@ namespace GXPEngine
 					_player.position.y = TiledObject.y;
 					_player._landed = true;
 					_player._landedBird = true;
+					//Console.WriteLine("ontheground");
 				}
 
 				if (direction == -1)
 				{
 					_player.position.y = TiledObject.y + height + 64;
 					_player._velocity.y = 0;
+					//Console.WriteLine("on the roof");
 				}
 
 				_player._velocity.y = 0;
