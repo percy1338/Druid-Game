@@ -46,7 +46,7 @@ namespace GXPEngine
                     SetFrame(-1);
                 }
             }
-            ShootPlayer();
+           // ShootPlayer();
             _cooldown--;
         }
 
