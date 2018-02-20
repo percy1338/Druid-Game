@@ -207,8 +207,6 @@ namespace GXPEngine
         [XmlAttribute("source")]
         public string source = "";
 
-
-
         public Image()
         {
         }
