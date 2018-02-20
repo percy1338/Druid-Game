@@ -40,6 +40,8 @@
     <Compile Include="Button.cs" />
     <Compile Include="Destructable.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="Enemy2.cs" />
+    <Compile Include="EnemyBullet.cs" />
     <Compile Include="ForeGround.cs" />
     <Compile Include="Hitbox.cs" />
     <Compile Include="IActivatable.cs" />

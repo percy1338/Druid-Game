@@ -20,6 +20,7 @@ namespace GXPEngine
 
 		public Level(MyGame mygame, int width, int height) : base()
 		{
+            _player = new Player(_mygame, _map);
             _mygame = mygame;
 			this.x = 0;
 			this.y = 0;
@@ -109,16 +110,30 @@ namespace GXPEngine
                         }
                         if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ENEMY")
                         {
-                            YesZone yZone = new YesZone(map.objGroup.TiledObject[i].gid, map, i);
-                            yZone.x = _map.objGroup.TiledObject[i].x;
-                            yZone.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
-                            AddChild(yZone);
+                            Enemy enemy = new Enemy(map.objGroup.TiledObject[i].gid, map, i);
+                            enemy.x = _map.objGroup.TiledObject[i].x;
+                            enemy.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(enemy);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ENEMY2")
+                        {
+                            Enemy2 enemy2 = new Enemy2(map.objGroup.TiledObject[i].gid, map, i, _player);
+                            enemy2.x = _map.objGroup.TiledObject[i].x;
+                            enemy2.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(enemy2);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "DAMAGE")
+                        {
+                            Thornes thornes = new Thornes(map.objGroup.TiledObject[i].gid, map, i);
+                            thornes.x = _map.objGroup.TiledObject[i].x;
+                            thornes.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(thornes);
                         }
                     }
                 }
 			}
             //////////////////////player
-            _player = new Player(_mygame, _map);
+            
             AddChild(_player);
 
             ///////// foreground
