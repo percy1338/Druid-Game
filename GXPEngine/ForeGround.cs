@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class ForeGround : Sprite
     {
         private int _index = 0;

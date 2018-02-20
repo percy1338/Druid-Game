@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     interface IActivatable
     {
         void Activateble(Player player);

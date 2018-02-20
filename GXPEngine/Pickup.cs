@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class Pickup : AnimationSprite, IActivatable
     {
         private int _points = 0;

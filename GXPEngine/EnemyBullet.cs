@@ -4,7 +4,7 @@ namespace GXPEngine
     public class Bullet : Sprite
     {
         //private Sound _playerHit = new Sound();
-
+		//
 
         private float _speed = 15;
         private float _velocityX, _velocityY;

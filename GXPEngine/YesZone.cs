@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class YesZone : AnimationSprite, IActivatable
     {
         private bool _CanTrans;

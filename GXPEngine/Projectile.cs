@@ -33,7 +33,6 @@ namespace GXPEngine
 				_position.y += _player.position.y - 64;
 				_speed = -10;
 				_lastLeft = true;
-
 			}
 
 			if (player._velocity.x > 0 || _lastLeft == false)
@@ -45,18 +44,22 @@ namespace GXPEngine
 				_speed = 10;
 				_lastLeft = false;
 			}
-
 			this.SetOrigin(width / 2, height / 2);
 			this.SetScaleXY(0.5f, 0.5f);
 
+			_velocity.x = _speed;
 
 		}
 		public void Update()
 		{
-			
 			TimerProjectile();
 			ProjectileCollision();
-			ProjectilePhysics();
+
+			//ProjectilePhysics();
+
+
+			_velocity.Multiply(0.98f);
+			_position.Add(_velocity);
 		}
 
 		private void ProjectileCollision()
@@ -69,28 +72,28 @@ namespace GXPEngine
 
 			if (TiledObject != null)
 			{
-				
+				_velocity.Multiply(-1);
 
 			}
-
+			x = _position.x + _velocity.x;
 		}
 
 		private void ProjectilePhysics()
 		{
-			float gravityForce = _weight * 0.981f;
+			//float gravityForce = _weight * 0.981f;
 
-			_gravity.y += gravityForce;
+			//_gravity.y += gravityForce;
 
-			_speed *= 0.99f;
-			_velocity.x = _speed;
-			_velocity.y = 0;
+			//_speed *= 0.99f;
+			//_velocity.x = _speed;
+			//_velocity.y = 0;
 
 
-			_position.Add(_velocity);
-			_position.Add(_gravity);
+			//_position.Add(_velocity);
+			//_position.Add(_gravity);
 
-			this.x = _position.x;
-			this.y = _position.y;
+			//this.x = _position.x;
+			//this.y = _position.y;
 		}
 
 		private void TimerProjectile()

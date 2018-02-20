@@ -199,7 +199,6 @@ namespace GXPEngine
 		{
 			_gravity.y = _weight * 0.981f;
 			_velocity.Multiply(0.95f);
-
 		}
 
 		private void handleInputHuman()

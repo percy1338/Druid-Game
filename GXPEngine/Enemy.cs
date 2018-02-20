@@ -7,6 +7,7 @@ namespace GXPEngine
 {
     public class Enemy : AnimationSprite
     {
+		//
         private float _speedX = 5;
         private float _speedY;
         private float _dmg;

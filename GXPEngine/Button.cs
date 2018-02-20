@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class Button : AnimationSprite, IActivatable
     {
         private int _doorId = 0;

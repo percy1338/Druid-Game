@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class Thornes : AnimationSprite, IActivatable
     {
         private int _dmg = 0;

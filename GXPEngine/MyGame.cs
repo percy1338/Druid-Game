@@ -7,6 +7,7 @@ using System.IO;
 
 public class MyGame : Game
 {
+	//
     private int _width = 1600;
     private int _height = 900;
 

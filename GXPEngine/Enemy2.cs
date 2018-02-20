@@ -7,6 +7,7 @@ namespace GXPEngine
 {
     public class Enemy2 : AnimationSprite
     {
+		//
         private float _range = 300;
         private float _cooldown = 60;
         private int _dmg;

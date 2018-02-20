@@ -5,6 +5,7 @@ using System.Text;
 
 namespace GXPEngine
 {
+	//
     public class Destructable : AnimationSprite, IActivatable
     {
         private int _health = 0;

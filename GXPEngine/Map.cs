@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace GXPEngine
 {
+	//
     [XmlRoot("map")]
     public class Map
     {
