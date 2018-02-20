@@ -9,7 +9,7 @@
  <imagelayer name="backgroundlayer" offsetx="74.6666" offsety="18.6667">
   <image source="walking lvl test.png" width="10746" height="2265"/>
  </imagelayer>
- <layer name="Tilelaag 1" width="170" height="170" opacity="0.5" offsetx="76" offsety="20.6667">
+ <layer name="Tilelaag 1" width="170" height="170" opacity="0.7" offsetx="76" offsety="20.6667">
   <data encoding="csv">
 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,
 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,0,0,4,4,0,0,0,4,4,0,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,4,4,0,0,0,0,0,0,0,0,0,4,4,0,0,0,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,
@@ -205,22 +205,22 @@
     <property name="points" type="int" value="10"/>
    </properties>
   </object>
-  <object id="108" gid="2" x="1521.33" y="374" width="64" height="64">
+  <object id="108" gid="2" x="1536" y="386.667" width="64" height="64">
    <properties>
     <property name="Type" value="NOTRANSZONE"/>
    </properties>
   </object>
-  <object id="110" gid="2" x="1700" y="378" width="64" height="64">
+  <object id="110" gid="2" x="1722.67" y="386.667" width="64" height="64">
    <properties>
     <property name="Type" value="NOTRANSZONE"/>
    </properties>
   </object>
-  <object id="111" gid="5" x="1449.33" y="372" width="64" height="64">
+  <object id="111" gid="5" x="1469.33" y="386.667" width="64" height="64">
    <properties>
     <property name="Type" value="TRANSZONE"/>
    </properties>
   </object>
-  <object id="112" gid="5" x="1784" y="382" width="64" height="64">
+  <object id="112" gid="5" x="1790.67" y="386" width="64" height="64">
    <properties>
     <property name="Type" value="TRANSZONE"/>
    </properties>
