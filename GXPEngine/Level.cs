@@ -147,7 +147,7 @@ namespace GXPEngine
                 }
 			}
             //////////////////////player
-            _player = new Player(_map, this,playerSpawnX,playerSpawnY);
+            _player = new Player(this,playerSpawnX,playerSpawnY);
 
 
             AddChild(_player);

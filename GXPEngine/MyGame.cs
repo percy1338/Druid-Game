@@ -59,7 +59,7 @@ public class MyGame : Game
             map = serializer.Deserialize(reader) as Map;
             reader.Close();
 
-            Console.WriteLine(map);
+            //Console.WriteLine(map);
     }
 
     private void ParseInnerDate()

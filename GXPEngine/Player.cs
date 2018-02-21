@@ -20,6 +20,7 @@ namespace GXPEngine
 		private float _speed;
 		private float _topSpeed;
 		private float _jump;
+		private float _health;
 
 		//calculated floats.
 
@@ -43,13 +44,8 @@ namespace GXPEngine
 			Snake
 		}
 
-		private Map _map;
-
-		public Player(Map map, Level level, float SpawnX, float SpawnY) : base("Sprites/Testsheet.png", 4, 1, -1)
+		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/Testsheet.png", 4, 1, -1)
 		{
-            this.x = SpawnX;
-            this.y = SpawnY;
-
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
 			_gravity = Vec2.zero;
@@ -59,25 +55,8 @@ namespace GXPEngine
 			shapeEvent(Shape.Human);
 			_level = level;
 
-			_hitbox = new Hitbox(this);
+			_hitbox = new Hitbox(this, SpawnX, SpawnY);
 			_level.AddChild(_hitbox);
-
-			// find player spawn
-			_map = map;
-
-			for (int i = 0; i < map.objGroup.TiledObject.Length; i++)
-			{
-				if (map.objGroup.TiledObject[i].properties != null)
-				{
-					for (int p = 0; p < map.objGroup.TiledObject[i].properties.property.Length; p++)
-					{
-						if (map.objGroup.TiledObject[i].properties.property[p].name == "spawn" || map.objGroup.TiledObject[i].properties.property[p].value == "true")
-						{
-							_position.Set(map.objGroup.TiledObject[i].x, map.objGroup.TiledObject[i].y);
-						}
-					}
-				}
-			}
 		}
 
 		public void Update()

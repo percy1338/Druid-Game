@@ -54,67 +54,6 @@ namespace GXPEngine
 		private void ProjectileCollision()
 		{
 
-			int direction;
-			GameObject TiledObject;
-
-			//X - collision;
-
-			_position.x += _velocity.x;
-			this.x = _position.x;
-
-			TiledObject = Level.Return().CheckCollision(this);
-
-			if (TiledObject != null)
-			{
-				Console.WriteLine("nani");
-				direction = _velocity.x > 0 ? -1 : 1;
-				if (direction == -1)
-				{
-					_position.x = TiledObject.x - width / 2;
-					_velocity.x *= -1;
-				}
-
-				if (direction == 1)
-				{
-					_position.x = TiledObject.x + 64 + width / 2;
-					_velocity.x *= -1;
-				}
-			}
-
-			x = _position.x - _velocity.x;
-
-
-
-			// y - collision;
-			_position.y += _velocity.y;
-			this.y = _position.y;
-
-			TiledObject = Level.Return().CheckCollision(this);
-
-			if (TiledObject != null)
-			{
-				direction = _velocity.y > 0 ? -1 : 1;
-
-				Console.WriteLine("ultranani");
-				if (direction == 1)
-				{
-					_position.y = TiledObject.y + height + 64;
-					_velocity.y *= -1;
-				}
-
-				if (direction == -1)
-				{
-					_position.y = TiledObject.y;
-					_velocity.y *= -1;
-				}
-
-
-			}
-
-			_position.y += _velocity.y;
-			y = _position.y;
-
-
 		}
 
 
@@ -125,6 +64,16 @@ namespace GXPEngine
 			{
 				this.Destroy();
 			}
+		}
+
+		public Vec2 position
+		{
+			set { _position = value ?? Vec2.zero; }
+			get
+			{
+				return _position;
+			}
+
 		}
 	}
 }

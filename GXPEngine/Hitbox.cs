@@ -9,15 +9,18 @@ namespace GXPEngine
 	public class Hitbox : Sprite
 	{
 		Player _player;
+		private bool _hitRight;
 
-
-		public Hitbox(Player player) : base("Sprites/colors.png")
+		public Hitbox(Player player, float spawnX, float spawnY) : base("Sprites/colors.png")
 		{
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
 			this.alpha = 0.5F;
 			playerOnShapeEvent(Player.Shape.Human);
+
+			_player.position.x = spawnX;
+			_player.position.y = spawnY;
 
 		}
 
@@ -49,6 +52,12 @@ namespace GXPEngine
 			{
 				this.SetScaleXY(2, 2);
 			}
+
+			if (shape == Player.Shape.Bear && _hitRight == true)
+			{
+				this.SetScaleXY(2, 2);
+				_player.position.x -= 32;
+			}
 		}
 
 
@@ -74,19 +83,22 @@ namespace GXPEngine
 				if (direction == -1)
 				{
 					_player._position.x = TiledObject.x - width / 2;
-					_player._velocity.x = 0;
-					//Console.WriteLine("hitright");
-
+					_player._velocity.x = 0.0000000000001f; //PRO-CODE ONLY PLZ DON'T COPY THIS. ITS MINE AND MINE ONLY.
+					_hitRight = true;
 				}
 
 				if (direction == 1)
 				{
 					_player._position.x = TiledObject.x + 64 + width / 2;
 					_player._velocity.x = 0;
-					//Console.WriteLine("hitleft");
 				}
 
 			}
+			else
+			{
+				_hitRight = false;
+			}
+
 			x = _player._position.x - _player.velocity.x;
 
 
@@ -106,7 +118,6 @@ namespace GXPEngine
 					_player.position.y = TiledObject.y;
 					_player._landed = true;
 					_player._landedBird = true;
-					//Console.WriteLine("ontheground");
 				}
 
 				if (direction == -1)
