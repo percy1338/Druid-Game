@@ -19,26 +19,26 @@ namespace GXPEngine
             _player = player;
             _map = map;
             _index = i;
-            this.x = _player.position.x;
-            this.y = _player.position.y;
+            //this.x = _player.position.x;
+            //this.y = _player.position.y;
         }
 
         public void Update()
         {
-            if(!(_player._velocity.x == 0.0000000000001f))
-            {
-                this.x = float.Parse((_player.position.x - this.width * 0.5).ToString());
-                this.y = float.Parse((_player.position.y - this.height * 0.5).ToString());
-            }
+            //if(!(_player._velocity.x == 0.0000000000001f))
+            //{
+            //    this.x = float.Parse((_player.position.x - this.width * 0.5).ToString());
+            //    this.y = float.Parse((_player.position.y - this.height * 0.5).ToString());
+            //}
 
-            if(this.x < 0)
-            {
-               this.x = 0;
-            }
-            if (this.y < 0)
-            {
-                this.y = 0;
-            }
+            //if(this.x < 0)
+            //{
+            //   this.x = 0;
+            //}
+            //if (this.y < 0)
+            //{
+            //    this.y = 0;
+            //}
         }
     }
 }
