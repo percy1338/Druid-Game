@@ -76,6 +76,7 @@
     <Compile Include="NoZone.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="ScrollingBackground.cs" />
     <Compile Include="Thornes.cs" />
     <Compile Include="Tiles.cs" />
     <Compile Include="Map.cs" />

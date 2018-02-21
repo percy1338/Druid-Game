@@ -52,7 +52,6 @@ public class MyGame : Game
 
     public void ReadMap()
     {
-
             XmlSerializer serializer = new XmlSerializer(typeof(Map));
 
             TextReader reader = new StreamReader(_level);

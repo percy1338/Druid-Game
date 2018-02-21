@@ -42,7 +42,10 @@ namespace GXPEngine
 		public void DrawLevel(Map map, int[,] TileGids)
 		{
             _map = map;
-			if (HasChild(this))
+            _player = new Player(this, playerSpawnX, playerSpawnY);
+
+
+            if (HasChild(this))
 			{
 				this.GetChildren().Clear();
 			}
@@ -53,8 +56,13 @@ namespace GXPEngine
                 {
                     if(map.background[i].name == "backgroundlayer")
                     {
-                        Background background = new Background(map);
+                        Background background = new Background(map, i);
                         AddChild(background);
+                    }
+                    if(map.background[i].name == "scrollingbackgroundlayer")
+                    {
+                        ScrollingBackground sb = new ScrollingBackground(_map, i, _player);
+                        AddChild(sb);
                     }
                 }
 			}
@@ -147,9 +155,13 @@ namespace GXPEngine
                 }
 			}
             //////////////////////player
+<<<<<<< HEAD
             _player = new Player(this,playerSpawnX,playerSpawnY);
 
 
+=======
+            //player
+>>>>>>> d7ed08562b3597cc550d09bf5293db29c1d93bb3
             AddChild(_player);
 
             ///////// foreground

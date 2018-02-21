@@ -8,10 +8,10 @@ namespace GXPEngine
 	//
     public class Background : Sprite
     {
-        public Background(Map map):base("Level/" + map.background[0].background.source)
+        public Background(Map map, int i):base("Level/" + map.background[i].background.source)
         {
-           // this.x += map.background[0].offsetx;
-          //  this.y += map.background[0].offsety;
+           // this.x += map.background[i].offsetx;
+          //  this.y += map.background[i].offsety;
         }
     }
 }
