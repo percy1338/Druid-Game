@@ -19,7 +19,7 @@ namespace GXPEngine
                     _CanTrans = bool.Parse(map.objGroup.TiledObject[index].properties.property[i].value);
                 }
             }
-            this.alpha = 1;
+            this.alpha = 0;
         }
 
         public void Activateble(Player player)
