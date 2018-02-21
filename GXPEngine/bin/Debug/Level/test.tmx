@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="176" height="176" tilewidth="64" tileheight="64" nextobjectid="184">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="176" height="176" tilewidth="64" tileheight="64" nextobjectid="228">
  <tileset firstgid="1" name="testSheet" tilewidth="64" tileheight="64" tilecount="6" columns="6">
   <image source="testSheet.png" width="384" height="64"/>
  </tileset>
  <tileset firstgid="7" name="walking lvl test" tilewidth="64" tileheight="64" tilecount="5845" columns="167">
   <image source="walking lvl test.png" width="10746" height="2265"/>
  </tileset>
- <imagelayer name="scrollingbackgroundlayer" offsetx="75.7576" offsety="27.2727">
+ <imagelayer name="scrollingbackgroundlayer" offsetx="75.7576" offsety="15.1515">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
- <imagelayer name="Kopie van scrollingbackgroundlayer" offsetx="2331.76" offsety="27.2727">
+ <imagelayer name="scrollingbackgroundlayer" offsetx="2334.79" offsety="18.1818">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
- <imagelayer name="Kopie van Kopie van scrollingbackgroundlayer" offsetx="4589.09" offsety="27.2727">
+ <imagelayer name="scrollingbackgroundlayer" offsetx="4580" offsety="18.1818">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
- <imagelayer name="Kopie van Kopie van Kopie van scrollingbackgroundlayer" offsetx="6846.09" offsety="27.2727">
+ <imagelayer name="scrollingbackgroundlayer" offsetx="6827.91" offsety="-2.72727e-5">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
- <imagelayer name="Kopie van Kopie van Kopie van Kopie van scrollingbackgroundlayer" offsetx="9102.09" offsety="27.2727">
+ <imagelayer name="scrollingbackgroundlayer" offsetx="9112.88" offsety="18.7879">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
  <imagelayer name="backgroundlayer" offsetx="74.6666" offsety="18.6667">
@@ -252,13 +252,6 @@
     <property name="damage" type="int" value="10"/>
    </properties>
   </object>
-  <object id="127" gid="2" x="4027.53" y="383.803" width="64" height="64">
-   <properties>
-    <property name="Type" value="ENEMY2"/>
-    <property name="damage" type="int" value="10"/>
-    <property name="shootLeft" type="bool" value="true"/>
-   </properties>
-  </object>
   <object id="129" gid="6" x="194.182" y="318.848" width="64" height="64">
    <properties>
     <property name="Type" value="SPAWN"/>
@@ -328,27 +321,27 @@
     <property name="Type" value="TRANSZONE"/>
    </properties>
   </object>
-  <object id="143" gid="6" x="4577.53" y="382" width="64" height="64">
+  <object id="143" gid="6" x="5121.86" y="450" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="145" gid="6" x="4577.53" y="318" width="64" height="64">
+  <object id="145" gid="6" x="5121.53" y="386" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="146" gid="6" x="4577.53" y="254.364" width="64" height="64">
+  <object id="146" gid="6" x="5121.53" y="322.364" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="147" gid="6" x="4577.53" y="190.136" width="64" height="64">
+  <object id="147" gid="6" x="5121.53" y="258.682" width="129" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="148" gid="6" x="4577.53" y="126.076" width="64" height="64">
+  <object id="148" gid="6" x="5121.53" y="194.985" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
@@ -368,7 +361,7 @@
     <property name="Type" value="ANIMAL"/>
    </properties>
   </object>
-  <object id="152" gid="4" x="10171.3" y="1982" width="128" height="128">
+  <object id="152" gid="4" x="10404.3" y="1986" width="128" height="128">
    <properties>
     <property name="Type" value="ANIMAL"/>
    </properties>
@@ -444,74 +437,326 @@
     <property name="damage" type="int" value="10"/>
    </properties>
   </object>
-  <object id="169" gid="4" x="10438" y="1984" width="128" height="128">
+  <object id="169" gid="4" x="10604" y="1987" width="128" height="128">
    <properties>
     <property name="Type" value="ANIMAL"/>
    </properties>
   </object>
-  <object id="170" gid="6" x="6014.83" y="320.416" width="64" height="64">
+  <object id="170" gid="6" x="5953.83" y="324.416" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="171" gid="6" x="6015" y="446.584" width="64" height="64">
+  <object id="171" gid="6" x="5954" y="450.584" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="172" gid="6" x="6014.83" y="256.416" width="64" height="64">
+  <object id="172" gid="6" x="5953.83" y="260.416" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="173" gid="6" x="6014.83" y="193.416" width="64" height="64">
+  <object id="173" gid="6" x="5953.83" y="197.416" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="174" gid="6" x="6014.83" y="383.916" width="64" height="64">
+  <object id="174" gid="6" x="5953.83" y="387.916" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="175" gid="6" x="6014.92" y="127.417" width="64" height="64">
+  <object id="175" gid="6" x="5953.92" y="133.598" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="176" gid="6" x="10076.9" y="1924.92" width="64" height="64">
+  <object id="176" gid="6" x="10076.6" y="1925.46" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="177" gid="6" x="10078" y="1669.42" width="64" height="64">
+  <object id="177" gid="6" x="10076.6" y="1670.87" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="178" gid="6" x="10076.9" y="1861.42" width="64" height="64">
+  <object id="178" gid="6" x="10076.6" y="1861.42" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="179" gid="6" x="10076.9" y="1797.42" width="64" height="64">
+  <object id="179" gid="6" x="10076.6" y="1797.42" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="180" gid="6" x="10076.9" y="1734.42" width="64" height="64">
+  <object id="180" gid="6" x="10076.6" y="1734.42" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="181" gid="6" x="10077.1" y="1987.58" width="64" height="64">
+  <object id="181" gid="6" x="10076.6" y="1989.22" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="182" gid="6" x="10079" y="1606" width="64" height="64">
+  <object id="182" gid="6" x="10076.6" y="1607.27" width="128" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="184" gid="6" x="10076.6" y="1543.64" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="185" gid="6" x="5954.09" y="69.6364" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="186" gid="6" x="5121.64" y="132.182" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="187" gid="2" x="10240" y="448" width="64" height="64">
+   <properties>
+    <property name="Type" value="ENEMY2"/>
+    <property name="damage" type="int" value="10"/>
+    <property name="shootLeft" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="188" gid="2" x="8252" y="1276" width="64" height="64">
+   <properties>
+    <property name="Type" value="ENEMY2"/>
+    <property name="damage" type="int" value="10"/>
+    <property name="shootLeft" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="189" gid="6" x="5121.33" y="68" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="190" gid="6" x="9084" y="322.44" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="191" gid="6" x="9084" y="385.99" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="192" gid="6" x="9084" y="258.84" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="193" gid="6" x="9084" y="512.99" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="194" gid="6" x="9084" y="577.03" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="195" gid="6" x="9084" y="195.21" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="196" gid="6" x="9084" y="640.79" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="197" gid="6" x="9084" y="448.99" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="198" gid="6" x="9084" y="130.815" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="199" gid="6" x="9084" y="67.185" width="128" height="64">
+   <properties>
+    <property name="Type" value="DESTRUCTABLE"/>
+   </properties>
+  </object>
+  <object id="200" gid="3" x="4537.7" y="355.879" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="201" gid="3" x="5371.03" y="343.758" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="202" gid="3" x="6916.48" y="449.818" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="203" gid="3" x="6910.42" y="574.061" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="204" gid="3" x="6913.45" y="704.364" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="205" gid="3" x="6913.45" y="319.515" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="206" gid="3" x="6922.55" y="831.636" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="207" gid="3" x="7549.82" y="1283.15" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="208" gid="3" x="9792.24" y="1855.88" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="209" gid="3" x="10846.8" y="1498.3" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="210" gid="3" x="10846.8" y="1313.45" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="211" gid="3" x="10843.8" y="1119.52" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="212" gid="3" x="10846.8" y="928.606" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="213" gid="3" x="10846.8" y="743.758" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="214" gid="3" x="10846.8" y="549.818" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="215" gid="3" x="10586.2" y="416.485" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="216" gid="3" x="10401.3" y="419.515" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="217" gid="3" x="9946.79" y="604.364" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="218" gid="3" x="9443.76" y="604.364" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="219" gid="3" x="8783.15" y="607.394" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="220" gid="3" x="7971.03" y="931.636" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="221" gid="3" x="7964.97" y="801.333" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="222" gid="3" x="7968" y="677.091" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="223" gid="3" x="7971.03" y="1058.91" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="224" gid="3" x="6180.12" y="1192.24" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="225" gid="3" x="6171.03" y="989.212" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="226" gid="3" x="992.242" y="349.818" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="227" gid="3" x="1183.15" y="355.879" width="64" height="64">
+   <properties>
+    <property name="Type" value="PICKUP"/>
+    <property name="points" type="int" value="10"/>
    </properties>
   </object>
  </objectgroup>
