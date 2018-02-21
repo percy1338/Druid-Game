@@ -39,7 +39,6 @@ public class MyGame : Game
 
     public void Update()
     {
-
     }
 
     private void generateLevel()

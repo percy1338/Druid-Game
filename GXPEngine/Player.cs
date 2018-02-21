@@ -208,6 +208,7 @@ namespace GXPEngine
 					//Shoot
 					Projectile fireball = new Projectile(this);
 					_level.AddChild(fireball);
+					Console.WriteLine("happend");
 				}
 			}
 		}

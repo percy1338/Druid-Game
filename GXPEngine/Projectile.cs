@@ -53,6 +53,9 @@ namespace GXPEngine
 		private void ProjectileCollision()
 		{
 
+			_position.Add(_velocity);
+			x = _position.x;
+			y = _position.y;
 		}
 
 

@@ -42,8 +42,7 @@ namespace GXPEngine
 		public void DrawLevel(Map map, int[,] TileGids)
 		{
             _map = map;
-            _player = new Player(this, playerSpawnX, playerSpawnY);
-
+            //_player = new Player(this, playerSpawnX, playerSpawnY);
 
             if (HasChild(this))
 			{

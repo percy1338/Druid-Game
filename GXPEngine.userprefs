@@ -4,15 +4,17 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Level.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\MyGame.cs">
     <Files>
-      <File FileName="GXPEngine\Player.cs" Line="277" Column="30" />
-      <File FileName="GXPEngine\BearAttack.cs" Line="48" Column="50" />
+      <File FileName="GXPEngine\Player.cs" Line="211" Column="14" />
+      <File FileName="GXPEngine\Projectile.cs" Line="56" Column="29" />
+      <File FileName="GXPEngine\BearAttack.cs" Line="48" Column="48" />
       <File FileName="GXPEngine\Hitbox.cs" Line="146" Column="50" />
-      <File FileName="GXPEngine\Projectile.cs" Line="19" Column="21" />
       <File FileName="GXPEngine\Destructable.cs" Line="36" Column="20" />
-      <File FileName="GXPEngine\Level.cs" Line="106" Column="44" />
+      <File FileName="GXPEngine\Level.cs" Line="216" Column="32" />
       <File FileName="GXPEngine\EnemyBullet.cs" Line="35" Column="36" />
+      <File FileName="GXPEngine\ScrollingBackground.cs" Line="41" Column="14" />
+      <File FileName="GXPEngine\MyGame.cs" Line="42" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
