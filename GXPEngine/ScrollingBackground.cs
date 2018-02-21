@@ -16,16 +16,16 @@ namespace GXPEngine
             _player = player;
             _map = map;
             _index = i;
-            this.x = _player.x;
-            this.y = _player.y;
+            this.x = _player.position.x;
+            this.y = _player.position.y;
             // this.x += _map.background[_index].offsetx;
             //  this.y += _map.background[_index].offsety;
         }
 
         public void Update()
         {
-            this.x = float.Parse((_player.x - this.width * 0.5).ToString());
-            this.y = float.Parse((_player.y - this.height * 0.5).ToString());
+            this.x = float.Parse((_player.position.x - this.width * 0.5).ToString());
+            this.y = float.Parse((_player.position.y - this.height * 0.5).ToString());
 
             if(this.x < 0)
             {

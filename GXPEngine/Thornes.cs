@@ -9,6 +9,7 @@ namespace GXPEngine
     public class Thornes : AnimationSprite, IActivatable
     {
         private int _dmg = 0;
+        private int _cooldown = 0;
 
         public Thornes(int frame, Map map, int index) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
         {
@@ -26,12 +27,21 @@ namespace GXPEngine
             }
 
             this.alpha = 0.5f;
+            if (_cooldown >= 0)
+            {
+                _cooldown--;
+            }
         }
 
         public void Activateble(Player player)
         {
             Console.WriteLine("player take damage");
-            //player.hp -= _dmg;
+            if (_cooldown <= 0)
+            {
+                Console.WriteLine("player got his shit kicked in");
+                player.GetHit(_dmg);
+                _cooldown = 120;
+            }
         }
     }
 }
