@@ -155,13 +155,9 @@ namespace GXPEngine
                 }
 			}
             //////////////////////player
-<<<<<<< HEAD
             _player = new Player(this,playerSpawnX,playerSpawnY);
 
-
-=======
             //player
->>>>>>> d7ed08562b3597cc550d09bf5293db29c1d93bb3
             AddChild(_player);
 
             ///////// foreground
