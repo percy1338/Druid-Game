@@ -20,7 +20,7 @@ namespace GXPEngine
 		private float _speed;
 		private float _topSpeed;
 		private float _jump;
-		private float _health;
+		private float _health = 10;
 
 		//calculated floats.
 
@@ -299,6 +299,21 @@ namespace GXPEngine
 		{
 			return currentShape;
 		}
+
+		public void GetHit(int damage)
+		{
+			_health -= damage;
+			checkHP();
+		}
+
+		private void checkHP()
+		{
+			if (_health <= 0)
+			{
+				this.Destroy();
+			}
+		}
+
 	}
 }
 

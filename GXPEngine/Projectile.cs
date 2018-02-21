@@ -65,15 +65,5 @@ namespace GXPEngine
 				this.Destroy();
 			}
 		}
-
-		public Vec2 position
-		{
-			set { _position = value ?? Vec2.zero; }
-			get
-			{
-				return _position;
-			}
-
-		}
 	}
 }
