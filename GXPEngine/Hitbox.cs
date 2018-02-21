@@ -16,7 +16,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 0.5F;
+			this.alpha = 0;
 			playerOnShapeEvent(Player.Shape.Human);
 
 			_player.position.x = spawnX;
@@ -85,12 +85,14 @@ namespace GXPEngine
 					_player._position.x = TiledObject.x - width / 2;
 					_player._velocity.x = 0.0000000000001f; //PRO-CODE ONLY PLZ DON'T COPY THIS. ITS MINE AND MINE ONLY.
 					_hitRight = true;
+					Console.WriteLine("hitright");
 				}
 
 				if (direction == 1)
 				{
 					_player._position.x = TiledObject.x + 64 + width / 2;
 					_player._velocity.x = 0;
+					Console.WriteLine("hitleft");
 				}
 
 			}
@@ -118,12 +120,13 @@ namespace GXPEngine
 					_player.position.y = TiledObject.y;
 					_player._landed = true;
 					_player._landedBird = true;
+					Console.WriteLine("on the floor");
 				}
 
 				if (direction == -1)
 				{
 					_player.position.y = TiledObject.y + height + 64;
-					//Console.WriteLine("on the roof");
+					Console.WriteLine("on the roof");
 				}
 
 				_player._velocity.y = 0;

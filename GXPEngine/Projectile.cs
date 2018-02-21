@@ -45,6 +45,8 @@ namespace GXPEngine
 		}
 		public void Update()
 		{
+			updatePosition();
+
 			TimerProjectile();
 			ProjectileCollision();
 
@@ -54,10 +56,14 @@ namespace GXPEngine
 		{
 
 			_position.Add(_velocity);
+		}
+
+
+		private void updatePosition()
+		{
 			x = _position.x;
 			y = _position.y;
 		}
-
 
 		private void TimerProjectile()
 		{

@@ -21,6 +21,7 @@ namespace GXPEngine
 		private float _topSpeed;
 		private float _jump;
 		private float _health = 10;
+		private int frametimer;
 
 		//calculated floats.
 
@@ -44,7 +45,7 @@ namespace GXPEngine
 			Snake
 		}
 
-		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/Testsheet.png", 4, 1, -1)
+		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/TestBear2.png", 5, 5, -1)
 		{
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
@@ -208,7 +209,6 @@ namespace GXPEngine
 					//Shoot
 					Projectile fireball = new Projectile(this);
 					_level.AddChild(fireball);
-					Console.WriteLine("happend");
 				}
 			}
 		}
@@ -265,11 +265,33 @@ namespace GXPEngine
 				if (Input.GetKey(Key.A))
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
+					this.Mirror(true, false);
 				}
 
 				if (Input.GetKey(Key.D))
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
+					this.Mirror(false, false);
+
+
+
+					frametimer++;
+
+					if (frametimer > 12)
+					{
+						NextFrame();
+						if (currentFrame == 5)
+						{
+							SetFrame(0);
+						}
+						frametimer = 0;
+					}
+
+					if ((!Input.GetKey(Key.D)) && (!Input.GetKey(Key.A)) && (!Input.GetKey(Key.W)))
+					{
+						SetFrame(0);
+					}
+
 				}
 
 				if (Input.GetKeyDown(Key.SPACE))
