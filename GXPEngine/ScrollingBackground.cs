@@ -19,8 +19,6 @@ namespace GXPEngine
             _player = player;
             _map = map;
             _index = i;
-            //this.x = _player.position.x;
-            //this.y = _player.position.y;
         }
 
         public void Update()

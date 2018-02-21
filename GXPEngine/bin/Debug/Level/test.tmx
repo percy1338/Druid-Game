@@ -9,6 +9,18 @@
  <imagelayer name="scrollingbackgroundlayer" offsetx="75.7576" offsety="27.2727">
   <image source="background1.jpg" width="2257" height="2265"/>
  </imagelayer>
+ <imagelayer name="Kopie van scrollingbackgroundlayer" offsetx="2331.76" offsety="27.2727">
+  <image source="background1.jpg" width="2257" height="2265"/>
+ </imagelayer>
+ <imagelayer name="Kopie van Kopie van scrollingbackgroundlayer" offsetx="4589.09" offsety="27.2727">
+  <image source="background1.jpg" width="2257" height="2265"/>
+ </imagelayer>
+ <imagelayer name="Kopie van Kopie van Kopie van scrollingbackgroundlayer" offsetx="6846.09" offsety="27.2727">
+  <image source="background1.jpg" width="2257" height="2265"/>
+ </imagelayer>
+ <imagelayer name="Kopie van Kopie van Kopie van Kopie van scrollingbackgroundlayer" offsetx="9102.09" offsety="27.2727">
+  <image source="background1.jpg" width="2257" height="2265"/>
+ </imagelayer>
  <imagelayer name="backgroundlayer" offsetx="74.6666" offsety="18.6667">
   <image source="main layer.png" width="11278" height="2265"/>
  </imagelayer>
@@ -50,7 +62,7 @@
 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,4,4,4,4,
 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,4,4,4,4,
 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -247,7 +259,7 @@
     <property name="shootLeft" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="129" gid="6" x="967.515" y="272.182" width="64" height="64">
+  <object id="129" gid="6" x="194.182" y="318.848" width="64" height="64">
    <properties>
     <property name="Type" value="SPAWN"/>
    </properties>
@@ -316,27 +328,27 @@
     <property name="Type" value="TRANSZONE"/>
    </properties>
   </object>
-  <object id="143" gid="6" x="4577.53" y="381.97" width="64" height="64">
+  <object id="143" gid="6" x="4577.53" y="382" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="145" gid="6" x="4577.86" y="317.303" width="64" height="64">
+  <object id="145" gid="6" x="4577.53" y="318" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="146" gid="6" x="4577.86" y="252.303" width="64" height="64">
+  <object id="146" gid="6" x="4577.53" y="254.364" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="147" gid="6" x="4577.86" y="188.803" width="64" height="64">
+  <object id="147" gid="6" x="4577.53" y="190.136" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="148" gid="6" x="4577.86" y="124.803" width="64" height="64">
+  <object id="148" gid="6" x="4577.53" y="126.076" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
@@ -437,32 +449,32 @@
     <property name="Type" value="ANIMAL"/>
    </properties>
   </object>
-  <object id="170" gid="6" x="6014.83" y="324.416" width="64" height="64">
+  <object id="170" gid="6" x="6014.83" y="320.416" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="171" gid="6" x="6015" y="450.584" width="64" height="64">
+  <object id="171" gid="6" x="6015" y="446.584" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="172" gid="6" x="6014.83" y="260.416" width="64" height="64">
+  <object id="172" gid="6" x="6014.83" y="256.416" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="173" gid="6" x="6014.83" y="197.416" width="64" height="64">
+  <object id="173" gid="6" x="6014.83" y="193.416" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="174" gid="6" x="6014.83" y="387.916" width="64" height="64">
+  <object id="174" gid="6" x="6014.83" y="383.916" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="175" gid="6" x="6014.92" y="131.417" width="64" height="64">
+  <object id="175" gid="6" x="6014.92" y="127.417" width="64" height="64">
    <properties>
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>

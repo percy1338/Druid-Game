@@ -6,17 +6,17 @@ using System.Text;
 namespace GXPEngine
 {
 	//
-	public class Destructable : AnimationSprite, IActivatable
+	public class Destructable : Sprite, IActivatable
 	{
 		private int _timer;
 		private int _health = 0;
 		private Level _level;
 
-		public Destructable(int frame, Map map, int index, Level level) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
-		{
+		public Destructable(int frame, Map map, int index, Level level) : base("Level/wall (1).png")
+
+        {
 			_level = level;
 
-			SetFrame(frame - map.tileSet.firstGid);
 			for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
 			{
 				if (map.objGroup.TiledObject[index].properties.property[i].name == "hp")
