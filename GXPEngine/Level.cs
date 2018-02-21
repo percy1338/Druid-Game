@@ -103,7 +103,11 @@ namespace GXPEngine
                             destructable.x = map.objGroup.TiledObject[i].x;
                             destructable.y = map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
                             AddChild(destructable);
+<<<<<<< HEAD
 							_collisionSprites.Add(destructable);
+=======
+                            _collisionSprites.Add(destructable);
+>>>>>>> ecb52d69610016624cbf2ee4db6540477c611220
                         }
                         if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "BUTTON")
                         {
@@ -151,6 +155,20 @@ namespace GXPEngine
                         {
                             playerSpawnX = map.objGroup.TiledObject[i].x;
                             playerSpawnY = map.objGroup.TiledObject[i].y;
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ANIMAL")
+                        {
+                            Animal animal = new Animal(map);
+                            animal.x = _map.objGroup.TiledObject[i].x;
+                            animal.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(animal);
+                        }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ARTIFACT")
+                        {
+                            Artifact artifact = new Artifact();
+                            artifact.x = _map.objGroup.TiledObject[i].x;
+                            artifact.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
+                            AddChild(artifact);
                         }
                     }
                 }
