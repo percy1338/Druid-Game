@@ -47,8 +47,6 @@ namespace GXPEngine
 		{
 			TimerProjectile();
 			ProjectileCollision();
-
-			//ProjectilePhysics();
 		}
 
 		private void ProjectileCollision()
