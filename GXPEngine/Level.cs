@@ -99,10 +99,11 @@ namespace GXPEngine
                         }
                         if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "DESTRUCTABLE")
                         {
-                            Destructable destructable = new Destructable(_map.objGroup.TiledObject[i].gid, map, i);
+                            Destructable destructable = new Destructable(_map.objGroup.TiledObject[i].gid, map, i, this);
                             destructable.x = map.objGroup.TiledObject[i].x;
                             destructable.y = map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
                             AddChild(destructable);
+							_collisionSprites.Add(destructable);
                         }
                         if (_map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "BUTTON")
                         {

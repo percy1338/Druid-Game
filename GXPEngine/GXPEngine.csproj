@@ -84,6 +84,7 @@
     <Compile Include="Vec2.cs" />
     <Compile Include="Projectile.cs" />
     <Compile Include="YesZone.cs" />
+    <Compile Include="BearAttack.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>

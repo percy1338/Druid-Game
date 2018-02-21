@@ -16,7 +16,6 @@ namespace GXPEngine
 		{
 			_velocity = Vec2.zero;
 			_position = Vec2.zero;
-
 			_player = player;
 
 			if (player._velocity.x < 0 || _lastLeft == true)
@@ -42,11 +41,13 @@ namespace GXPEngine
 			this.SetOrigin(width / 2, height);
 			_velocity.x = _speed;
 			_velocity.y = 1;
+
 		}
 		public void Update()
 		{
 			TimerProjectile();
 			ProjectileCollision();
+
 		}
 
 		private void ProjectileCollision()

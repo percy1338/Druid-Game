@@ -144,7 +144,6 @@ namespace GXPEngine
 			if (other is IActivatable)
 			{
 				(other as IActivatable).Activateble(_player);
-				Console.WriteLine(other);
 			}
 		}
 	}

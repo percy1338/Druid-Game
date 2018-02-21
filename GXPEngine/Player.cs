@@ -248,10 +248,6 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 				}
-				if (Input.GetKey(Key.SPACE))
-				{
-					//dash
-				}
 			}
 		}
 
@@ -275,9 +271,10 @@ namespace GXPEngine
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 				}
 
-				if (Input.GetKey(Key.SPACE))
+				if (Input.GetKeyDown(Key.SPACE))
 				{
-					//Slash in front of itself
+					BearAttack attack = new BearAttack(this);
+					_level.AddChild(attack);
 				}
 
 			}
