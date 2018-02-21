@@ -45,8 +45,11 @@ namespace GXPEngine
 
 		private Map _map;
 
-		public Player(Map map, Level level) : base("Sprites/Testsheet.png", 4, 1, -1)
+		public Player(Map map, Level level, float SpawnX, float SpawnY) : base("Sprites/Testsheet.png", 4, 1, -1)
 		{
+            this.x = SpawnX;
+            this.y = SpawnY;
+
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
 			_gravity = Vec2.zero;

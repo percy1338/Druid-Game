@@ -12,7 +12,6 @@ namespace GXPEngine
         {
            // this.x += map.background[0].offsetx;
           //  this.y += map.background[0].offsety;
-
         }
     }
 }

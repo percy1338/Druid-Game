@@ -19,6 +19,9 @@ namespace GXPEngine
         private int _screenWidth;
         private int _screenHeight;
 
+        float playerSpawnX;
+        float playerSpawnY;
+
 		public Level(MyGame mygame, int width, int height) : base()
 		{
             _mygame = mygame;
@@ -46,8 +49,14 @@ namespace GXPEngine
 			///////////background
 			if (_map.background != null)
 			{
-				Background background = new Background(map);
-				AddChild(background);
+                for(int i = 0; i < map.background.Length; i++)
+                {
+                    if(map.background[i].name == "backgroundlayer")
+                    {
+                        Background background = new Background(map);
+                        AddChild(background);
+                    }
+                }
 			}
 
 			/////// tiles
@@ -129,11 +138,18 @@ namespace GXPEngine
                             thornes.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
                             AddChild(thornes);
                         }
+                        if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "SPAWN")
+                        {
+                            playerSpawnX = map.objGroup.TiledObject[i].x;
+                            playerSpawnY = map.objGroup.TiledObject[i].y;
+                        }
                     }
                 }
 			}
             //////////////////////player
-            _player = new Player(_map, this);
+            _player = new Player(_map, this,playerSpawnX,playerSpawnY);
+
+
             AddChild(_player);
 
             ///////// foreground
@@ -147,8 +163,6 @@ namespace GXPEngine
                         AddChild(foreground);
                     }
                 }
-				//ForeGround foreground = new ForeGround(map);
-				//AddChild(foreground);
 			}
 		}
 

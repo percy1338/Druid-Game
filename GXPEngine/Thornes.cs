@@ -14,8 +14,8 @@ namespace GXPEngine
         {
             SetFrame(frame - map.tileSet.firstGid);
 
-            this.width = int.Parse(map.objGroup.TiledObject[index].width.ToString());
-            this.height = int.Parse(map.objGroup.TiledObject[index].height.ToString());
+            this.width = (int)map.objGroup.TiledObject[index].width;
+            this.height = (int)map.objGroup.TiledObject[index].height;
 
             for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
             {
@@ -24,6 +24,8 @@ namespace GXPEngine
                     _dmg = int.Parse(map.objGroup.TiledObject[index].properties.property[i].value);
                 }
             }
+
+            this.alpha = 0.5f;
         }
 
         public void Activateble(Player player)

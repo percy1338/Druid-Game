@@ -1,28 +1,31 @@
 ﻿using System;
+
 namespace GXPEngine
 {
-    public class Bullet : Sprite
+    public class EnemyBullet : Sprite
     {
-        //private Sound _playerHit = new Sound();
-		//
-
         private float _speed = 15;
         private float _velocityX, _velocityY;
         private float _lifetime = 120;
- 
+        private bool _shootleft;
 
-        public Bullet(float x, float y, float velocityX, float velocityY) : base("Sprites/Color.png")
+        public EnemyBullet(float x, float y, bool shootleft) : base("Sprites/colors.png")
         {
             this.x = x;
             this.y = y;
-            _velocityX = velocityX * _speed;
-            _velocityY = velocityY * _speed;
+            _shootleft = shootleft;
         }
 
-        void Update()
+        public void Update()
         {
-            x += _velocityX;
-            y += _velocityY;
+            if(_shootleft)
+            {
+                this.x -= 5;
+            }
+            else
+            {
+                this.x += 5;
+            }
 
             GameObject[] others = GetCollisions();//get all objects player is coliding with and puts it in a list
             foreach (GameObject other in others)
