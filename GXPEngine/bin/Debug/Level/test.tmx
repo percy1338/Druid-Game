@@ -6,6 +6,9 @@
  <tileset firstgid="7" name="walking lvl test" tilewidth="64" tileheight="64" tilecount="5845" columns="167">
   <image source="walking lvl test.png" width="10746" height="2265"/>
  </tileset>
+ <imagelayer name="scrollingbackgroundlayer" offsetx="75.7576" offsety="24.2424">
+  <image source="background1.jpg" width="2257" height="2265"/>
+ </imagelayer>
  <imagelayer name="backgroundlayer" offsetx="74.6666" offsety="18.6667">
   <image source="main layer.png" width="11278" height="2265"/>
  </imagelayer>
