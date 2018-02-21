@@ -26,7 +26,7 @@ namespace GXPEngine
                 }
             }
 
-            this.alpha = 0.5f;
+            this.alpha = 0f;
             if (_cooldown >= 0)
             {
                 _cooldown--;
