@@ -8,10 +8,10 @@ namespace GXPEngine
     public class Enemy2 : AnimationSprite
     {
         //
-        private Sound _backgroundMusic = new Sound("audio/223611__ctcollab__fire-ball-release.wav.mp3", false, true);
+        private Sound _backgroundMusic = new Sound("audio/223611__ctcollab__fire-ball-release.wav", false, true);
         private SoundChannel _backgroundChanel;
 
-        private float _range = 300;
+        private float _range = 600;
         private float _cooldown = 60;
         private int _dmg;
         private bool _shootLeft;
@@ -61,15 +61,22 @@ namespace GXPEngine
 
         void ShootPlayer()
         {
+          //  float deltaX = _player.position.x - this.x;
+          //  float deltaY = _player.position.y - this.y;
+          //  float length = Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY);
+          //  if(length <= _range)
+          //  {
                 if (_cooldown <= 0)
                 {
-                    bullet = new EnemyBullet(this.x,this.y, _shootLeft);
-                _backgroundChanel = _backgroundMusic.Play();
-                _backgroundChanel.Volume = 0.5f;
-                parent.AddChild(bullet);
-                    
+                    bullet = new EnemyBullet(this.x, this.y, _shootLeft);
+                    _backgroundChanel = _backgroundMusic.Play();
+                    _backgroundChanel.Volume = 0.2f;
+                    parent.AddChild(bullet);
+
                     _cooldown = 120;
                 }
+           // }
+
         }
     }
 }

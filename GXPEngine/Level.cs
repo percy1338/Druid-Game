@@ -38,7 +38,7 @@ namespace GXPEngine
 			_lvl = this;
 
             _backgroundChanel = _backgroundMusic.Play();
-            _backgroundChanel.Volume = 0.5f;
+            _backgroundChanel.Volume = 0.3f;
         }
 
         public void Update()
