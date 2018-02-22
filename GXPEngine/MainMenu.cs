@@ -7,6 +7,9 @@ namespace GXPEngine
 {
     public class MainMenu : Sprite
     {
+        private Sound _backgroundMusic = new Sound("audio/Realm-of-Fantasy.mp3", true, true);
+        private SoundChannel _backgroundChanel;
+
         private Sprite _startButton = new Sprite("HUD/start.png");
         private Sprite _infoButton = new Sprite("HUD/info.png");
         private Sprite _quitButton = new Sprite("HUD/quit.png");
@@ -15,6 +18,9 @@ namespace GXPEngine
 
         public MainMenu(MyGame mygame) : base("HUD/menu.png")
         {
+            _backgroundChanel = _backgroundMusic.Play();
+            _backgroundChanel.Volume = 0.5f;
+
             _mygame = mygame;
 
             this.width = game.width;
@@ -89,6 +95,7 @@ namespace GXPEngine
         private void StartGame()
         {
             _mygame.generateLevel();
+            _backgroundChanel.Stop();
             Destroy();
         }
     }
