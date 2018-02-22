@@ -391,6 +391,7 @@ namespace GXPEngine
 		{
 			_health -= damage;
 			checkHP();
+            
 		}
 
 		private void checkHP()

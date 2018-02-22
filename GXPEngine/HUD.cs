@@ -5,46 +5,30 @@ using System.Text;
 
 namespace GXPEngine
 {
-    public class HUD :Sprite
+    public class HUD :AnimationSprite
     {
         private Level _level;
+        private Player _player;
         private int offsetx = -50;
         private int offsety = -100;
 
-        public HUD(Level level) : base("HUD/HUD (1).png")
-        {
-            _level = level;
-            this.scale = 0.30f;
-            this.x = offsetx;
-            this.y = offsety;
-
-            Healthbar healthbar = new Healthbar(this);
-            AddChild(healthbar);
-        }
-
-        public void Update()
-        {
-            this.x = -_level.x + offsetx;
-            this.y = -_level.y + offsety;
-        }
-    }
-
-    public class Healthbar : AnimationSprite
-    {
         private int _step;
         private int _animDrawsBetweenFrames = 5;
         private int _maxFramesInAnim = 2;
         public bool TakeDamage = false;
 
-        private HUD _hud;
-        public Healthbar(HUD hud) : base("HUD/HUD Bar.png",1,1,-1)
+        public HUD(Level level, Player player) : base("HUD/HUD HP.png",1,3,-1)
         {
-            _hud = hud;
+            _player = player;
+            _level = level;
+            this.scale = 0.30f;
+            Healthbar healthbar = new Healthbar(this, _player);
+            AddChild(healthbar);
         }
 
         public void Update()
         {
-            if(TakeDamage)
+            if (TakeDamage)
             {
                 _step = _step + 1;
                 if (_step > _animDrawsBetweenFrames)
@@ -54,11 +38,28 @@ namespace GXPEngine
 
                     if (currentFrame > _maxFramesInAnim)
                     {
-                        //gameover
+                        GameOver go = new GameOver();
+                        game.AddChild(go);
                     }
                 }
                 TakeDamage = false;
             }
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    public class Healthbar : Sprite
+    {
+        private HUD _hud;
+        private Player _player;
+
+        public Healthbar(HUD hud, Player player) : base("HUD/Human.png")
+        {
+            _player = player;
+            _hud = hud;
+
+           // this.x -= this.width;
+           // this.y += this.height * 0.5f;
+
         }
     }
 }

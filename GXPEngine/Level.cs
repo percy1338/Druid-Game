@@ -189,7 +189,7 @@ namespace GXPEngine
 			}
 
             //////////////HUD
-            _hud = new HUD(this);
+            _hud = new HUD(this, _player);
             AddChild(_hud);
 		}
 
