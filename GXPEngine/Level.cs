@@ -8,7 +8,10 @@ namespace GXPEngine
 	//
 	public class Level : GameObject
 	{
-		List<GameObject> children = new List<GameObject>();
+        private Sound _backgroundMusic = new Sound("audio/Gentle-Closure.mp3", true, true);
+        private SoundChannel _backgroundChanel;
+
+        List<GameObject> children = new List<GameObject>();
 		public List<GameObject> _collisionSprites = new List<GameObject>();
 
 		private static Level _lvl;
@@ -33,7 +36,10 @@ namespace GXPEngine
             _screenWidth = width;
 
 			_lvl = this;
-		}
+
+            _backgroundChanel = _backgroundMusic.Play();
+            _backgroundChanel.Volume = 0.5f;
+        }
 
         public void Update()
         {
