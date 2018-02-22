@@ -8,6 +8,8 @@ namespace GXPEngine
     public class MainMenu : Sprite
     {
         private Sprite _startButton = new Sprite("HUD/start.png");
+        private Sprite _infoButton = new Sprite("HUD/info.png");
+        private Sprite _quitButton = new Sprite("HUD/quit.png");
         private MyGame _mygame;
 
         private int _width = 1600;
@@ -19,10 +21,18 @@ namespace GXPEngine
             this.width = game.width;
             this.height = game.height;
 
-            _startButton.x = game.width * 0.5f - (_startButton.width * 0.5f);
-            _startButton.y = game.height * 0.5f - (_startButton.height * 0.25f);
+            _startButton.x = game.width * 0.55f;
+            _startButton.y = _height * 0.75f;
+
+            _infoButton.x = game.width * 0.55f;
+            _infoButton.y = _height * 0.85f;
+
+            _quitButton.x = game.width * 0.55f;
+            _quitButton.y = _height * 0.95f;
 
             AddChild(_startButton);
+            AddChild(_infoButton);
+            AddChild(_quitButton);
         }
 
         public void Update()
@@ -36,15 +46,22 @@ namespace GXPEngine
                 {
                     StartGame();
                 }
+                if (_quitButton.HitTestPoint(Input.mouseX, Input.mouseY))
+                {
+                    game.Destroy();
+                }
+                if (_infoButton.HitTestPoint(Input.mouseX, Input.mouseY))
+                {
+                    WinScreen win = new WinScreen();
+                    game.AddChild(win);
+                    this.Destroy();
+                }
             }
         }
 
         private void StartGame()
         {
-           // Level level = new Level((MyGame)this.parent, _width, _height);
-           // game.AddChild(level);
             _mygame.generateLevel();
-
             Destroy();
         }
     }
@@ -53,14 +70,16 @@ namespace GXPEngine
     {
         public GameOver() : base("HUD/gameover.png")
         {
-
+            this.width = game.width;
+            this.height = game.height;
         }
     }
     public class WinScreen : Sprite
     {
         public WinScreen() : base("HUD/winscreen.png")
         {
-
+            this.width = game.width;
+            this.height = game.height;
         }
     }
 
@@ -68,7 +87,8 @@ namespace GXPEngine
     {
         public InfoScreen() : base("HUD/info page.png")
         {
-
+            this.width = game.width;
+            this.height = game.height;
         }
     }
 
