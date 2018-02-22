@@ -14,7 +14,9 @@ namespace GXPEngine
 
         public void Activateble(Player player)
         {
-            // victory screen n shit
+            WinScreen win = new WinScreen();
+            game.AddChild(win);
+
             this.Destroy();
         }
     }
