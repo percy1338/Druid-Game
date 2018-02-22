@@ -16,7 +16,7 @@ public class MyGame : Game
 
     private string _level = "Level/test.tmx";
 
-    public MyGame() : base(1600, 900, false)
+    public MyGame() : base(1600, 900, false, false)
     {
         MainMenu menu = new MainMenu(this);
         AddChild(menu);
