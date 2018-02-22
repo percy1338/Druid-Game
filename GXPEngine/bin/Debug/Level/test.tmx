@@ -246,7 +246,7 @@
     <property name="damage" type="int" value="10"/>
    </properties>
   </object>
-  <object id="129" gid="6" x="3946.18" y="352.181" width="64" height="64">
+  <object id="129" gid="6" x="158.182" y="236.181" width="64" height="64">
    <properties>
     <property name="Type" value="SPAWN"/>
    </properties>
