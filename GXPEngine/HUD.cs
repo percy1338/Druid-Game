@@ -22,12 +22,17 @@ namespace GXPEngine
             _player = player;
             _level = level;
             this.scale = 0.30f;
-            Healthbar healthbar = new Healthbar(this, _player);
-            AddChild(healthbar);
+            FormUI fui = new FormUI(this, _player);
+            AddChild(fui);
         }
 
         public void Update()
         {
+            if(_player.GetHP() == 0.0f)
+            {
+
+            }
+
             if (TakeDamage)
             {
                 _step = _step + 1;
@@ -47,19 +52,38 @@ namespace GXPEngine
         }
     }
     ///////////////////////////////////////////////////////////////////////////
-    public class Healthbar : Sprite
+    public class FormUI : Sprite
     {
         private HUD _hud;
         private Player _player;
 
-        public Healthbar(HUD hud, Player player) : base("HUD/Human.png")
+        public FormUI(HUD hud, Player player) : base("HUD/Human.png")
         {
             _player = player;
             _hud = hud;
 
-           // this.x -= this.width;
-           // this.y += this.height * 0.5f;
+            this.x += 20;
+            this.y += 110;
+        }
 
+        public void Update()
+        {
+            if(_player.GetShape() == Player.Shape.Snake)
+            {
+                this.texture.Load("HUD/Snake.png");
+            }
+            if (_player.GetShape() == Player.Shape.Human)
+            {
+                this.texture.Load("HUD/Human.png");
+            }
+            if (_player.GetShape() == Player.Shape.Bird)
+            {
+                this.texture.Load("HUD/Eagle.png");
+            }
+            if (_player.GetShape() == Player.Shape.Bear)
+            {
+                this.texture.Load("HUD/Bear.png");
+            }
         }
     }
 }

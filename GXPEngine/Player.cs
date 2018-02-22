@@ -402,6 +402,11 @@ namespace GXPEngine
 			}
 		}
 
+        public float GetHP()
+        {
+            return _health;
+        }
+
 
 
 
