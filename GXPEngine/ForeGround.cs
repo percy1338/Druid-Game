@@ -13,8 +13,8 @@ namespace GXPEngine
         {
             _index = i;
 
-            this.x = map.background[_index].offsetx;
-            this.y = map.background[_index].offsety;
+            //this.x = map.background[_index].offsetx;
+           // this.y = map.background[_index].offsety;
         }
     }
 }

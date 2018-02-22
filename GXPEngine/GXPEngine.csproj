@@ -49,6 +49,7 @@
     <Compile Include="HUD.cs" />
     <Compile Include="IActivatable.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />

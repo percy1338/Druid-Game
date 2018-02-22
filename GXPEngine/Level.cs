@@ -15,6 +15,7 @@ namespace GXPEngine
         private MyGame _mygame;
         private Player _player;
         private Map _map;
+        private HUD _hud;
 
         private int _screenWidth;
         private int _screenHeight;
@@ -188,8 +189,8 @@ namespace GXPEngine
 			}
 
             //////////////HUD
-            HUD hud = new HUD();
-            AddChild(hud);
+            _hud = new HUD(this);
+            AddChild(_hud);
 		}
 
 		public GameObject CheckCollision(GameObject other)
@@ -214,6 +215,8 @@ namespace GXPEngine
             {
                 this.y = -_player._hitbox.y + this._screenHeight * 0.5f;
             }
+
+            Console.WriteLine(this.x);
         }
 
         public static Level Return()
