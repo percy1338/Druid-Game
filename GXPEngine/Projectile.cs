@@ -3,7 +3,10 @@ namespace GXPEngine
 {
 	public class Projectile : Sprite
 	{
-		public Vec2 _position;
+        private Sound _backgroundMusic = new Sound("audio/223611__ctcollab__fire-ball-release.wav", false, true);
+        private SoundChannel _backgroundChanel;
+
+        public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
 		private Player _player;
@@ -89,7 +92,9 @@ namespace GXPEngine
 
 			if (TiledObject != null)
 			{
-				directionY = _velocity.y > 0 ? 1 : -1;
+                _backgroundChanel = _backgroundMusic.Play();
+                _backgroundChanel.Volume = 2.1f;
+                directionY = _velocity.y > 0 ? 1 : -1;
 
 				if (directionY == 1)
 				{
@@ -120,7 +125,7 @@ namespace GXPEngine
 		private void TimerProjectile()
 		{
 			_timer++;
-			if (_timer > 240)
+			if (_timer > 120)
 			{
 				this.Destroy();
 			}
