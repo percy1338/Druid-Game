@@ -46,6 +46,7 @@
     <Compile Include="EnemyBullet.cs" />
     <Compile Include="ForeGround.cs" />
     <Compile Include="Hitbox.cs" />
+    <Compile Include="HUD.cs" />
     <Compile Include="IActivatable.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MyGame.cs" />

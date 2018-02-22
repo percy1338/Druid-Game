@@ -186,6 +186,10 @@ namespace GXPEngine
                     }
                 }
 			}
+
+            //////////////HUD
+            HUD hud = new HUD();
+            AddChild(hud);
 		}
 
 		public GameObject CheckCollision(GameObject other)
