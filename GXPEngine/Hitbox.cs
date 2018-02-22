@@ -16,7 +16,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 0;
+			this.alpha = 1;
 			playerOnShapeEvent(Player.Shape.Human);
 
 			_player.position.x = spawnX;
@@ -35,7 +35,7 @@ namespace GXPEngine
 
 			if (shape == Player.Shape.Human)
 			{
-				this.SetScaleXY(1, 1.5f);
+				this.SetScaleXY(0.75f, 1.75f);
 			}
 
 			if (shape == Player.Shape.Bird)
@@ -45,12 +45,12 @@ namespace GXPEngine
 
 			if (shape == Player.Shape.Snake)
 			{
-				this.SetScaleXY(1f, 1f);
+				this.SetScaleXY(1f, 0.7f);
 			}
 
 			if (shape == Player.Shape.Bear)
 			{
-				this.SetScaleXY(2, 2);
+				this.SetScaleXY(2.5f, 2.25f);
 			}
 
 			if (shape == Player.Shape.Bear && _hitRight == true)
@@ -85,14 +85,14 @@ namespace GXPEngine
 					_player._position.x = TiledObject.x - width / 2;
 					_player._velocity.x = 0.0000000000001f; //PRO-CODE ONLY PLZ DON'T COPY THIS. ITS MINE AND MINE ONLY.
 					_hitRight = true;
-					Console.WriteLine("hitright");
+					//Console.WriteLine("hitright");
 				}
 
 				if (direction == 1)
 				{
 					_player._position.x = TiledObject.x + 64 + width / 2;
 					_player._velocity.x = 0;
-					Console.WriteLine("hitleft");
+					//Console.WriteLine("hitleft");
 				}
 
 			}
@@ -120,13 +120,13 @@ namespace GXPEngine
 					_player.position.y = TiledObject.y;
 					_player._landed = true;
 					_player._landedBird = true;
-					Console.WriteLine("on the floor");
+					//Console.WriteLine("on the floor");
 				}
 
 				if (direction == -1)
 				{
 					_player.position.y = TiledObject.y + height + 64;
-					Console.WriteLine("on the roof");
+					//Console.WriteLine("on the roof");
 				}
 
 				_player._velocity.y = 0;
