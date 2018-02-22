@@ -9,6 +9,7 @@ namespace GXPEngine
     {
         private Sound _backgroundMusic = new Sound("audio/332629__treasuresounds__item-pickup.ogg", false, true);
         private SoundChannel _backgroundChanel;
+        private bool audioPlayed = false;
 
         private int _step;
         private int _animDrawsBetweenFrames = 5;
@@ -26,8 +27,14 @@ namespace GXPEngine
 
         public void Activateble(Player player)
         {
-            _backgroundChanel = _backgroundMusic.Play();
-            _backgroundChanel.Volume = 0.5f;
+            if(!audioPlayed)
+            {
+                _backgroundChanel = _backgroundMusic.Play();
+                _backgroundChanel.Volume = 0.5f;
+                audioPlayed = true;
+            }
+
+
             playAnim = true;
         }
 

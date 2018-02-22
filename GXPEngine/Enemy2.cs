@@ -7,7 +7,10 @@ namespace GXPEngine
 {
     public class Enemy2 : AnimationSprite
     {
-		//
+        //
+        private Sound _backgroundMusic = new Sound("audio/223611__ctcollab__fire-ball-release.wav.mp3", false, true);
+        private SoundChannel _backgroundChanel;
+
         private float _range = 300;
         private float _cooldown = 60;
         private int _dmg;
@@ -61,7 +64,9 @@ namespace GXPEngine
                 if (_cooldown <= 0)
                 {
                     bullet = new EnemyBullet(this.x,this.y, _shootLeft);
-                    parent.AddChild(bullet);
+                _backgroundChanel = _backgroundMusic.Play();
+                _backgroundChanel.Volume = 0.5f;
+                parent.AddChild(bullet);
                     
                     _cooldown = 120;
                 }

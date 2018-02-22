@@ -8,7 +8,7 @@ namespace GXPEngine
 	//
 	public class Level : GameObject
 	{
-        private Sound _backgroundMusic = new Sound("audio/Gentle-Closure.mp3", true, true);
+        private Sound _backgroundMusic = new Sound("audio/Gentle-Closure_Editeroni.mp3", true, true);
         private SoundChannel _backgroundChanel;
 
         List<GameObject> children = new List<GameObject>();
@@ -221,6 +221,7 @@ namespace GXPEngine
             if (_player._hitbox.y >= this._screenHeight * 0.5f && _player._hitbox.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5f)
             {
                 this.y = -_player._hitbox.y + this._screenHeight * 0.5f;
+                _hud.y = +_player._hitbox.y - this._screenHeight * 0.5f;
             }
 
             Console.WriteLine(this.x);

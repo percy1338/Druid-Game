@@ -7,9 +7,12 @@ namespace GXPEngine
 {
 	public class Player : AnimSprite
 	{
+        // audio
+        private Sound _backgroundMusic = new Sound("audio/394671__mattleschuck__magic-twinkle.wav", false, true);
+        private SoundChannel _backgroundChanel;
 
-		//vec2 fields.
-		public Vec2 _position;
+        //vec2 fields.
+        public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
 		public Hitbox _hitbox;
@@ -229,7 +232,9 @@ namespace GXPEngine
 				if ((Input.GetKeyDown(Key.SPACE)) && _cooldown == 0)
 				{
 					Projectile fireball = new Projectile(this);
-					_level.AddChild(fireball);
+                    _backgroundChanel = _backgroundMusic.Play();
+                    _backgroundChanel.Volume = 0.5f;
+                    _level.AddChild(fireball);
 
 					_cooldown = 120;
 

@@ -87,6 +87,10 @@ namespace GXPEngine
                 {
                     InfoScreen info = new InfoScreen(_mygame);
                     game.AddChild(info);
+
+                    _backgroundChanel.Stop();
+                    _backgroundMusic = null;
+                    _backgroundChanel = null;
                     this.Destroy();
                 }
             }
@@ -96,6 +100,8 @@ namespace GXPEngine
         {
             _mygame.generateLevel();
             _backgroundChanel.Stop();
+            _backgroundMusic = null;
+            _backgroundChanel = null;
             Destroy();
         }
     }
@@ -119,6 +125,9 @@ namespace GXPEngine
 
     public class InfoScreen : Sprite
     {
+        private Sound _backgroundMusic = new Sound("audio/Realm-of-Fantasy.mp3", true, true);
+        private SoundChannel _backgroundChanel;
+
         private Sprite _startButton = new Sprite("HUD/start.png");
         private Sprite _quitButton = new Sprite("HUD/quit.png");
 
@@ -129,6 +138,9 @@ namespace GXPEngine
 
         public InfoScreen(MyGame mygame) : base("HUD/info page.png")
         {
+            _backgroundChanel = _backgroundMusic.Play();
+            _backgroundChanel.Volume = 0.5f;
+
             _mygame = mygame;
             this.width = game.width;
             this.height = game.height;
@@ -179,10 +191,14 @@ namespace GXPEngine
                 }
             }
         }
+
         private void StartGame()
         {
             _mygame.generateLevel();
-            Destroy();
+            _backgroundChanel.Stop();
+            _backgroundMusic = null;
+            _backgroundChanel = null;
+            this.Destroy();
         }
     }
 }
