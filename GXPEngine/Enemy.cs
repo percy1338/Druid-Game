@@ -12,16 +12,14 @@ namespace GXPEngine
         private float _speedY;
         private float _dmg;
         private bool _turn = false;
-
-        private Player _player;
-
         private int _step;
-        private int _animDrawsBetweenFrames = 5;
-        int _maxFramesInAnim = 1;
+        private int _animDrawsBetweenFrames = 10;
 
-        public Enemy(int frame, Map map, int index) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
+        public Enemy(int frame, Map map, int index) : base("sprites/EnemySprite.png", 3, 1, -1)
 		{
-            SetFrame(frame - map.tileSet.firstGid);
+			this.SetOrigin(width / 2, height / 2 + 28);
+			this.SetScaleXY(1.75f, 1.75f);
+			SetFrame(0);
             for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
             {
                 if (map.objGroup.TiledObject[index].properties.property[i].name == "damage")
@@ -39,9 +37,9 @@ namespace GXPEngine
                 NextFrame();
                 _step = 0;
 
-                if (currentFrame > _maxFramesInAnim)
+                if (currentFrame == 2)
                 {
-                    SetFrame(-1);
+                    SetFrame(0);
                 }
                 movement();
             }
@@ -59,13 +57,10 @@ namespace GXPEngine
             {
                 _speedX = 5;
             }
-            this.y += _speedY;
-            checkCollision(0, _speedY);
         }
 
         public void Death()
-        {
-            SetFrame(2);
+		{
             this.Destroy();
         }
 

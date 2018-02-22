@@ -123,7 +123,7 @@ namespace GXPEngine
 				currentShape = Shape.Human;
 
 				//sizes:
-				this.SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1.75f, 1.75f);
 				SetFrame(35);
 
 				//values:
@@ -140,6 +140,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(16);
+                SetScaleXY(1.75f, 1.75f);
 
 				//values:
 				_weight = 0.5f;
@@ -155,6 +156,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(23);
+                SetScaleXY(1.75f, 1.75f);
 
 				//values:
 				_weight = 0.25f;
@@ -170,6 +172,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(0);
+				SetScaleXY(1, 1);
 
 				//values:
 				_weight = 1.5f;

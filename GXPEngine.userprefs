@@ -4,12 +4,14 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GXPEngine\Enemy.cs">
     <Files>
       <File FileName="GXPEngine\Projectile.cs" Line="55" Column="4" />
-      <File FileName="GXPEngine\Player.cs" Line="304" Column="31" />
-      <File FileName="GXPEngine\Hitbox.cs" Line="19" Column="18" />
-      <File FileName="GXPEngine\Level.cs" Line="191" Column="31" />
+      <File FileName="GXPEngine\Player.cs" Line="139" Column="31" />
+      <File FileName="GXPEngine\Enemy.cs" Line="21" Column="34" />
+      <File FileName="GXPEngine\Enemy2.cs" Line="1" Column="1" />
+      <File FileName="GXPEngine\Hitbox.cs" Line="38" Column="32" />
+      <File FileName="GXPEngine\Level.cs" Line="191" Column="30" />
       <File FileName="GXPEngine\HUD.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
