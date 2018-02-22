@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="176" height="176" tilewidth="64" tileheight="64" nextobjectid="228">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="176" height="176" tilewidth="64" tileheight="64" nextobjectid="229">
  <tileset firstgid="1" name="testSheet" tilewidth="64" tileheight="64" tilecount="6" columns="6">
   <image source="testSheet.png" width="384" height="64"/>
  </tileset>
@@ -220,12 +220,6 @@
     <property name="damage" type="int" value="5"/>
    </properties>
   </object>
-  <object id="104" gid="3" x="3293.33" y="327.334" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
   <object id="108" gid="2" x="1537.34" y="386.635" width="62" height="63.3333">
    <properties>
     <property name="Type" value="NOTRANSZONE"/>
@@ -252,7 +246,7 @@
     <property name="damage" type="int" value="10"/>
    </properties>
   </object>
-  <object id="129" gid="6" x="3958.18" y="310.848" width="64" height="64">
+  <object id="129" gid="6" x="158.182" y="236.181" width="64" height="64">
    <properties>
     <property name="Type" value="SPAWN"/>
    </properties>
@@ -275,24 +269,19 @@
     <property name="damage" type="int" value="5"/>
    </properties>
   </object>
-  <object id="135" gid="2" x="4814.67" y="449.333" width="62" height="63.3333">
+  <object id="135" gid="2" x="4798.17" y="449.083" width="50.25" height="63.3333">
    <properties>
     <property name="Type" value="NOTRANSZONE"/>
    </properties>
   </object>
-  <object id="136" gid="5" x="4714.67" y="450.667" width="64" height="64">
+  <object id="136" gid="5" x="4671.92" y="446.417" width="64" height="64">
    <properties>
     <property name="Type" value="TRANSZONE"/>
    </properties>
   </object>
-  <object id="137" gid="5" x="4978.67" y="450.667" width="64" height="64">
+  <object id="137" gid="5" x="5010.17" y="448.167" width="103.5" height="64">
    <properties>
     <property name="Type" value="TRANSZONE"/>
-   </properties>
-  </object>
-  <object id="138" gid="2" x="4854.33" y="451" width="62" height="63.3333">
-   <properties>
-    <property name="Type" value="NOTRANSZONE"/>
    </properties>
   </object>
   <object id="139" gid="2" x="6342" y="1729.94" width="62" height="63.3333">
@@ -393,24 +382,6 @@
   <object id="161" gid="5" x="9422" y="1986.67" width="64" height="64">
    <properties>
     <property name="Type" value="TRANSZONE"/>
-   </properties>
-  </object>
-  <object id="162" gid="3" x="3608" y="192" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="163" gid="3" x="2970.67" y="270.667" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="164" gid="3" x="2109.33" y="294.667" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
    </properties>
   </object>
   <object id="166" gid="2" x="6848" y="1727.5" width="64" height="64">
@@ -585,176 +556,13 @@
     <property name="Type" value="DESTRUCTABLE"/>
    </properties>
   </object>
-  <object id="200" gid="3" x="4537.7" y="355.879" width="64" height="64">
+  <object id="228" gid="2" x="4872.38" y="447.833" width="50.25" height="63.3333">
    <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="201" gid="3" x="5371.03" y="343.758" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="202" gid="3" x="6916.48" y="449.818" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="203" gid="3" x="6910.42" y="574.061" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="204" gid="3" x="6913.45" y="704.364" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="205" gid="3" x="6913.45" y="319.515" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="206" gid="3" x="6922.55" y="831.636" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="207" gid="3" x="7549.82" y="1283.15" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="208" gid="3" x="9792.24" y="1855.88" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="209" gid="3" x="10846.8" y="1498.3" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="210" gid="3" x="10846.8" y="1313.45" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="211" gid="3" x="10843.8" y="1119.52" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="212" gid="3" x="10846.8" y="928.606" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="213" gid="3" x="10846.8" y="743.758" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="214" gid="3" x="10846.8" y="549.818" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="215" gid="3" x="10586.2" y="416.485" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="216" gid="3" x="10401.3" y="419.515" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="217" gid="3" x="9946.79" y="604.364" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="218" gid="3" x="9443.76" y="604.364" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="219" gid="3" x="8783.15" y="607.394" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="220" gid="3" x="7971.03" y="931.636" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="221" gid="3" x="7964.97" y="801.333" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="222" gid="3" x="7968" y="677.091" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="223" gid="3" x="7971.03" y="1058.91" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="224" gid="3" x="6180.12" y="1192.24" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="225" gid="3" x="6171.03" y="989.212" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="226" gid="3" x="992.242" y="349.818" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
-   </properties>
-  </object>
-  <object id="227" gid="3" x="1183.15" y="355.879" width="64" height="64">
-   <properties>
-    <property name="Type" value="PICKUP"/>
-    <property name="points" type="int" value="10"/>
+    <property name="Type" value="NOTRANSZONE"/>
    </properties>
   </object>
  </objectgroup>
  <imagelayer name="foreground layer" offsetx="168.332" offsety="-42.9996">
-  <image source="foreground (1).png" width="11278" height="2265"/>
+  <image source="foreground (2).png" width="10746" height="2265"/>
  </imagelayer>
 </map>
