@@ -3,8 +3,6 @@ using GXPEngine;
 using System.Xml.Serialization;
 using System.IO;
 
- 
-
 public class MyGame : Game
 {
 	//
@@ -20,16 +18,9 @@ public class MyGame : Game
 
     public MyGame() : base(1600, 900, false)
     {
-        //background
-
-        //tiles
-        level = new Level(this, _width, _height);
-        generateLevel();
-        // player.
-
-        //forground
-
-        //hud
+        MainMenu menu = new MainMenu(this);
+        AddChild(menu);
+        ShowMouse(true);
     }
 
     static void Main()
@@ -41,8 +32,9 @@ public class MyGame : Game
     {
     }
 
-    private void generateLevel()
+    public void generateLevel()
     {
+        level = new Level(this, _width, _height);
         ReadMap();
         ParseInnerDate();
         this.AddChild(level);
