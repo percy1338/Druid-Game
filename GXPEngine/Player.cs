@@ -7,12 +7,12 @@ namespace GXPEngine
 {
 	public class Player : AnimSprite
 	{
-        // audio
-        private Sound _backgroundMusic = new Sound("audio/394671__mattleschuck__magic-twinkle.wav", false, true);
-        private SoundChannel _backgroundChanel;
+		// audio
+		private Sound _backgroundMusic = new Sound("audio/394671__mattleschuck__magic-twinkle.wav", false, true);
+		private SoundChannel _backgroundChanel;
 
-        //vec2 fields.
-        public Vec2 _position;
+		//vec2 fields.
+		public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
 		public Hitbox _hitbox;
@@ -23,10 +23,11 @@ namespace GXPEngine
 		private float _speed;
 		private float _topSpeed;
 		private float _jump;
-		private float _health = 10;
+		private float _health = 3;
 		private int frameTimer;
 		private int idleTimer;
 		private int _cooldown;
+		private int _invincibleTimer;
 
 		private bool _attackAnimation;
 
@@ -134,6 +135,7 @@ namespace GXPEngine
 				_speed = 0.5f;
 				_topSpeed = 0f;
 				_jump = 25;
+				_attackAnimation = false;
 			}
 
 			if (shape == Shape.Bird)
@@ -143,13 +145,14 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(16);
-                SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1.75f, 1.75f);
 
 				//values:
 				_weight = 0.5f;
 				_speed = 0.5f;
 				_topSpeed = 0f;
 				_jump = 10;
+				_attackAnimation = false;
 			}
 
 			if (shape == Shape.Snake)
@@ -159,7 +162,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(23);
-                SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1.75f, 1.75f);
 
 				//values:
 				_weight = 0.25f;
@@ -189,6 +192,11 @@ namespace GXPEngine
 		{
 			_gravity.y = _weight * 0.981f;
 			_velocity.Multiply(0.95f);
+
+			if (_invincibleTimer > 0)
+			{
+				_invincibleTimer--;
+			}
 		}
 
 		private void handleInputHuman()
@@ -232,9 +240,9 @@ namespace GXPEngine
 				if ((Input.GetKeyDown(Key.SPACE)) && _cooldown == 0)
 				{
 					Projectile fireball = new Projectile(this);
-                    _backgroundChanel = _backgroundMusic.Play();
-                    _backgroundChanel.Volume = 0.5f;
-                    _level.AddChild(fireball);
+					_backgroundChanel = _backgroundMusic.Play();
+					_backgroundChanel.Volume = 0.5f;
+					_level.AddChild(fireball);
 
 					_cooldown = 120;
 
@@ -394,9 +402,13 @@ namespace GXPEngine
 
 		public void GetHit(int damage)
 		{
-			_health -= damage;
-			checkHP();
-            
+			if (_invincibleTimer == 0)
+			{
+				_health -= damage;
+                checkHP();
+				_invincibleTimer = 120;
+			}
+
 		}
 
 		private void checkHP()
@@ -407,10 +419,10 @@ namespace GXPEngine
 			}
 		}
 
-        public float GetHP()
-        {
-            return _health;
-        }
+		public float GetHP()
+		{
+			return _health;
+		}
 
 
 
