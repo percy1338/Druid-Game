@@ -12,18 +12,18 @@ namespace GXPEngine
         private float _cooldown = 60;
         private int _dmg;
         private bool _shootLeft;
-
         private int _step;
-        private int _animDrawsBetweenFrames = 5;
-        private int _maxFramesInAnim = 2;
+       
 
         EnemyBullet bullet;
         private Player _player;
         
 
-        public Enemy2(int frame, Map map, int index, Player player) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
+        public Enemy2(int frame, Map map, int index, Player player) : base("sprites/EnemySprite.png", 3, 1, -1)
         {
-            SetFrame(frame - map.tileSet.firstGid);
+            SetFrame(0);
+			SetOrigin(width / 2, height / 2);
+			SetScaleXY(1.75f, 1.75f);
             _player = player;
 
             for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
@@ -41,15 +41,15 @@ namespace GXPEngine
 
         public void Update()
         {
-            _step = _step + 1;
-            if (_step > _animDrawsBetweenFrames)
+			_step += 1;
+            if (_step > 15)
             {
                 NextFrame();
                 _step = 0;
 
-                if (currentFrame > _maxFramesInAnim)
+                if (currentFrame == 3)
                 {
-                    SetFrame(-1);
+                    SetFrame(0);
                 }
             }
             ShootPlayer();
@@ -63,7 +63,7 @@ namespace GXPEngine
                     bullet = new EnemyBullet(this.x,this.y, _shootLeft);
                     parent.AddChild(bullet);
                     
-                    _cooldown = 60;
+                    _cooldown = 120;
                 }
         }
     }

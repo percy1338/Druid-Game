@@ -49,7 +49,7 @@ namespace GXPEngine
 			Snake
 		}
 
-		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/PlayerSheet.png", 5, 9, -1)
+		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/PlayerSheet2.png", 5, 9, -1)
 		{
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
@@ -123,7 +123,7 @@ namespace GXPEngine
 				currentShape = Shape.Human;
 
 				//sizes:
-				SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1, 1);
 				SetFrame(35);
 
 				//values:
@@ -216,7 +216,7 @@ namespace GXPEngine
 				if ((!Input.GetKey(Key.A)) && (!Input.GetKey(Key.D)) && (!Input.GetKey(Key.W)) && (!Input.GetKey(Key.SPACE)) && _attackAnimation == false)
 				{
 					idleTimer++;
-					if (idleTimer > 12)
+					if (idleTimer > 10)
 					{
 						idleHuman();
 					}
@@ -318,20 +318,26 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(true, false);
-					walkAnimationBear();
+					if (_attackAnimation == false)
+					{
+						walkAnimationBear();
+					}
 				}
 
 				if (Input.GetKey(Key.D))
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(false, false);
-					walkAnimationBear();
+					if (_attackAnimation == false)
+					{
+						walkAnimationBear();
+					}
 				}
 
 				if ((!Input.GetKey(Key.D)) && (!Input.GetKey(Key.A)) && (!Input.GetKey(Key.W)) && _attackAnimation == false)
 				{
 					idleTimer++;
-					if (idleTimer > 60)
+					if (idleTimer > 10)
 					{
 						idleBear();
 					}
@@ -546,7 +552,7 @@ namespace GXPEngine
 
 			frameTimer++;
 
-			if (frameTimer > 12)
+			if (frameTimer > 6)
 			{
 				NextFrame();
 

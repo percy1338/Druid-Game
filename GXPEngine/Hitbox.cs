@@ -16,7 +16,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 1;
+			this.alpha = 0;
 			playerOnShapeEvent(Player.Shape.Human);
 
 			_player.position.x = spawnX;
@@ -50,7 +50,7 @@ namespace GXPEngine
 
 			if (shape == Player.Shape.Bear)
 			{
-				this.SetScaleXY(2.5f, 2.25f);
+				this.SetScaleXY(2, 2);
 			}
 
 			if (shape == Player.Shape.Bear && _hitRight == true)

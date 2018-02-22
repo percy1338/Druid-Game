@@ -9,7 +9,7 @@ namespace GXPEngine
         private float _lifetime = 120;
         private bool _shootleft;
 
-        public EnemyBullet(float x, float y, bool shootleft) : base("Sprites/colors.png")
+        public EnemyBullet(float x, float y, bool shootleft) : base("Sprites/EnemyProjectile.png")
         {
             this.x = x;
             this.y = y;
@@ -34,7 +34,7 @@ namespace GXPEngine
                 {
                     this.Destroy();
                 }
-                if (other is Player)// check if colliderd object is an player and if the enemy shot the bullet
+                if (other is Hitbox)// check if colliderd object is an player and if the enemy shot the bullet
                 {
                    // ((Player)other).SubtractLives();
                     this.Destroy();

@@ -9,7 +9,6 @@ namespace GXPEngine
     {
 		//
         private float _speedX = 5;
-        private float _speedY;
         private float _dmg;
         private bool _turn = false;
         private int _step;
@@ -20,6 +19,8 @@ namespace GXPEngine
 			this.SetOrigin(width / 2, height / 2 + 28);
 			this.SetScaleXY(1.75f, 1.75f);
 			SetFrame(0);
+            this.Mirror(true, false);
+
             for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
             {
                 if (map.objGroup.TiledObject[index].properties.property[i].name == "damage")
@@ -90,9 +91,7 @@ namespace GXPEngine
                 }
                 if (other is Tiles)
                 {
-                    Console.WriteLine("invisabld block hit " + mx);
                     this.x -= mx;//return to previous non coliding position
-                    this.y -= my;
                     _turn = !_turn;
                     if (mx > 0)
                     {

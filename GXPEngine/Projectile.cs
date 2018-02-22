@@ -12,7 +12,7 @@ namespace GXPEngine
 		private bool _lastLeft;
 		private int _timer;
 
-		public Projectile(Player player) : base("Sprites/checkers.png")
+		public Projectile(Player player) : base("Sprites/PlayerProjectile.png")
 		{
 			_velocity = Vec2.zero;
 			_position = Vec2.zero;
