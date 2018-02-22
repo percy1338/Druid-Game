@@ -210,6 +210,7 @@ namespace GXPEngine
             if (_player._hitbox.x >= this._screenWidth * 0.5f && _player._hitbox.x <= _map.width * _map.tileWidth - this._screenWidth*0.5)
             {
                 this.x = -_player._hitbox.x + this._screenWidth * 0.5f;
+                _hud.x = +_player._hitbox.x - this._screenWidth * 0.5f;
             }
             if (_player._hitbox.y >= this._screenHeight * 0.5f && _player._hitbox.y <= _map.height * _map.tileHeight - this._screenHeight * 0.5f)
             {
