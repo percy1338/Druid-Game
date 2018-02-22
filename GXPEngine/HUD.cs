@@ -30,24 +30,16 @@ namespace GXPEngine
         {
             if(_player.GetHP() == 0.0f)
             {
-
+                GameOver go = new GameOver();
+                game.AddChild(go);
             }
-
-            if (TakeDamage)
+            if (_player.GetHP() == 1.0f)
             {
-                _step = _step + 1;
-                if (_step > _animDrawsBetweenFrames)
-                {
-                    NextFrame();
-                    _step = 0;
-
-                    if (currentFrame > _maxFramesInAnim)
-                    {
-                        GameOver go = new GameOver();
-                        game.AddChild(go);
-                    }
-                }
-                TakeDamage = false;
+                SetFrame(2);
+            }
+            if (_player.GetHP() == 2.0f)
+            {
+                SetFrame(1);
             }
         }
     }
