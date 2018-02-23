@@ -7,7 +7,7 @@ namespace GXPEngine
 {
     public class Artifact: AnimationSprite, IActivatable
     {
-        public Artifact() : base("Sprites/Collectible(s) (64x64).png",6,1,-1)
+        public Artifact() : base("Level/Arc_4.png", 1,1,-1)
         {
             SetFrame(3);
         }
