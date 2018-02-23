@@ -9,12 +9,7 @@ namespace GXPEngine
     {
         private Level _level;
         private Player _player;
-        private int offsetx = -50;
-        private int offsety = -100;
-
-        private int _step;
-        private int _animDrawsBetweenFrames = 5;
-        private int _maxFramesInAnim = 2;
+     
         public bool TakeDamage = false;
 
         public HUD(Level level, Player player) : base("HUD/HUD HP.png",1,3,-1)

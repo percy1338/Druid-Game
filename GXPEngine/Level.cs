@@ -223,8 +223,6 @@ namespace GXPEngine
                 this.y = -_player._hitbox.y + this._screenHeight * 0.5f;
                 _hud.y = +_player._hitbox.y - this._screenHeight * 0.5f;
             }
-
-            Console.WriteLine(this.x);
         }
 
         public static Level Return()

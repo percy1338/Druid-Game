@@ -9,7 +9,6 @@ namespace GXPEngine
     public class Thornes : AnimationSprite, IActivatable
     {
         private int _dmg = 1;
-        private int _cooldown = 0;
 
         public Thornes(int frame, Map map, int index) : base("Level/" + map.tileSet.image.source, map.tileSet.columns, map.tileSet.tilecount / map.tileSet.columns, -1)
         {

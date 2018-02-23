@@ -22,23 +22,22 @@ namespace GXPEngine
 		private float _weight;
 		private float _speed;
 		private float _topSpeed;
-		private float _jump;
-		private float _health = 3;
+		private int _jump;
+		private int _health = 3;
+
+		//calculated floats.
+		public bool _landed;
+		public bool _landedBird;
+		public bool Changeable;
+		public bool left = false;
+		public bool CanTransform = true;
+
+		//values for animations.
 		private int frameTimer;
 		private int idleTimer;
 		private int _cooldown;
 		private int _invincibleTimer;
-
 		private bool _attackAnimation;
-
-		//calculated floats.
-
-		public bool _landed;
-		public bool _landedBird;
-		public bool Changeable;
-		public bool left;
-		public bool right;
-		public bool CanTransform = true;
 
 		public delegate void OnShapeEvent(Shape shape); //Event for when shapeshifting happens.
 		public event OnShapeEvent onShapeEvent; //So other classes can hook into this event.
@@ -53,7 +52,7 @@ namespace GXPEngine
 			Snake
 		}
 
-		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/PlayerSheet2.png", 5, 9, -1)
+		public Player(Level level, float SpawnX, float SpawnY) : base("Sprites/PlayerSheet.png", 5, 9, -1)
 		{
 			_position = Vec2.zero;
 			_velocity = Vec2.zero;
@@ -80,7 +79,7 @@ namespace GXPEngine
 			_hitbox.Step();
 
 			this.x = _hitbox.x;
-			this.y = _hitbox.y;
+			this.y = _hitbox.y + 12;
 
 			handlePhysics(); // handles all the physics and mechanics.
 		}
@@ -127,7 +126,7 @@ namespace GXPEngine
 				currentShape = Shape.Human;
 
 				//sizes:
-				SetScaleXY(1, 1);
+				SetScaleXY(1.5f, 1.5f);
 				SetFrame(35);
 
 				//values:
@@ -145,7 +144,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(16);
-				SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1, 1);
 
 				//values:
 				_weight = 0.5f;
@@ -162,7 +161,7 @@ namespace GXPEngine
 
 				//sizes:
 				SetFrame(23);
-				SetScaleXY(1.75f, 1.75f);
+				SetScaleXY(1, 1);
 
 				//values:
 				_weight = 0.25f;
@@ -195,7 +194,12 @@ namespace GXPEngine
 
 			if (_invincibleTimer > 0)
 			{
+				this.color = 0xff0000;
 				_invincibleTimer--;
+			}
+			else
+			{
+				this.color = 0xffffffff;
 			}
 		}
 
@@ -213,6 +217,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(true, false);
+					left = true;
 					walkAnimationHuman();
 
 				}
@@ -221,6 +226,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(false, false);
+					left = false;
 					walkAnimationHuman();
 				}
 
@@ -262,7 +268,10 @@ namespace GXPEngine
 
 				if (_attackAnimation == true)
 				{
-					HumanAttack();
+					if ((!Input.GetKey(Key.A)) && (!Input.GetKey(Key.D)))
+					{
+						HumanAttack();
+					}
 				}
 
 			}
@@ -284,6 +293,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(true, false);
+					left = true;
 					walkAnimationBird();
 				}
 
@@ -291,6 +301,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(false, false);
+					left = false;
 					walkAnimationBird();
 				}
 
@@ -305,6 +316,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(true, false);
+					left = true;
 					walkAnimationSnake();
 				}
 
@@ -312,6 +324,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(false, false);
+					left = false;
 					walkAnimationSnake();
 				}
 			}
@@ -331,6 +344,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x - _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(true, false);
+					left = true;
 					if (_attackAnimation == false)
 					{
 						walkAnimationBear();
@@ -341,6 +355,7 @@ namespace GXPEngine
 				{
 					_velocity.x = Utils.Clamp(_velocity.x + _speed, -5 - _topSpeed, 5 + _topSpeed);
 					this.Mirror(false, false);
+					left = false;
 					if (_attackAnimation == false)
 					{
 						walkAnimationBear();
@@ -405,8 +420,8 @@ namespace GXPEngine
 			if (_invincibleTimer == 0)
 			{
 				_health -= damage;
-                checkHP();
-				_invincibleTimer = 120;
+				checkHP();
+				_invincibleTimer = 60;
 			}
 
 		}
@@ -425,12 +440,7 @@ namespace GXPEngine
 		}
 
 
-
-
-		//Animations and shit.
-
-
-
+		//Animations.
 		private void walkAnimationBear()
 		{
 			if (currentFrame > 6)
@@ -586,7 +596,6 @@ namespace GXPEngine
 				frameTimer = 0;
 			}
 		}
-
 	}
 }
 

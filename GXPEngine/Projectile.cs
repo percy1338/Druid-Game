@@ -3,17 +3,13 @@ namespace GXPEngine
 {
 	public class Projectile : Sprite
 	{
-        private Sound _backgroundMusic = new Sound("audio/223611__ctcollab__fire-ball-release.wav", false, true);
-        private SoundChannel _backgroundChanel;
-
-        public Vec2 _position;
+		public Vec2 _position;
 		public Vec2 _velocity;
 		public Vec2 _gravity;
 		private Player _player;
 
 		//values
 		private float _speed;
-		private bool _lastLeft;
 		private int _timer;
 		private float _bouncinessX = 0.98f;
 		private float _bouncinessY = 0.8f;
@@ -26,24 +22,22 @@ namespace GXPEngine
 
 			_player = player;
 
-			if (player._velocity.x < 0 || _lastLeft == true)
+			if (_player.left == true)
 			{
 				this.x = _player._hitbox.x - 48;
-				this.y = _player._hitbox.y - 32;
+				this.y = _player._hitbox.y - 64;
 				_position.x += _player._hitbox.x - 48;
-				_position.y += _player._hitbox.y - 32;
+				_position.y += _player._hitbox.y - 64;
 				_speed = -10;
-				_lastLeft = true;
 			}
 
-			if (player._velocity.x > 0 || _lastLeft == false)
+			if (_player.left == false)
 			{
 				this.x = _player._hitbox.x + 48;
-				this.y = _player._hitbox.y - 32;
+				this.y = _player._hitbox.y - 64;
 				_position.x += _player._hitbox.x + 48;
-				_position.y += _player._hitbox.y - 32;
+				_position.y += _player._hitbox.y - 64;
 				_speed = 10;
-				_lastLeft = false;
 			}
 
 			this.SetOrigin(width / 2, height);
@@ -58,8 +52,10 @@ namespace GXPEngine
 			updatePosition();
 
 			_velocity.Add(_gravity);
+
 			TimerProjectile();
 			ProjectileCollision();
+			enemyCollision();
 
 		}
 
@@ -76,7 +72,6 @@ namespace GXPEngine
 
 			if (TiledObject != null)
 			{
-				Console.WriteLine("HIT");
 				_velocity.x *= -1;
 				_velocity.x *= _bouncinessX;
 
@@ -92,20 +87,16 @@ namespace GXPEngine
 
 			if (TiledObject != null)
 			{
-                _backgroundChanel = _backgroundMusic.Play();
-                _backgroundChanel.Volume = 2.1f;
-                directionY = _velocity.y > 0 ? 1 : -1;
+				directionY = _velocity.y > 0 ? 1 : -1;
 
 				if (directionY == 1)
 				{
-					Console.WriteLine("hitbot");
 					_velocity.y *= -1;
 					_velocity.y *= _bouncinessY;
 				}
 
 				if (directionY == -1)
 				{
-					Console.WriteLine("hitTop");
 					_velocity.y = 0;
 				}
 			}
@@ -113,6 +104,30 @@ namespace GXPEngine
 			y = _position.y - _velocity.y;
 
 			_position.Add(_velocity);
+		}
+
+
+		private void enemyCollision()
+		{
+			GameObject[] others = GetCollisions();//get all objects player is coliding with and puts it in a list
+			foreach (GameObject other in others)
+			{
+				if (other is Enemy)// check if colliderd object is an player and if the enemy shot the bullet
+				{
+					((Enemy)other).Hit();
+					this.Destroy();
+				}
+				if (other is Enemy2)
+				{
+					((Enemy2)other).Hit();
+					this.Destroy();
+				}
+				if (other is EnemyBullet)
+				{
+					((EnemyBullet)other).Hit();
+				}
+
+			}
 		}
 
 
