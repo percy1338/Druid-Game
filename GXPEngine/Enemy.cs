@@ -10,7 +10,7 @@ namespace GXPEngine
 		//
 		private float _speedX = -5;
 		private float _dmg;
-		private bool _turn = true;
+		private bool _turn = false;
 		private int _step;
 		private int _animDrawsBetweenFrames = 10;
 		Player _player;
