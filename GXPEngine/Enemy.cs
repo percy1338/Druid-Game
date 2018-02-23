@@ -89,25 +89,16 @@ namespace GXPEngine
                     }
                     return;
                 }
-                if (other is Tiles)
-                {
-                    this.x -= mx;//return to previous non coliding position
-                    _turn = !_turn;
-                    if (mx > 0)
-                    {
-                        if (_turn)
-                        {
-                            _speedX = 5;
-                            Mirror(false, false);
-                        }
-                    }
-                    else
-                    {
-                        Mirror(true, false);
-                    }
-                    return;
-                }
+				if (other is Hitbox)
+				{
+					((Hitbox)other).GetHit(1);
+				}
             }
         }
+
+		public void Hit()
+		{
+			this.Destroy();
+		}
     }
 }

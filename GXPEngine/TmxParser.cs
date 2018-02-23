@@ -25,8 +25,6 @@ namespace GXPEngine
             TextReader reader = new StreamReader(_level);
             map = serializer.Deserialize(reader) as Map;
             reader.Close();
-
-            Console.WriteLine(map);
         }
 
         private void ParseInnerData()

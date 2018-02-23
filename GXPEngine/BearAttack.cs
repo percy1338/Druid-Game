@@ -10,7 +10,7 @@ namespace GXPEngine
 		{
 			_player = player;
 
-			this.alpha = 0.25f;
+			this.alpha = 0;
 			this.SetScaleXY(2, 2);
 			this.SetOrigin(width / 2, height / 2);
 
@@ -35,7 +35,7 @@ namespace GXPEngine
 		{
 			_timer++;
 
-			if (_timer > 20)
+			if (_timer > 36)
 			{
 				this.Destroy();
 			}
@@ -47,6 +47,7 @@ namespace GXPEngine
 			{
 				(other as IActivatable).Activateble(_player);
 			}
+
 		}
 	}
 }

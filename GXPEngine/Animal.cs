@@ -15,7 +15,6 @@ namespace GXPEngine
         private int _animDrawsBetweenFrames = 5;
         int _maxFramesInAnim = 7;
         bool playAnim;
-        int timer;
 
         
 

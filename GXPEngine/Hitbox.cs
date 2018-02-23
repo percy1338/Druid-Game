@@ -5,7 +5,6 @@ using System.Text;
 
 namespace GXPEngine
 {
-	//
 	public class Hitbox : Sprite
 	{
 		Player _player;
@@ -16,7 +15,7 @@ namespace GXPEngine
 			_player = player;
 			player.onShapeEvent += playerOnShapeEvent;
 			this.SetOrigin(width / 2, height);
-			this.alpha = 0;
+			this.alpha = 0.00f;
 			playerOnShapeEvent(Player.Shape.Human);
 
 			_player.position.x = spawnX;
@@ -45,12 +44,12 @@ namespace GXPEngine
 
 			if (shape == Player.Shape.Snake)
 			{
-				this.SetScaleXY(1f, 0.7f);
+				this.SetScaleXY(1f, 0.5f);
 			}
 
 			if (shape == Player.Shape.Bear)
 			{
-				this.SetScaleXY(2, 2);
+				this.SetScaleXY(3, 2);
 			}
 
 			if (shape == Player.Shape.Bear && _hitRight == true)
@@ -85,14 +84,12 @@ namespace GXPEngine
 					_player._position.x = TiledObject.x - width / 2;
 					_player._velocity.x = 0.0000000000001f; //PRO-CODE ONLY PLZ DON'T COPY THIS. ITS MINE AND MINE ONLY.
 					_hitRight = true;
-					//Console.WriteLine("hitright");
 				}
 
 				if (direction == 1)
 				{
 					_player._position.x = TiledObject.x + 64 + width / 2;
 					_player._velocity.x = 0;
-					//Console.WriteLine("hitleft");
 				}
 
 			}
@@ -120,13 +117,11 @@ namespace GXPEngine
 					_player.position.y = TiledObject.y;
 					_player._landed = true;
 					_player._landedBird = true;
-					//Console.WriteLine("on the floor");
 				}
 
 				if (direction == -1)
 				{
 					_player.position.y = TiledObject.y + height + 64;
-					//Console.WriteLine("on the roof");
 				}
 
 				_player._velocity.y = 0;
@@ -136,7 +131,6 @@ namespace GXPEngine
 			else
 			{
 				_player._landedBird = false;
-				//_player._landed = false; // if we want to check collision if you land instead of jump.
 			}
 			y = _player.position.y - _player.velocity.y;
 
@@ -149,5 +143,11 @@ namespace GXPEngine
 				(other as IActivatable).Activateble(_player);
 			}
 		}
+
+		public void GetHit(int hit)
+		{
+			_player.GetHit(hit);
+		}
+
 	}
 }

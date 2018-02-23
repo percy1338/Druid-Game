@@ -30,7 +30,7 @@ namespace GXPEngine
 		{
 			_timer++;
 
-			if (_timer > 20)
+			if (_timer > 36)
 			{
 				_level._collisionSprites.Remove(this);
 				this.Destroy();
