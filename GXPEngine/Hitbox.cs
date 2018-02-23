@@ -8,6 +8,7 @@ namespace GXPEngine
 	public class Hitbox : Sprite
 	{
 		Player _player;
+		static Hitbox _hitBox;
 		private bool _hitRight;
 
 		public Hitbox(Player player, float spawnX, float spawnY) : base("Sprites/colors.png")
@@ -20,6 +21,7 @@ namespace GXPEngine
 
 			_player.position.x = spawnX;
 			_player.position.y = spawnY;
+			_hitBox = this;
 
 		}
 
@@ -147,6 +149,16 @@ namespace GXPEngine
 		public void GetHit(int hit)
 		{
 			_player.GetHit(hit);
+		}
+
+		public static Hitbox Return()
+		{
+			return _hitBox;
+		}
+
+		public float getX()
+		{
+			return this.x;
 		}
 
 	}

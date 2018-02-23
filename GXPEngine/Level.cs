@@ -134,14 +134,14 @@ namespace GXPEngine
                         }
                         if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ENEMY")
                         {
-                            Enemy enemy = new Enemy(map.objGroup.TiledObject[i].gid, map, i);
+                            Enemy enemy = new Enemy(map.objGroup.TiledObject[i].gid, map, i, _player);
                             enemy.x = _map.objGroup.TiledObject[i].x;
                             enemy.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
                             AddChild(enemy);
                         }
                         if (map.objGroup.TiledObject[i].properties.property[0].name == "Type" && _map.objGroup.TiledObject[i].properties.property[0].value == "ENEMY2")
                         {
-                            Enemy2 enemy2 = new Enemy2(map.objGroup.TiledObject[i].gid, map, i, _player);
+                            Enemy2 enemy2 = new Enemy2(map.objGroup.TiledObject[i].gid, map, i);
                             enemy2.x = _map.objGroup.TiledObject[i].x;
                             enemy2.y = _map.objGroup.TiledObject[i].y - _map.objGroup.TiledObject[i].height;
                             AddChild(enemy2);

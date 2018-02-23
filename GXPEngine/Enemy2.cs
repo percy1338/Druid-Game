@@ -17,15 +17,13 @@ namespace GXPEngine
 
 
 		EnemyBullet bullet;
-		private Player _player;
 
 
-		public Enemy2(int frame, Map map, int index, Player player) : base("sprites/EnemySprite.png", 3, 1, -1)
+		public Enemy2(int frame, Map map, int index) : base("sprites/EnemySprite.png", 3, 1, -1)
 		{
 			SetFrame(0);
 			SetOrigin(width / 2, height / 2);
 			SetScaleXY(1.75f, 1.75f);
-			_player = player;
 
 			for (int i = 0; i < map.objGroup.TiledObject[index].properties.property.Length; i++)
 			{
@@ -42,6 +40,7 @@ namespace GXPEngine
 
 		public void Update()
 		{
+
 			_step += 1;
 			if (_step > 15)
 			{
@@ -59,6 +58,11 @@ namespace GXPEngine
 
 		void ShootPlayer()
 		{
+			float _playerX = Hitbox.Return().getX();
+
+			float deltaX = this.x - _playerX;
+
+
 			//  float deltaX = _player.position.x - this.x;
 			//  float deltaY = _player.position.y - this.y;
 			//  float length = Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY);
@@ -66,12 +70,14 @@ namespace GXPEngine
 			//  {
 			if (_cooldown <= 0)
 			{
-				bullet = new EnemyBullet(this.x, this.y, _shootLeft);
-				_backgroundChanel = _backgroundMusic.Play();
-				_backgroundChanel.Volume = 0.2f;
-				parent.AddChild(bullet);
-
-				_cooldown = 60;
+				if (deltaX < 1400 && deltaX > -1400)
+				{
+					bullet = new EnemyBullet(this.x, this.y, _shootLeft);
+					_backgroundChanel = _backgroundMusic.Play();
+					_backgroundChanel.Volume = 0.2f;
+					parent.AddChild(bullet);
+					_cooldown = 60;
+				}
 			}
 			// }
 		}
