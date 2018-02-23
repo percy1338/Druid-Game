@@ -145,11 +145,11 @@ namespace GXPEngine
             this.width = game.width;
             this.height = game.height;
 
-            _startButton.x = _width * 0.75f;
-            _startButton.y = _height * 0.75f;
+            _startButton.x = _width * 0.6f;
+            _startButton.y = _height * 0.99f;
 
-            _quitButton.x = _width * 0.75f;
-            _quitButton.y = _height * 0.90f;
+            _quitButton.x = _width * 0.8f;
+            _quitButton.y = _height * 0.99f;
 
             AddChild(_startButton);
             AddChild(_quitButton);
