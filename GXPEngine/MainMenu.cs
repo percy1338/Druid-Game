@@ -136,7 +136,7 @@ namespace GXPEngine
 
         private MyGame _mygame;
 
-        public InfoScreen(MyGame mygame) : base("HUD/info page.png")
+        public InfoScreen(MyGame mygame) : base("HUD/info page (1).png")
         {
             _backgroundChanel = _backgroundMusic.Play();
             _backgroundChanel.Volume = 0.5f;
